@@ -1,0 +1,15 @@
+---
+
+apiVersion: 1
+
+providers:
+  - name: some_unique_name
+    ordId: 1
+    folder: ''
+    folderUid: ''
+    type: file
+    disableDeletion: true
+    editable: true
+    allowUiUpdates: false
+    options:
+      path: /tmp/dashboards/
