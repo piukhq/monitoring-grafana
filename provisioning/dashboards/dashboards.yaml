@@ -3,13 +3,13 @@
 apiVersion: 1
 
 providers:
-  - name: some_unique_name
+  - name: infra
     ordId: 1
-    folder: ''
-    folderUid: ''
+    folder: 'Infrastructure'
+    folderUid: 'infra'
     type: file
     disableDeletion: true
     editable: true
     allowUiUpdates: false
     options:
-      path: /tmp/dashboards/
+      path: /tmp/dashboards/infra/
