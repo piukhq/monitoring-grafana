@@ -16,8 +16,7 @@
   "editable": true,
   "gnetId": 11692,
   "graphTooltip": 0,
-  "id": 4,
-  "iteration": 1592486507244,
+  "iteration": 1592488029793,
   "links": [],
   "panels": [
     {
@@ -88,7 +87,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "redis_uptime_in_seconds{instance=\"10.2.0.57:9100\", job=\"redis\", kubernetes_cluster=\"dev\", kubernetes_namespace=\"default\", kubernetes_pod_name=\"redis-exporter-7794895cc-5gdgd\"}",
+      "tableColumn": "redis_uptime_in_seconds{instance=\"bink-dev-uksouth\", job=\"redis\", kubernetes_cluster=\"dev\", kubernetes_namespace=\"default\", kubernetes_pod_name=\"redis-exporter-8687ff7dcf-cvc7z\"}",
       "targets": [
         {
           "expr": "redis_uptime_in_seconds{instance=~\"$instance\"}",
@@ -179,7 +178,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "redis_connected_clients{instance=\"10.2.0.57:9100\", job=\"redis\", kubernetes_cluster=\"dev\", kubernetes_namespace=\"default\", kubernetes_pod_name=\"redis-exporter-7794895cc-5gdgd\"}",
+      "tableColumn": "redis_connected_clients{instance=\"bink-dev-uksouth\", job=\"redis\", kubernetes_cluster=\"dev\", kubernetes_namespace=\"default\", kubernetes_pod_name=\"redis-exporter-8687ff7dcf-cvc7z\"}",
       "targets": [
         {
           "expr": "redis_connected_clients{instance=~\"$instance\"}",
@@ -275,7 +274,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "{instance=\"10.2.0.57:9100\", job=\"redis\", kubernetes_cluster=\"dev\", kubernetes_namespace=\"default\", kubernetes_pod_name=\"redis-exporter-7794895cc-5gdgd\"}",
+      "tableColumn": "{instance=\"bink-dev-uksouth\", job=\"redis\", kubernetes_cluster=\"dev\", kubernetes_namespace=\"default\", kubernetes_pod_name=\"redis-exporter-8687ff7dcf-cvc7z\"}",
       "targets": [
         {
           "expr": "100 * (redis_memory_used_bytes{instance=~\"$instance\"}  / redis_memory_max_bytes{instance=~\"$instance\"} )",
@@ -1381,9 +1380,9 @@
       {
         "allValue": null,
         "current": {
-          "selected": true,
-          "text": "10.2.0.57:9100",
-          "value": "10.2.0.57:9100"
+          "selected": false,
+          "text": "bink-dev-uksouth",
+          "value": "bink-dev-uksouth"
         },
         "datasource": "$DS_PROMETHEUS",
         "definition": "label_values(redis_up{kubernetes_namespace=\"$namespace\", statefulset_kubernetes_io_pod_name=\"$pod_name\"}, instance)",
@@ -1395,7 +1394,7 @@
         "options": [],
         "query": "label_values(redis_up{kubernetes_namespace=\"$namespace\", statefulset_kubernetes_io_pod_name=\"$pod_name\"}, instance)",
         "refresh": 2,
-        "regex": "",
+        "regex": "/bink.+/",
         "skipUrlSync": false,
         "sort": 1,
         "tagValuesQuery": "",
@@ -1407,7 +1406,7 @@
     ]
   },
   "time": {
-    "from": "now-24h",
+    "from": "now-30m",
     "to": "now"
   },
   "timepicker": {
