@@ -15,8 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 5,
-  "iteration": 1592497387413,
+  "iteration": 1593180420560,
   "links": [],
   "panels": [
     {
@@ -500,7 +499,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(rate(container_cpu_usage_seconds_total{container_name=\"$container\",pod=\"$pod\"}[5m]))",
+          "expr": "sum(rate(container_cpu_usage_seconds_total{container=\"$container\",pod=\"$pod\"}[5m]))",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -526,6 +525,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:92",
           "decimals": null,
           "format": "short",
           "label": "CPU Cores",
@@ -535,6 +535,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:93",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -596,7 +597,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(container_cpu_cfs_throttled_seconds_total{container_name=\"$container\",pod=\"$pod\"}[5m])",
+          "expr": "rate(container_cpu_cfs_throttled_seconds_total{container=\"$container\",pod=\"$pod\"}[5m])",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -622,6 +623,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:144",
           "decimals": null,
           "format": "s",
           "label": "",
@@ -631,6 +633,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:145",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -698,13 +701,13 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(container_memory_working_set_bytes{container_name=\"$container\",pod=\"$pod\"})",
+          "expr": "sum(container_memory_working_set_bytes{container=\"$container\",pod=\"$pod\"})",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
         },
         {
-          "expr": "sum(container_spec_memory_limit_bytes{container_name=\"$container\",pod=\"$pod\"})",
+          "expr": "sum(container_spec_memory_limit_bytes{container=\"$container\",pod=\"$pod\"})",
           "interval": "",
           "legendFormat": "limit",
           "refId": "B"
@@ -730,6 +733,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:196",
           "decimals": null,
           "format": "bytes",
           "label": "",
@@ -739,6 +743,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:197",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -817,8 +822,8 @@
         "allValue": null,
         "current": {
           "selected": true,
-          "text": "hades-api-6bb9657b-mxlf2",
-          "value": "hades-api-6bb9657b-mxlf2"
+          "text": "helios-migrator-5cc9cc57fc-6782m",
+          "value": "helios-migrator-5cc9cc57fc-6782m"
         },
         "datasource": "Prometheus",
         "definition": "label_values(container_cpu_usage_seconds_total{kubernetes_cluster=\"$env\", namespace=\"$ns\"}, pod)",
@@ -843,8 +848,8 @@
         "allValue": null,
         "current": {
           "selected": true,
-          "text": "hades",
-          "value": "hades"
+          "text": "pgbouncer",
+          "value": "pgbouncer"
         },
         "datasource": "Prometheus",
         "definition": "label_values(container_cpu_usage_seconds_total{kubernetes_cluster=\"$env\", namespace=\"$ns\", pod=\"$pod\"}, container)",
@@ -888,5 +893,5 @@
   "timezone": "browser",
   "title": "Pod Resource Info",
   "uid": "H2KW9VWGz",
-  "version": 2
+  "version": 1
 }
