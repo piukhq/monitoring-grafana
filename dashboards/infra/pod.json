@@ -79,7 +79,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(rate(container_cpu_usage_seconds_total{container_name!=\"POD\",pod_name=\"$pod\"}[5m]))",
+          "expr": "sum(rate(container_cpu_usage_seconds_total{container_name!=\"POD\",pod=\"$pod\"}[5m]))",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -175,7 +175,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(rate(container_cpu_cfs_throttled_seconds_total{pod_name=\"$pod\"}[5m]))",
+          "expr": "sum(rate(container_cpu_cfs_throttled_seconds_total{pod=\"$pod\"}[5m]))",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -277,13 +277,13 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(container_memory_working_set_bytes{pod_name=\"$pod\"})",
+          "expr": "sum(container_memory_working_set_bytes{pod=\"$pod\"})",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
         },
         {
-          "expr": "sum(container_spec_memory_limit_bytes{pod_name=\"$pod\"})",
+          "expr": "sum(container_spec_memory_limit_bytes{pod=\"$pod\"})",
           "interval": "",
           "legendFormat": "limit",
           "refId": "B"
@@ -384,13 +384,13 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(rate(container_network_receive_bytes_total{pod_name=\"$pod\"}[5m]))",
+          "expr": "sum(rate(container_network_receive_bytes_total{pod=\"$pod\"}[5m]))",
           "interval": "",
           "legendFormat": "Received",
           "refId": "A"
         },
         {
-          "expr": "sum(rate(container_network_transmit_bytes_total{pod_name=\"$pod\"}[5m]))",
+          "expr": "sum(rate(container_network_transmit_bytes_total{pod=\"$pod\"}[5m]))",
           "interval": "",
           "legendFormat": "Transmitted",
           "refId": "B"
@@ -500,7 +500,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(rate(container_cpu_usage_seconds_total{container_name=\"$container\",pod_name=\"$pod\"}[5m]))",
+          "expr": "sum(rate(container_cpu_usage_seconds_total{container_name=\"$container\",pod=\"$pod\"}[5m]))",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -596,7 +596,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(container_cpu_cfs_throttled_seconds_total{container_name=\"$container\",pod_name=\"$pod\"}[5m])",
+          "expr": "rate(container_cpu_cfs_throttled_seconds_total{container_name=\"$container\",pod=\"$pod\"}[5m])",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -698,13 +698,13 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(container_memory_working_set_bytes{container_name=\"$container\",pod_name=\"$pod\"})",
+          "expr": "sum(container_memory_working_set_bytes{container_name=\"$container\",pod=\"$pod\"})",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
         },
         {
-          "expr": "sum(container_spec_memory_limit_bytes{container_name=\"$container\",pod_name=\"$pod\"})",
+          "expr": "sum(container_spec_memory_limit_bytes{container_name=\"$container\",pod=\"$pod\"})",
           "interval": "",
           "legendFormat": "limit",
           "refId": "B"
@@ -821,14 +821,14 @@
           "value": "hades-api-6bb9657b-mxlf2"
         },
         "datasource": "Prometheus",
-        "definition": "label_values(container_cpu_usage_seconds_total{kubernetes_cluster=\"$env\", namespace=\"$ns\"}, pod_name)",
+        "definition": "label_values(container_cpu_usage_seconds_total{kubernetes_cluster=\"$env\", namespace=\"$ns\"}, pod)",
         "hide": 0,
         "includeAll": false,
         "label": "Pod",
         "multi": false,
         "name": "pod",
         "options": [],
-        "query": "label_values(container_cpu_usage_seconds_total{kubernetes_cluster=\"$env\", namespace=\"$ns\"}, pod_name)",
+        "query": "label_values(container_cpu_usage_seconds_total{kubernetes_cluster=\"$env\", namespace=\"$ns\"}, pod)",
         "refresh": 2,
         "regex": "",
         "skipUrlSync": false,
@@ -847,14 +847,14 @@
           "value": "hades"
         },
         "datasource": "Prometheus",
-        "definition": "label_values(container_cpu_usage_seconds_total{kubernetes_cluster=\"$env\", namespace=\"$ns\", pod_name=\"$pod\"}, container)",
+        "definition": "label_values(container_cpu_usage_seconds_total{kubernetes_cluster=\"$env\", namespace=\"$ns\", pod=\"$pod\"}, container)",
         "hide": 0,
         "includeAll": false,
         "label": "Container",
         "multi": false,
         "name": "container",
         "options": [],
-        "query": "label_values(container_cpu_usage_seconds_total{kubernetes_cluster=\"$env\", namespace=\"$ns\", pod_name=\"$pod\"}, container)",
+        "query": "label_values(container_cpu_usage_seconds_total{kubernetes_cluster=\"$env\", namespace=\"$ns\", pod=\"$pod\"}, container)",
         "refresh": 2,
         "regex": "",
         "skipUrlSync": false,
