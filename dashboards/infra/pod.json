@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1593180420560,
+  "iteration": 1593435326095,
   "links": [],
   "panels": [
     {
@@ -36,6 +36,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "Prometheus",
+      "decimals": 0,
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -46,7 +47,7 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 6,
+        "h": 9,
         "w": 12,
         "x": 0,
         "y": 1
@@ -54,13 +55,15 @@
       "hiddenSeries": false,
       "id": 2,
       "legend": {
+        "alignAsTable": true,
         "avg": false,
-        "current": false,
-        "max": false,
+        "current": true,
+        "max": true,
         "min": false,
+        "rightSide": true,
         "show": true,
         "total": false,
-        "values": false
+        "values": true
       },
       "lines": true,
       "linewidth": 1,
@@ -72,19 +75,53 @@
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
-      "seriesOverrides": [],
+      "seriesOverrides": [
+        {
+          "$$hashKey": "object:236",
+          "alias": "Limit",
+          "color": "#E02F44",
+          "fill": 0
+        },
+        {
+          "$$hashKey": "object:512",
+          "alias": "Request",
+          "color": "#FF780A",
+          "fill": 0
+        }
+      ],
       "spaceLength": 10,
       "stack": false,
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(rate(container_cpu_usage_seconds_total{container_name!=\"POD\",pod=\"$pod\"}[5m]))",
+          "expr": "sum(rate(container_cpu_usage_seconds_total{container_name!=\"POD\",pod=\"$pod\"}[5m])) * 1000",
           "interval": "",
-          "legendFormat": "",
+          "legendFormat": "CPU",
           "refId": "A"
+        },
+        {
+          "expr": "sum(kube_pod_container_resource_requests_cpu_cores{kubernetes_cluster=\"$env\",pod=\"$pod\"}) * 1000",
+          "interval": "",
+          "legendFormat": "Request",
+          "refId": "B"
+        },
+        {
+          "expr": "sum(kube_pod_container_resource_limits_cpu_cores{kubernetes_cluster=\"$env\",pod=\"$pod\"}) * 1000",
+          "interval": "",
+          "legendFormat": "Limit",
+          "refId": "C"
         }
       ],
-      "thresholds": [],
+      "thresholds": [
+        {
+          "$$hashKey": "object:230",
+          "colorMode": "critical",
+          "fill": true,
+          "line": true,
+          "op": "gt",
+          "yaxis": "left"
+        }
+      ],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
@@ -104,15 +141,17 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:209",
           "decimals": null,
           "format": "short",
-          "label": "CPU Cores",
+          "label": "MilliCores",
           "logBase": 1,
           "max": null,
           "min": "0",
           "show": true
         },
         {
+          "$$hashKey": "object:210",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -142,7 +181,7 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 6,
+        "h": 8,
         "w": 12,
         "x": 12,
         "y": 1
@@ -240,116 +279,8 @@
       "gridPos": {
         "h": 6,
         "w": 12,
-        "x": 0,
-        "y": 7
-      },
-      "hiddenSeries": false,
-      "id": 4,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": false,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "dataLinks": []
-      },
-      "percentage": false,
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [
-        {
-          "alias": "limit",
-          "color": "#E02F44",
-          "fill": 0
-        }
-      ],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "sum(container_memory_working_set_bytes{pod=\"$pod\"})",
-          "interval": "",
-          "legendFormat": "",
-          "refId": "A"
-        },
-        {
-          "expr": "sum(container_spec_memory_limit_bytes{pod=\"$pod\"})",
-          "interval": "",
-          "legendFormat": "limit",
-          "refId": "B"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Pod Memory Usage",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": null,
-          "format": "bytes",
-          "label": "",
-          "logBase": 1,
-          "max": null,
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "Prometheus",
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 6,
-        "w": 12,
         "x": 12,
-        "y": 7
+        "y": 9
       },
       "hiddenSeries": false,
       "id": 9,
@@ -438,13 +369,130 @@
       }
     },
     {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Prometheus",
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 5,
+        "w": 12,
+        "x": 0,
+        "y": 10
+      },
+      "hiddenSeries": false,
+      "id": 4,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": true,
+        "max": true,
+        "min": false,
+        "rightSide": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "$$hashKey": "object:919",
+          "alias": "Limit",
+          "color": "#E02F44",
+          "fill": 0
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "sum(container_memory_working_set_bytes{pod=\"$pod\"})",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        },
+        {
+          "expr": "sum(container_spec_memory_limit_bytes{pod=\"$pod\"})",
+          "interval": "",
+          "legendFormat": "Limit",
+          "refId": "B"
+        },
+        {
+          "expr": "",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "C"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Pod Memory Usage",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "bytes",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
       "collapsed": false,
       "datasource": null,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 13
+        "y": 15
       },
       "id": 11,
       "panels": [],
@@ -470,18 +518,20 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 14
+        "y": 16
       },
       "hiddenSeries": false,
       "id": 6,
       "legend": {
+        "alignAsTable": true,
         "avg": false,
-        "current": false,
-        "max": false,
+        "current": true,
+        "max": true,
         "min": false,
+        "rightSide": true,
         "show": true,
         "total": false,
-        "values": false
+        "values": true
       },
       "lines": true,
       "linewidth": 1,
@@ -493,16 +543,41 @@
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
-      "seriesOverrides": [],
+      "seriesOverrides": [
+        {
+          "$$hashKey": "object:739",
+          "alias": "Request",
+          "color": "#FF780A",
+          "fill": 0
+        },
+        {
+          "$$hashKey": "object:751",
+          "alias": "Limit",
+          "color": "#E02F44",
+          "fill": 0
+        }
+      ],
       "spaceLength": 10,
       "stack": false,
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(rate(container_cpu_usage_seconds_total{container=\"$container\",pod=\"$pod\"}[5m]))",
+          "expr": "sum(rate(container_cpu_usage_seconds_total{container=\"$container\",pod=\"$pod\"}[5m])) * 1000",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
+        },
+        {
+          "expr": "kube_pod_container_resource_requests_cpu_cores{container=\"$container\",kubernetes_cluster=\"$env\",pod=\"$pod\"} * 1000",
+          "interval": "",
+          "legendFormat": "Request",
+          "refId": "B"
+        },
+        {
+          "expr": "kube_pod_container_resource_limits_cpu_cores{container=\"$container\",kubernetes_cluster=\"$env\",pod=\"$pod\"} * 1000",
+          "interval": "",
+          "legendFormat": "Limit",
+          "refId": "C"
         }
       ],
       "thresholds": [],
@@ -555,6 +630,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "Prometheus",
+      "decimals": null,
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -568,116 +644,20 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 14
-      },
-      "hiddenSeries": false,
-      "id": 7,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": false,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "dataLinks": []
-      },
-      "percentage": false,
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "rate(container_cpu_cfs_throttled_seconds_total{container=\"$container\",pod=\"$pod\"}[5m])",
-          "interval": "",
-          "legendFormat": "",
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Container \"$container\" time spent CPU throttled ",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:144",
-          "decimals": null,
-          "format": "s",
-          "label": "",
-          "logBase": 1,
-          "max": null,
-          "min": "0",
-          "show": true
-        },
-        {
-          "$$hashKey": "object:145",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "Prometheus",
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 7,
-        "w": 12,
-        "x": 0,
-        "y": 21
+        "y": 16
       },
       "hiddenSeries": false,
       "id": 8,
       "legend": {
+        "alignAsTable": true,
         "avg": false,
-        "current": false,
-        "max": false,
+        "current": true,
+        "max": true,
         "min": false,
-        "show": false,
+        "rightSide": true,
+        "show": true,
         "total": false,
-        "values": false
+        "values": true
       },
       "lines": true,
       "linewidth": 1,
@@ -691,7 +671,8 @@
       "renderer": "flot",
       "seriesOverrides": [
         {
-          "alias": "limit",
+          "$$hashKey": "object:566",
+          "alias": "Limit",
           "color": "#E02F44",
           "fill": 0
         }
@@ -709,7 +690,7 @@
         {
           "expr": "sum(container_spec_memory_limit_bytes{container=\"$container\",pod=\"$pod\"})",
           "interval": "",
-          "legendFormat": "limit",
+          "legendFormat": "Limit",
           "refId": "B"
         }
       ],
@@ -822,8 +803,8 @@
         "allValue": null,
         "current": {
           "selected": true,
-          "text": "helios-migrator-5cc9cc57fc-6782m",
-          "value": "helios-migrator-5cc9cc57fc-6782m"
+          "text": "fakicorp-694b54b6bd-rrj2v",
+          "value": "fakicorp-694b54b6bd-rrj2v"
         },
         "datasource": "Prometheus",
         "definition": "label_values(container_cpu_usage_seconds_total{kubernetes_cluster=\"$env\", namespace=\"$ns\"}, pod)",
@@ -847,9 +828,9 @@
       {
         "allValue": null,
         "current": {
-          "selected": true,
-          "text": "pgbouncer",
-          "value": "pgbouncer"
+          "selected": false,
+          "text": "fakicorp",
+          "value": "fakicorp"
         },
         "datasource": "Prometheus",
         "definition": "label_values(container_cpu_usage_seconds_total{kubernetes_cluster=\"$env\", namespace=\"$ns\", pod=\"$pod\"}, container)",

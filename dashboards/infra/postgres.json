@@ -16,8 +16,7 @@
   "editable": true,
   "gnetId": 9628,
   "graphTooltip": 0,
-  "id": 6,
-  "iteration": 1592954583935,
+  "iteration": 1593435056530,
   "links": [],
   "panels": [
     {
@@ -450,7 +449,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "pg_settings_max_connections{instance=\"bink-dev-uksouth\", job=\"postgres\", kubernetes_cluster=\"dev\", kubernetes_namespace=\"default\", kubernetes_pod_name=\"postgres-exporter-84d9c878b6-mwg2r\", server=\"bink-dev-uksouth\"}",
+      "tableColumn": "pg_settings_max_connections{instance=\"bink-prod-uksouth\", job=\"postgres\", kubernetes_cluster=\"prod\", kubernetes_namespace=\"default\", kubernetes_pod_name=\"postgres-exporter-9c65fff98-g9bg8\", server=\"bink-prod-uksouth\"}",
       "targets": [
         {
           "expr": "pg_settings_max_connections{release=\"$release\", instance=\"$instance\"}",
@@ -549,6 +548,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:494",
           "format": "s",
           "label": null,
           "logBase": 1,
@@ -557,6 +557,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:495",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -853,7 +854,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "pg_settings_shared_buffers_bytes{instance=\"bink-dev-uksouth\", job=\"postgres\", kubernetes_cluster=\"dev\", kubernetes_namespace=\"default\", kubernetes_pod_name=\"postgres-exporter-84d9c878b6-mwg2r\", server=\"bink-dev-uksouth\"}",
+      "tableColumn": "pg_settings_shared_buffers_bytes{instance=\"bink-prod-uksouth\", job=\"postgres\", kubernetes_cluster=\"prod\", kubernetes_namespace=\"default\", kubernetes_pod_name=\"postgres-exporter-9c65fff98-g9bg8\", server=\"bink-prod-uksouth\"}",
       "targets": [
         {
           "expr": "pg_settings_shared_buffers_bytes{instance=\"$instance\"}",
@@ -939,7 +940,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "pg_settings_effective_cache_size_bytes{instance=\"bink-dev-uksouth\", job=\"postgres\", kubernetes_cluster=\"dev\", kubernetes_namespace=\"default\", kubernetes_pod_name=\"postgres-exporter-84d9c878b6-mwg2r\", server=\"bink-dev-uksouth\"}",
+      "tableColumn": "pg_settings_effective_cache_size_bytes{instance=\"bink-prod-uksouth\", job=\"postgres\", kubernetes_cluster=\"prod\", kubernetes_namespace=\"default\", kubernetes_pod_name=\"postgres-exporter-9c65fff98-g9bg8\", server=\"bink-prod-uksouth\"}",
       "targets": [
         {
           "expr": "pg_settings_effective_cache_size_bytes{instance=\"$instance\"}",
@@ -1025,7 +1026,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "pg_settings_maintenance_work_mem_bytes{instance=\"bink-dev-uksouth\", job=\"postgres\", kubernetes_cluster=\"dev\", kubernetes_namespace=\"default\", kubernetes_pod_name=\"postgres-exporter-84d9c878b6-mwg2r\", server=\"bink-dev-uksouth\"}",
+      "tableColumn": "pg_settings_maintenance_work_mem_bytes{instance=\"bink-prod-uksouth\", job=\"postgres\", kubernetes_cluster=\"prod\", kubernetes_namespace=\"default\", kubernetes_pod_name=\"postgres-exporter-9c65fff98-g9bg8\", server=\"bink-prod-uksouth\"}",
       "targets": [
         {
           "expr": "pg_settings_maintenance_work_mem_bytes{instance=\"$instance\"}",
@@ -1111,7 +1112,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "pg_settings_work_mem_bytes{instance=\"bink-dev-uksouth\", job=\"postgres\", kubernetes_cluster=\"dev\", kubernetes_namespace=\"default\", kubernetes_pod_name=\"postgres-exporter-84d9c878b6-mwg2r\", server=\"bink-dev-uksouth\"}",
+      "tableColumn": "pg_settings_work_mem_bytes{instance=\"bink-prod-uksouth\", job=\"postgres\", kubernetes_cluster=\"prod\", kubernetes_namespace=\"default\", kubernetes_pod_name=\"postgres-exporter-9c65fff98-g9bg8\", server=\"bink-prod-uksouth\"}",
       "targets": [
         {
           "expr": "pg_settings_work_mem_bytes{instance=\"$instance\"}",
@@ -1199,7 +1200,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "pg_settings_max_wal_size_bytes{instance=\"bink-dev-uksouth\", job=\"postgres\", kubernetes_cluster=\"dev\", kubernetes_namespace=\"default\", kubernetes_pod_name=\"postgres-exporter-84d9c878b6-mwg2r\", server=\"bink-dev-uksouth\"}",
+      "tableColumn": "pg_settings_max_wal_size_bytes{instance=\"bink-prod-uksouth\", job=\"postgres\", kubernetes_cluster=\"prod\", kubernetes_namespace=\"default\", kubernetes_pod_name=\"postgres-exporter-9c65fff98-g9bg8\", server=\"bink-prod-uksouth\"}",
       "targets": [
         {
           "expr": "pg_settings_max_wal_size_bytes{instance=\"$instance\"}",
@@ -1285,7 +1286,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "pg_settings_random_page_cost{instance=\"bink-dev-uksouth\", job=\"postgres\", kubernetes_cluster=\"dev\", kubernetes_namespace=\"default\", kubernetes_pod_name=\"postgres-exporter-84d9c878b6-mwg2r\", server=\"bink-dev-uksouth\"}",
+      "tableColumn": "pg_settings_random_page_cost{instance=\"bink-prod-uksouth\", job=\"postgres\", kubernetes_cluster=\"prod\", kubernetes_namespace=\"default\", kubernetes_pod_name=\"postgres-exporter-9c65fff98-g9bg8\", server=\"bink-prod-uksouth\"}",
       "targets": [
         {
           "expr": "pg_settings_random_page_cost{instance=\"$instance\"}",
@@ -1371,7 +1372,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "pg_settings_seq_page_cost{instance=\"bink-dev-uksouth\", job=\"postgres\", kubernetes_cluster=\"dev\", kubernetes_namespace=\"default\", kubernetes_pod_name=\"postgres-exporter-84d9c878b6-mwg2r\", server=\"bink-dev-uksouth\"}",
+      "tableColumn": "pg_settings_seq_page_cost{instance=\"bink-prod-uksouth\", job=\"postgres\", kubernetes_cluster=\"prod\", kubernetes_namespace=\"default\", kubernetes_pod_name=\"postgres-exporter-9c65fff98-g9bg8\", server=\"bink-prod-uksouth\"}",
       "targets": [
         {
           "expr": "pg_settings_seq_page_cost{instance=\"$instance\"}",
@@ -1459,7 +1460,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "pg_settings_max_worker_processes{instance=\"bink-dev-uksouth\", job=\"postgres\", kubernetes_cluster=\"dev\", kubernetes_namespace=\"default\", kubernetes_pod_name=\"postgres-exporter-84d9c878b6-mwg2r\", server=\"bink-dev-uksouth\"}",
+      "tableColumn": "pg_settings_max_worker_processes{instance=\"bink-prod-uksouth\", job=\"postgres\", kubernetes_cluster=\"prod\", kubernetes_namespace=\"default\", kubernetes_pod_name=\"postgres-exporter-9c65fff98-g9bg8\", server=\"bink-prod-uksouth\"}",
       "targets": [
         {
           "expr": "pg_settings_max_worker_processes{instance=\"$instance\"}",
@@ -1545,7 +1546,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "pg_settings_max_parallel_workers{instance=\"bink-dev-uksouth\", job=\"postgres\", kubernetes_cluster=\"dev\", kubernetes_namespace=\"default\", kubernetes_pod_name=\"postgres-exporter-84d9c878b6-mwg2r\", server=\"bink-dev-uksouth\"}",
+      "tableColumn": "pg_settings_max_parallel_workers{instance=\"bink-prod-uksouth\", job=\"postgres\", kubernetes_cluster=\"prod\", kubernetes_namespace=\"default\", kubernetes_pod_name=\"postgres-exporter-9c65fff98-g9bg8\", server=\"bink-prod-uksouth\"}",
       "targets": [
         {
           "expr": "pg_settings_max_parallel_workers{instance=\"$instance\"}",
@@ -3109,12 +3110,12 @@
         "allValue": null,
         "current": {
           "selected": false,
-          "text": "performance",
-          "value": "performance"
+          "text": "oat",
+          "value": "oat"
         },
         "datasource": "Prometheus",
         "definition": "",
-        "hide": 0,
+        "hide": 2,
         "includeAll": false,
         "label": "Namespace",
         "multi": false,
@@ -3162,8 +3163,8 @@
         "allValue": null,
         "current": {
           "selected": false,
-          "text": "bink-dev-uksouth",
-          "value": "bink-dev-uksouth"
+          "text": "bink-prod-uksouth",
+          "value": "bink-prod-uksouth"
         },
         "datasource": "Prometheus",
         "definition": "",
