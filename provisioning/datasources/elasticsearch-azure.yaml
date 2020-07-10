@@ -13,7 +13,7 @@ datasources:
     basicAuthUser: starbug
     jsonData:
       esVersion: 70
-      timeField: "@timestamp"
+      timeField: "time"
       interval: Daily
       tlsAuthWithCACert: true
     secureJsonData:
@@ -51,7 +51,7 @@ datasources:
     basicAuthUser: starbug
     jsonData:
       esVersion: 70
-      timeField: "@timestamp"
+      timeField: "time"
       interval: Daily
       tlsAuthWithCACert: true
     secureJsonData:
@@ -89,7 +89,7 @@ datasources:
     basicAuthUser: starbug
     jsonData:
       esVersion: 70
-      timeField: "@timestamp"
+      timeField: "time"
       interval: Daily
       tlsAuthWithCACert: true
     secureJsonData:
