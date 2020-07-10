@@ -121,7 +121,7 @@ datasources:
     type: elasticsearch
     access: proxy
     orgId: 1
-    uid: esAAD
+    uid: esPG
     url: https://elasticsearch.uksouth.bink.sh:9200
     basicAuth: true
     basicAuthUser: starbug
@@ -159,7 +159,7 @@ datasources:
     type: elasticsearch
     access: proxy
     orgId: 1
-    uid: esAAD
+    uid: esAKV
     url: https://elasticsearch.uksouth.bink.sh:9200
     basicAuth: true
     basicAuthUser: starbug
