@@ -16,7 +16,6 @@
     "editable": true,
     "gnetId": null,
     "graphTooltip": 0,
-    "id": null,
     "links": [],
     "panels": [
       {
@@ -314,6 +313,107 @@
         "type": "stat"
       },
       {
+        "datasource": "Elasticsearch - Logs",
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "custom": {},
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "#EAB839",
+                  "value": 4000
+                },
+                {
+                  "color": "red",
+                  "value": 5000
+                }
+              ]
+            },
+            "unit": "wpm"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 6,
+          "x": 12,
+          "y": 4
+        },
+        "id": 6,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "mean"
+            ],
+            "fields": "",
+            "values": false
+          }
+        },
+        "pluginVersion": "7.0.3",
+        "targets": [
+          {
+            "bucketAggs": [
+              {
+                "$$hashKey": "object:38",
+                "field": "@timestamp",
+                "id": "2",
+                "settings": {
+                  "interval": "5m",
+                  "min_doc_count": 0,
+                  "offset": "",
+                  "trimEdges": null
+                },
+                "type": "date_histogram"
+              }
+            ],
+            "metrics": [
+              {
+                "$$hashKey": "object:36",
+                "field": "select field",
+                "id": "1",
+                "type": "count"
+              }
+            ],
+            "query": "",
+            "refId": "A",
+            "timeField": "@timestamp"
+          }
+        ],
+        "timeFrom": null,
+        "timeShift": null,
+        "title": "Logs Writes/min",
+        "transformations": [
+          {
+            "id": "calculateField",
+            "options": {
+              "binary": {
+                "left": "Count",
+                "operator": "/",
+                "reducer": "sum",
+                "right": "5"
+              },
+              "mode": "binary",
+              "reduce": {
+                "reducer": "sum"
+              },
+              "replaceFields": true
+            }
+          }
+        ],
+        "type": "stat"
+      },
+      {
         "datasource": "Elasticsearch - Azure Frontdoor",
         "fieldConfig": {
           "defaults": {
@@ -436,6 +536,6 @@
     },
     "timezone": "utc",
     "title": "Elasticsearch Index Ingress",
-    "uid": null,
-    "version": 0
+    "uid": "yz4fe3MMz",
+    "version": 1
   }
