@@ -1,6 +1,5 @@
 stages:
   - build
-  - deploy
 
 # We'll probably want to run 2 grafanas eventually where by
 # one can be edited and we take those chagnes and do a formal
@@ -14,14 +13,8 @@ build-develop-grafana:
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" "$CI_REGISTRY"
   script:
     - docker build --pull -t "$CI_REGISTRY/grafana:latest" .
+    - docker tag "$CI_REGISTRY/grafana:latest" "$CI_REGISTRY/grafana:develop-$CI_COMMIT_SHORT_SHA"
     - docker push "$CI_REGISTRY/grafana:latest"
-  only:
-    - master
-
-tag-develop:
-  stage: deploy
-  image: binkops.azurecr.io/tagbot:latest
-  script:
-    - tagbot --username "$CI_REGISTRY_USER" --password "$CI_REGISTRY_PASSWORD" --source "$CI_REGISTRY/grafana:latest" --tag "develop-$CI_COMMIT_SHORT_SHA"
+    - docker push "$CI_REGISTRY/grafana:develop-$CI_COMMIT_SHORT_SHA"
   only:
     - master
