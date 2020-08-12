@@ -62,10 +62,10 @@
       "pluginVersion": "7.0.3",
       "targets": [
         {
-          "expr": "count(container_cpu_usage_seconds_total{kubernetes_cluster=~\"prod\\\\d*\",pod=~\".+\"})",
+          "expr": "count(count (container_cpu_usage_seconds_total{kubernetes_cluster=~\"^prod\\\\d*\",pod=~\".+\"}) by (pod))",
           "interval": "",
           "legendFormat": "",
-          "refId": "A"
+          "refId": "B"
         }
       ],
       "timeFrom": null,
