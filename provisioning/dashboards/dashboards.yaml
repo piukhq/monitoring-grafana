@@ -13,3 +13,14 @@ providers:
     allowUiUpdates: false
     options:
       path: /tmp/dashboards/infra/
+
+  - name: app
+    ordId: 1
+    folder: 'Application'
+    folderUid: 'app'
+    type: file
+    disableDeletion: true
+    editable: true
+    allowUiUpdates: false
+    options:
+      path: /tmp/dashboards/app/
