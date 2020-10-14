@@ -15,7 +15,6 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": null,
   "links": [],
   "panels": [
     {
@@ -54,7 +53,7 @@
         "orientation": "horizontal",
         "reduceOptions": {
           "calcs": [
-            "last"
+            "lastNotNull"
           ],
           "fields": "",
           "values": false
@@ -63,7 +62,7 @@
       "pluginVersion": "7.0.3",
       "targets": [
         {
-          "expr": "sum (payment_card_total) by (type, payment_card)",
+          "expr": "sum (payment_card_total{kubernetes_cluster=\"$cluster\"}) by (type, payment_card)",
           "interval": "",
           "legendFormat": "{{ payment_card }} - {{ type }}",
           "refId": "A"
@@ -121,7 +120,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(payment_card_total) by (type, payment_card)",
+          "expr": "sum(payment_card_total{kubernetes_cluster=\"$cluster\"}) by (type, payment_card)",
           "interval": "",
           "legendFormat": "{{ payment_card }} - {{ type }}",
           "refId": "A"
@@ -147,6 +146,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:96",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -155,6 +155,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:97",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -173,10 +174,37 @@
   "style": "dark",
   "tags": [],
   "templating": {
-    "list": []
+    "list": [
+      {
+        "allValue": null,
+        "current": {
+          "selected": false,
+          "text": "dev0",
+          "value": "dev0"
+        },
+        "datasource": "Prometheus",
+        "definition": "label_values(payment_card_total, kubernetes_cluster)",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Kubernetes Cluster",
+        "multi": false,
+        "name": "cluster",
+        "options": [],
+        "query": "label_values(payment_card_total, kubernetes_cluster)",
+        "refresh": 2,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      }
+    ]
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-30d",
     "to": "now"
   },
   "timepicker": {
@@ -194,6 +222,6 @@
   },
   "timezone": "",
   "title": "Zephyrus",
-  "uid": null,
-  "version": 0
+  "uid": "XYX_pV5Gk",
+  "version": 1
 }
