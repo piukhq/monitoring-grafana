@@ -15,6 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
+  "iteration": 1602781555278,
   "links": [],
   "panels": [
     {
@@ -120,7 +121,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(payment_card_total{kubernetes_cluster=\"$cluster\"}) by (type, payment_card)",
+          "expr": "sum(rate(payment_card_total{kubernetes_cluster=\"$cluster\"}[10m])) by (type, payment_card) * 60",
           "interval": "",
           "legendFormat": "{{ payment_card }} - {{ type }}",
           "refId": "A"
@@ -130,7 +131,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Transaction received",
+      "title": "Transaction received / min",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -179,8 +180,8 @@
         "allValue": null,
         "current": {
           "selected": false,
-          "text": "dev0",
-          "value": "dev0"
+          "text": "staging0",
+          "value": "staging0"
         },
         "datasource": "Prometheus",
         "definition": "label_values(payment_card_total, kubernetes_cluster)",
@@ -204,7 +205,7 @@
     ]
   },
   "time": {
-    "from": "now-30d",
+    "from": "now-7d",
     "to": "now"
   },
   "timepicker": {
