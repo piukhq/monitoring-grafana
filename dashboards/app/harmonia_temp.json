@@ -15,9 +15,104 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": null,
   "links": [],
   "panels": [
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      },
+      "hiddenSeries": false,
+      "id": 4,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "sum(irate(transactions_total{kubernetes_cluster=\"$cluster\"}[1m])) by (process_type, slug, transaction_type) * 60",
+          "interval": "",
+          "legendFormat": "{{transaction_type}} - {{ process_type }} - {{slug }} ",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Transactions Imported / min",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:145",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:146",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
     {
       "aliasColors": {},
       "bars": false,
@@ -36,7 +131,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 0
+        "y": 8
       },
       "hiddenSeries": false,
       "id": 2,
@@ -65,29 +160,17 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "transactions_total",
+          "expr": "sum(irate(files_received_total{kubernetes_cluster=\"$cluster\"}[2m])) by (process_type, slug) * 60",
           "interval": "",
-          "legendFormat": "",
-          "refId": "A"
-        },
-        {
-          "expr": "files_received_total",
-          "interval": "",
-          "legendFormat": "",
+          "legendFormat": "{{ process_type }} - {{ slug }}",
           "refId": "B"
-        },
-        {
-          "expr": "",
-          "interval": "",
-          "legendFormat": "",
-          "refId": "C"
         }
       ],
       "thresholds": [],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Panel Title",
+      "title": "Files received / min",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -103,6 +186,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:55",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -111,6 +195,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:56",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -129,7 +214,40 @@
   "style": "dark",
   "tags": [],
   "templating": {
-    "list": []
+    "list": [
+      {
+        "allValue": null,
+        "current": {
+          "selected": true,
+          "text": "staging0",
+          "value": "staging0"
+        },
+        "datasource": "Prometheus",
+        "definition": "label_values(files_received_total, kubernetes_cluster)",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Kubernetes Cluster",
+        "multi": false,
+        "name": "cluster",
+        "options": [
+          {
+            "selected": true,
+            "text": "staging0",
+            "value": "staging0"
+          }
+        ],
+        "query": "label_values(files_received_total, kubernetes_cluster)",
+        "refresh": 0,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      }
+    ]
   },
   "time": {
     "from": "now-6h",
@@ -150,6 +268,6 @@
   },
   "timezone": "",
   "title": "Harmonia temp",
-  "uid": null,
-  "version": 0
+  "uid": "YMhsKucGz",
+  "version": 1
 }
