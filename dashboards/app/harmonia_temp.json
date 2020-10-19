@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1602849687242,
+  "iteration": 1603103185410,
   "links": [],
   "panels": [
     {
@@ -65,7 +65,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(irate(transactions_total{kubernetes_cluster=\"$cluster\"}[1m])) by (process_type, slug, transaction_type) * 60",
+          "expr": "transactions_total{kubernetes_cluster=\"$cluster\"}",
           "interval": "",
           "legendFormat": "{{transaction_type}} - {{ process_type }} - {{slug }} ",
           "refId": "A"
@@ -161,7 +161,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(irate(files_received_total{kubernetes_cluster=\"$cluster\"}[2m])) by (process_type, slug) * 60",
+          "expr": "files_received_total{kubernetes_cluster=\"$cluster\"}",
           "interval": "",
           "legendFormat": "{{ process_type }} - {{ slug }}",
           "refId": "B"
