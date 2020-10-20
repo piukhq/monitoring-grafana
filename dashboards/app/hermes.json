@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1603205904320,
+  "iteration": 1603207030509,
   "links": [],
   "panels": [
     {
@@ -64,8 +64,8 @@
       "scopedVars": {
         "channel": {
           "selected": true,
-          "text": "com.barclays.bmb",
-          "value": "com.barclays.bmb"
+          "text": "com.bink.wallet",
+          "value": "com.bink.wallet"
         }
       },
       "seriesOverrides": [],
@@ -346,6 +346,100 @@
         "y": 23
       },
       "hiddenSeries": false,
+      "id": 14,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "sum(payment_card_status_total) by (scheme, status)",
+          "interval": "",
+          "legendFormat": "{{scheme}} - {{status}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Payment card status",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 31
+      },
+      "hiddenSeries": false,
       "id": 11,
       "legend": {
         "alignAsTable": false,
@@ -371,8 +465,8 @@
       "scopedVars": {
         "channel": {
           "selected": true,
-          "text": "com.barclays.bmb",
-          "value": "com.barclays.bmb"
+          "text": "com.bink.wallet",
+          "value": "com.bink.wallet"
         }
       },
       "seriesOverrides": [],
@@ -447,7 +541,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 31
+        "y": 39
       },
       "hiddenSeries": false,
       "id": 12,
@@ -474,8 +568,8 @@
       "scopedVars": {
         "channel": {
           "selected": true,
-          "text": "com.barclays.bmb",
-          "value": "com.barclays.bmb"
+          "text": "com.bink.wallet",
+          "value": "com.bink.wallet"
         }
       },
       "seriesOverrides": [],
@@ -549,18 +643,18 @@
         "allValue": null,
         "current": {
           "selected": false,
-          "text": "staging0",
-          "value": "staging0"
+          "text": "dev0",
+          "value": "dev0"
         },
         "datasource": "Prometheus",
-        "definition": "label_values(django_http_requests_total_by_method_channel_view_and_response_status_total, kubernetes_cluster)",
+        "definition": "label_values(payment_card_add_total, kubernetes_cluster)",
         "hide": 0,
         "includeAll": false,
         "label": "Kubernetes Cluster",
         "multi": false,
         "name": "cluster",
         "options": [],
-        "query": "label_values(django_http_requests_total_by_method_channel_view_and_response_status_total, kubernetes_cluster)",
+        "query": "label_values(payment_card_add_total, kubernetes_cluster)",
         "refresh": 2,
         "regex": "",
         "skipUrlSync": false,
@@ -574,19 +668,19 @@
       {
         "allValue": null,
         "current": {
-          "selected": true,
-          "text": "com.barclays.bmb",
-          "value": "com.barclays.bmb"
+          "selected": false,
+          "text": "com.bink.wallet",
+          "value": "com.bink.wallet"
         },
         "datasource": "Prometheus",
-        "definition": "label_values(django_http_requests_latency_seconds_by_view_method_count{channel=~\"com.+\"}, channel)",
+        "definition": "label_values(payment_card_add_total{channel=~\"com.+\"}, channel)",
         "hide": 0,
         "includeAll": true,
         "label": "Channel",
         "multi": false,
         "name": "channel",
         "options": [],
-        "query": "label_values(django_http_requests_latency_seconds_by_view_method_count{channel=~\"com.+\"}, channel)",
+        "query": "label_values(payment_card_add_total{channel=~\"com.+\"}, channel)",
         "refresh": 2,
         "regex": "",
         "skipUrlSync": false,
@@ -600,7 +694,7 @@
     ]
   },
   "time": {
-    "from": "now-2d",
+    "from": "now-12h",
     "to": "now"
   },
   "timepicker": {
