@@ -581,7 +581,7 @@
           "expr": "sum(service_creation_total{job=\"hermes\", channel=\"${channel:raw}\"})",
           "hide": false,
           "interval": "",
-          "legendFormat": "raw counter",
+          "legendFormat": "raw counter ",
           "refId": "A"
         },
         {
