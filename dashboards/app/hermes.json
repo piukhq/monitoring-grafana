@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1603191218512,
+  "iteration": 1603200517325,
   "links": [],
   "panels": [
     {
@@ -180,7 +180,7 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatIteration": 1603191218512,
+      "repeatIteration": 1603200517325,
       "repeatPanelId": 4,
       "scopedVars": {
         "channel": {
@@ -512,7 +512,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Payment card status changes - $channel",
+      "title": "Payment card adding - $channel",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -592,7 +592,7 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatIteration": 1603191218512,
+      "repeatIteration": 1603200517325,
       "repeatPanelId": 11,
       "scopedVars": {
         "channel": {
@@ -617,7 +617,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Payment card status changes - $channel",
+      "title": "Payment card adding - $channel",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -798,7 +798,7 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatIteration": 1603191218512,
+      "repeatIteration": 1603200517325,
       "repeatPanelId": 12,
       "scopedVars": {
         "channel": {
@@ -869,7 +869,7 @@
       {
         "allValue": null,
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "staging0",
           "value": "staging0"
         },
