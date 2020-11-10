@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1604421388682,
+  "iteration": 1605018941648,
   "links": [],
   "panels": [
     {
@@ -180,7 +180,7 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatIteration": 1604421388682,
+      "repeatIteration": 1605018941648,
       "repeatPanelId": 4,
       "scopedVars": {
         "channel": {
@@ -687,7 +687,7 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatIteration": 1604421388682,
+      "repeatIteration": 1605018941648,
       "repeatPanelId": 11,
       "scopedVars": {
         "channel": {
@@ -902,7 +902,7 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatIteration": 1604421388682,
+      "repeatIteration": 1605018941648,
       "repeatPanelId": 12,
       "scopedVars": {
         "channel": {
@@ -971,6 +971,58 @@
         "align": false,
         "alignLevel": null
       }
+    },
+    {
+      "datasource": "Prometheus",
+      "description": "The current values, taken from the database, is a point in time metric.",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 47
+      },
+      "id": 19,
+      "options": {
+        "displayMode": "gradient",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true
+      },
+      "pluginVersion": "7.0.3",
+      "targets": [
+        {
+          "expr": "hermes_current_payment_card_status_total",
+          "interval": "",
+          "legendFormat": "{{ issuer }} - {{ status }}",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Current Payment Card Status",
+      "type": "bargauge"
     }
   ],
   "schemaVersion": 25,
