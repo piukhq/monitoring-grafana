@@ -18,6 +18,94 @@
   "links": [],
   "panels": [
     {
+      "content": "\n\n\n",
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 1,
+        "w": 6,
+        "x": 0,
+        "y": 0
+      },
+      "id": 59,
+      "mode": "markdown",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Application name",
+      "type": "text"
+    },
+    {
+      "content": "\n",
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 1,
+        "w": 4,
+        "x": 6,
+        "y": 0
+      },
+      "id": 61,
+      "mode": "markdown",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Panel Title",
+      "type": "text"
+    },
+    {
+      "content": "\n",
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 1,
+        "w": 4,
+        "x": 10,
+        "y": 0
+      },
+      "id": 62,
+      "mode": "markdown",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Panel Title",
+      "type": "text"
+    },
+    {
+      "content": "\n",
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 1,
+        "w": 4,
+        "x": 14,
+        "y": 0
+      },
+      "id": 63,
+      "mode": "markdown",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Panel Title",
+      "type": "text"
+    },
+    {
       "content": "\n# Hermes\n\n\n",
       "datasource": null,
       "fieldConfig": {
@@ -25,6 +113,12 @@
           "custom": {}
         },
         "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 6,
+        "x": 0,
+        "y": 1
       },
       "id": 8,
       "mode": "markdown",
@@ -57,10 +151,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 3,
+        "h": 2,
         "w": 4,
         "x": 6,
-        "y": 0
+        "y": 1
       },
       "id": 6,
       "options": {
@@ -109,10 +203,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 3,
+        "h": 2,
         "w": 4,
         "x": 10,
-        "y": 0
+        "y": 1
       },
       "id": 2,
       "options": {
@@ -139,7 +233,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Total Pods",
+      "title": "",
       "type": "stat"
     },
     {
@@ -161,10 +255,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 3,
+        "h": 2,
         "w": 4,
         "x": 14,
-        "y": 0
+        "y": 1
       },
       "id": 4,
       "options": {
