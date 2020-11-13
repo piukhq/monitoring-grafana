@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1605262516889,
+  "iteration": 1605263392937,
   "links": [],
   "panels": [
     {
@@ -375,15 +375,15 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(requests_sent_total{job=\"harmonia\"}) by (slug)",
+          "expr": "sum(requests_sent_total) by (slug)",
           "interval": "",
           "legendFormat": "{{slug}} requests sent",
           "refId": "A"
         },
         {
-          "expr": "sum(transactions_total{job=\"harmonia\"}) by (slug)",
+          "expr": "sum(transactions_total) by (slug)",
           "interval": "",
-          "legendFormat": "((slug}} transactions",
+          "legendFormat": "{{slug}} transactions",
           "refId": "B"
         }
       ],
@@ -391,7 +391,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Panel Title",
+      "title": "requests and transactions",
       "tooltip": {
         "shared": true,
         "sort": 0,
