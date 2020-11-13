@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1605180615727,
+  "iteration": 1605285502357,
   "links": [],
   "panels": [
     {
@@ -127,10 +127,6 @@
               {
                 "color": "green",
                 "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
               }
             ]
           }
@@ -138,7 +134,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 4,
+        "h": 8,
         "w": 24,
         "x": 0,
         "y": 7
@@ -148,7 +144,7 @@
         "colorMode": "value",
         "graphMode": "none",
         "justifyMode": "auto",
-        "orientation": "auto",
+        "orientation": "horizontal",
         "reduceOptions": {
           "calcs": [
             "lastNotNull"
@@ -160,9 +156,9 @@
       "pluginVersion": "7.0.3",
       "targets": [
         {
-          "expr": "avg(hermes_current_payment_card_pending_overdue_total{kubernetes_cluster=\"$cluster\"})",
+          "expr": "hermes_current_payment_card_pending_overdue_total{kubernetes_cluster=\"$cluster\", provider=~\".+\"}",
           "interval": "",
-          "legendFormat": "",
+          "legendFormat": "{{ provider }}",
           "refId": "A"
         }
       ],
@@ -189,7 +185,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 11
+        "y": 15
       },
       "hiddenSeries": false,
       "id": 4,
@@ -308,7 +304,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 11
+        "y": 15
       },
       "hiddenSeries": false,
       "id": 27,
@@ -333,7 +329,7 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatIteration": 1605180615727,
+      "repeatIteration": 1605285502357,
       "repeatPanelId": 4,
       "scopedVars": {
         "channel": {
@@ -429,7 +425,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 20
+        "y": 24
       },
       "hiddenSeries": false,
       "id": 6,
@@ -523,7 +519,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 27
+        "y": 31
       },
       "hiddenSeries": false,
       "id": 7,
@@ -617,7 +613,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 34
+        "y": 38
       },
       "hiddenSeries": false,
       "id": 14,
@@ -711,7 +707,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 42
+        "y": 46
       },
       "hiddenSeries": false,
       "id": 11,
@@ -815,7 +811,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 42
+        "y": 46
       },
       "hiddenSeries": false,
       "id": 28,
@@ -840,7 +836,7 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatIteration": 1605180615727,
+      "repeatIteration": 1605285502357,
       "repeatPanelId": 11,
       "scopedVars": {
         "channel": {
@@ -921,7 +917,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 50
+        "y": 54
       },
       "hiddenSeries": false,
       "id": 12,
@@ -1031,7 +1027,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 50
+        "y": 54
       },
       "hiddenSeries": false,
       "id": 29,
@@ -1055,7 +1051,7 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatIteration": 1605180615727,
+      "repeatIteration": 1605285502357,
       "repeatPanelId": 12,
       "scopedVars": {
         "channel": {
@@ -1150,7 +1146,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 58
+        "y": 62
       },
       "id": 19,
       "options": {
@@ -1191,9 +1187,9 @@
       {
         "allValue": null,
         "current": {
-          "selected": false,
-          "text": "dev0",
-          "value": "dev0"
+          "selected": true,
+          "text": "staging0",
+          "value": "staging0"
         },
         "datasource": "Prometheus",
         "definition": "label_values(payment_card_add_total, kubernetes_cluster)",
