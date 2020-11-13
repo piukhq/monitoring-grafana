@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1605285502357,
+  "iteration": 1605285830574,
   "links": [],
   "panels": [
     {
@@ -160,6 +160,12 @@
           "interval": "",
           "legendFormat": "{{ provider }}",
           "refId": "A"
+        },
+        {
+          "expr": "sum(hermes_current_payment_card_pending_overdue_total{kubernetes_cluster=\"$cluster\", provider=~\".+\"})",
+          "interval": "",
+          "legendFormat": "Total",
+          "refId": "B"
         }
       ],
       "timeFrom": null,
@@ -329,7 +335,7 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatIteration": 1605285502357,
+      "repeatIteration": 1605285830574,
       "repeatPanelId": 4,
       "scopedVars": {
         "channel": {
@@ -836,7 +842,7 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatIteration": 1605285502357,
+      "repeatIteration": 1605285830574,
       "repeatPanelId": 11,
       "scopedVars": {
         "channel": {
@@ -1051,7 +1057,7 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatIteration": 1605285502357,
+      "repeatIteration": 1605285830574,
       "repeatPanelId": 12,
       "scopedVars": {
         "channel": {
@@ -1151,12 +1157,12 @@
       "id": 19,
       "options": {
         "colorMode": "value",
-        "graphMode": "area",
+        "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
-            "mean"
+            "lastNotNull"
           ],
           "fields": "",
           "values": false
@@ -1165,7 +1171,7 @@
       "pluginVersion": "7.0.3",
       "targets": [
         {
-          "expr": "hermes_current_payment_card_status_total{kubernetes_cluster=\"$cluster\"}",
+          "expr": "avg(hermes_current_payment_card_status_total{kubernetes_cluster=\"$cluster\"}) by (provider, status)",
           "format": "time_series",
           "interval": "",
           "legendFormat": "{{ provider }} - {{ status }}",
@@ -1187,7 +1193,7 @@
       {
         "allValue": null,
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "staging0",
           "value": "staging0"
         },
@@ -1239,7 +1245,7 @@
     ]
   },
   "time": {
-    "from": "now-2d",
+    "from": "now-6h",
     "to": "now"
   },
   "timepicker": {
