@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1603103377773,
+  "iteration": 1605263392937,
   "links": [],
   "panels": [
     {
@@ -285,7 +285,20 @@
           },
           "unit": "dateTimeFromNow"
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "process_type"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 210
+              }
+            ]
+          }
+        ]
       },
       "gridPos": {
         "h": 8,
@@ -295,7 +308,8 @@
       },
       "id": 6,
       "options": {
-        "showHeader": true
+        "showHeader": true,
+        "sortBy": []
       },
       "pluginVersion": "7.0.3",
       "targets": [
@@ -313,6 +327,108 @@
       "timeShift": null,
       "title": "Last processed file",
       "type": "table"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 25
+      },
+      "hiddenSeries": false,
+      "id": 10,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "sum(requests_sent_total) by (slug)",
+          "interval": "",
+          "legendFormat": "{{slug}} requests sent",
+          "refId": "A"
+        },
+        {
+          "expr": "sum(transactions_total) by (slug)",
+          "interval": "",
+          "legendFormat": "{{slug}} transactions",
+          "refId": "B"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "requests and transactions",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:126",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:127",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     }
   ],
   "schemaVersion": 25,
@@ -324,8 +440,8 @@
         "allValue": null,
         "current": {
           "selected": true,
-          "text": "staging0",
-          "value": "staging0"
+          "text": "prod0",
+          "value": "prod0"
         },
         "datasource": "Prometheus",
         "definition": "label_values(files_received_total, kubernetes_cluster)",
@@ -336,9 +452,14 @@
         "name": "cluster",
         "options": [
           {
-            "selected": true,
+            "selected": false,
             "text": "staging0",
             "value": "staging0"
+          },
+          {
+            "selected": true,
+            "text": "prod0",
+            "value": "prod0"
           }
         ],
         "query": "label_values(files_received_total, kubernetes_cluster)",
@@ -355,7 +476,7 @@
     ]
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-24h",
     "to": "now"
   },
   "timepicker": {

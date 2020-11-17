@@ -24,3 +24,14 @@ providers:
     allowUiUpdates: false
     options:
       path: /tmp/dashboards/app/
+
+  - name: ops
+    ordId: 1
+    folder: 'Operations'
+    folderUid: 'ops'
+    type: file
+    disableDeletion: true
+    editable: true
+    allowUiUpdates: false
+    options:
+      path: /tmp/dashboards/ops/

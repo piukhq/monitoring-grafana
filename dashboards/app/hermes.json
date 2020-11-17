@@ -15,9 +15,164 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1605018941648,
+  "iteration": 1605285830574,
   "links": [],
   "panels": [
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "hiddenSeries": false,
+      "id": 26,
+      "legend": {
+        "alignAsTable": false,
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null as zero",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.50, sum(rate(payment_card_processing_seconds_histogram_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\"}[5m])) by (job, le, provider))",
+          "interval": "",
+          "legendFormat": "{{ provider }}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Payment card processing time",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:273",
+          "format": "s",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:274",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 7
+      },
+      "id": 24,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        }
+      },
+      "pluginVersion": "7.0.3",
+      "targets": [
+        {
+          "expr": "hermes_current_payment_card_pending_overdue_total{kubernetes_cluster=\"$cluster\", provider=~\".+\"}",
+          "interval": "",
+          "legendFormat": "{{ provider }}",
+          "refId": "A"
+        },
+        {
+          "expr": "sum(hermes_current_payment_card_pending_overdue_total{kubernetes_cluster=\"$cluster\", provider=~\".+\"})",
+          "interval": "",
+          "legendFormat": "Total",
+          "refId": "B"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Pending payment cards overdue",
+      "type": "stat"
+    },
     {
       "aliasColors": {},
       "bars": false,
@@ -36,7 +191,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 0
+        "y": 15
       },
       "hiddenSeries": false,
       "id": 4,
@@ -155,10 +310,10 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 0
+        "y": 15
       },
       "hiddenSeries": false,
-      "id": 15,
+      "id": 27,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -180,7 +335,7 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatIteration": 1605018941648,
+      "repeatIteration": 1605285830574,
       "repeatPanelId": 4,
       "scopedVars": {
         "channel": {
@@ -276,7 +431,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 9
+        "y": 24
       },
       "hiddenSeries": false,
       "id": 6,
@@ -370,7 +525,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 16
+        "y": 31
       },
       "hiddenSeries": false,
       "id": 7,
@@ -464,7 +619,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 23
+        "y": 38
       },
       "hiddenSeries": false,
       "id": 14,
@@ -493,9 +648,9 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(payment_card_status_total{kubernetes_cluster=\"$cluster\"}) by (scheme, status)",
+          "expr": "sum(payment_card_status_change_total{kubernetes_cluster=\"$cluster\"}) by (scheme, status)",
           "interval": "",
-          "legendFormat": "{{scheme}} - {{status}}",
+          "legendFormat": "{{provider}} - {{status}}",
           "refId": "A"
         }
       ],
@@ -503,7 +658,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Payment card status",
+      "title": "Payment card status change",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -558,7 +713,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 31
+        "y": 46
       },
       "hiddenSeries": false,
       "id": 11,
@@ -662,10 +817,10 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 31
+        "y": 46
       },
       "hiddenSeries": false,
-      "id": 16,
+      "id": 28,
       "legend": {
         "alignAsTable": false,
         "avg": false,
@@ -687,7 +842,7 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatIteration": 1605018941648,
+      "repeatIteration": 1605285830574,
       "repeatPanelId": 11,
       "scopedVars": {
         "channel": {
@@ -768,7 +923,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 39
+        "y": 54
       },
       "hiddenSeries": false,
       "id": 12,
@@ -878,10 +1033,10 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 39
+        "y": 54
       },
       "hiddenSeries": false,
-      "id": 17,
+      "id": 29,
       "legend": {
         "avg": false,
         "current": false,
@@ -902,7 +1057,7 @@
       "points": false,
       "renderer": "flot",
       "repeat": null,
-      "repeatIteration": 1605018941648,
+      "repeatIteration": 1605285830574,
       "repeatPanelId": 12,
       "scopedVars": {
         "channel": {
@@ -977,7 +1132,9 @@
       "description": "The current values, taken from the database, is a point in time metric.",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
+          "custom": {
+            "align": null
+          },
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
@@ -992,14 +1149,16 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 8,
+        "h": 7,
         "w": 24,
         "x": 0,
-        "y": 47
+        "y": 62
       },
       "id": 19,
       "options": {
-        "displayMode": "gradient",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
@@ -1007,22 +1166,23 @@
           ],
           "fields": "",
           "values": false
-        },
-        "showUnfilled": true
+        }
       },
       "pluginVersion": "7.0.3",
       "targets": [
         {
-          "expr": "hermes_current_payment_card_status_total",
+          "expr": "avg(hermes_current_payment_card_status_total{kubernetes_cluster=\"$cluster\"}) by (provider, status)",
+          "format": "time_series",
           "interval": "",
-          "legendFormat": "{{ issuer }} - {{ status }}",
+          "legendFormat": "{{ provider }} - {{ status }}",
           "refId": "A"
         }
       ],
       "timeFrom": null,
       "timeShift": null,
       "title": "Current Payment Card Status",
-      "type": "bargauge"
+      "transparent": true,
+      "type": "stat"
     }
   ],
   "schemaVersion": 25,
@@ -1085,7 +1245,7 @@
     ]
   },
   "time": {
-    "from": "now-15m",
+    "from": "now-6h",
     "to": "now"
   },
   "timepicker": {
