@@ -15,7 +15,7 @@
     "editable": true,
     "gnetId": null,
     "graphTooltip": 0,
-    "iteration": 1605627109414,
+    "iteration": 1605629903838,
     "links": [],
     "panels": [
       {
@@ -104,9 +104,9 @@
         "steppedLine": false,
         "targets": [
           {
-            "expr": "histogram_quantile(0.50, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"membership-cards\", channel=\"com.barclays.bmb\"}[5m])) by (job, le))",
+            "expr": "histogram_quantile(0.50, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"membership-cards\", channel=\"com.barclays.bmb\"}[5m])) by (method, job, le))",
             "interval": "",
-            "legendFormat": "Membership Cards",
+            "legendFormat": "{{method}}",
             "refId": "A"
           }
         ],
@@ -114,7 +114,7 @@
         "timeFrom": null,
         "timeRegions": [],
         "timeShift": null,
-        "title": "Request Latency - Membership Cards",
+        "title": "Membership Cards",
         "tooltip": {
           "shared": true,
           "sort": 0,
@@ -217,9 +217,9 @@
         "steppedLine": false,
         "targets": [
           {
-            "expr": "histogram_quantile(0.50, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"membership-card\", channel=\"com.barclays.bmb\"}[5m])) by (job, le))",
+            "expr": "histogram_quantile(0.50, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"membership-card\", channel=\"com.barclays.bmb\"}[5m])) by (method, job, le))",
             "interval": "",
-            "legendFormat": "Membership Card",
+            "legendFormat": "{{method}}",
             "refId": "A"
           }
         ],
@@ -227,7 +227,7 @@
         "timeFrom": null,
         "timeRegions": [],
         "timeShift": null,
-        "title": "Request Latency - Membership Card",
+        "title": "Membership Card",
         "tooltip": {
           "shared": true,
           "sort": 0,
@@ -267,28 +267,6 @@
         }
       },
       {
-        "content": "\n# POST Request Response Times\n",
-        "datasource": null,
-        "fieldConfig": {
-          "defaults": {
-            "custom": {}
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 2,
-          "w": 24,
-          "x": 0,
-          "y": 9
-        },
-        "id": 7,
-        "mode": "markdown",
-        "timeFrom": null,
-        "timeShift": null,
-        "title": "",
-        "type": "text"
-      },
-      {
         "aliasColors": {},
         "bars": false,
         "dashLength": 10,
@@ -321,7 +299,7 @@
           "h": 7,
           "w": 12,
           "x": 0,
-          "y": 11
+          "y": 9
         },
         "hiddenSeries": false,
         "id": 8,
@@ -352,9 +330,9 @@
         "steppedLine": false,
         "targets": [
           {
-            "expr": "histogram_quantile(0.50, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"service\", channel=\"com.barclays.bmb\"}[5m])) by (job, le))",
+            "expr": "histogram_quantile(0.50, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"service\", channel=\"com.barclays.bmb\"}[5m])) by (method, job, le))",
             "interval": "",
-            "legendFormat": "service",
+            "legendFormat": "{{method}}",
             "refId": "A"
           }
         ],
@@ -362,7 +340,7 @@
         "timeFrom": null,
         "timeRegions": [],
         "timeShift": null,
-        "title": "Request Latency - Service",
+        "title": "Service",
         "tooltip": {
           "shared": true,
           "sort": 0,
@@ -411,18 +389,18 @@
           "allValue": null,
           "current": {
             "selected": true,
-            "text": "staging0",
-            "value": "staging0"
+            "text": "prod0",
+            "value": "prod0"
           },
           "datasource": "Prometheus",
-          "definition": "label_values(payment_card_add_total, kubernetes_cluster)",
+          "definition": "label_values(kubernetes_cluster)",
           "hide": 0,
           "includeAll": false,
           "label": "Kubernetes Cluster",
           "multi": false,
           "name": "cluster",
           "options": [],
-          "query": "label_values(payment_card_add_total, kubernetes_cluster)",
+          "query": "label_values(kubernetes_cluster)",
           "refresh": 2,
           "regex": "",
           "skipUrlSync": false,
