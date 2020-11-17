@@ -15,7 +15,7 @@
     "editable": true,
     "gnetId": null,
     "graphTooltip": 0,
-    "iteration": 1605630374117,
+    "iteration": 1605631707157,
     "links": [],
     "panels": [
       {
@@ -109,13 +109,6 @@
             "interval": "",
             "legendFormat": "{{method}}",
             "refId": "A"
-          },
-          {
-            "expr": "histogram_quantile(0.50, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"membership-cards\", channel=\"com.bink.wallet\"}[5m])) by (method, job, le))",
-            "hide": true,
-            "interval": "",
-            "legendFormat": "",
-            "refId": "B"
           }
         ],
         "thresholds": [],
@@ -397,8 +390,8 @@
           "allValue": null,
           "current": {
             "selected": true,
-            "text": "prod0",
-            "value": "prod0"
+            "text": "dev0",
+            "value": "dev0"
           },
           "datasource": "Prometheus",
           "definition": "label_values(kubernetes_cluster)",
