@@ -15,11 +15,11 @@
     "editable": true,
     "gnetId": null,
     "graphTooltip": 0,
-    "iteration": 1605629903838,
+    "iteration": 1605630374117,
     "links": [],
     "panels": [
       {
-        "content": "\n# GET Request Response Times",
+        "content": "\n# HTTP Request Response Times",
         "datasource": null,
         "fieldConfig": {
           "defaults": {
@@ -105,9 +105,17 @@
         "targets": [
           {
             "expr": "histogram_quantile(0.50, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"membership-cards\", channel=\"com.barclays.bmb\"}[5m])) by (method, job, le))",
+            "hide": false,
             "interval": "",
             "legendFormat": "{{method}}",
             "refId": "A"
+          },
+          {
+            "expr": "histogram_quantile(0.50, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"membership-cards\", channel=\"com.bink.wallet\"}[5m])) by (method, job, le))",
+            "hide": true,
+            "interval": "",
+            "legendFormat": "",
+            "refId": "B"
           }
         ],
         "thresholds": [],
@@ -414,7 +422,7 @@
       ]
     },
     "time": {
-      "from": "now-1h",
+      "from": "now-6h",
       "to": "now"
     },
     "timepicker": {
