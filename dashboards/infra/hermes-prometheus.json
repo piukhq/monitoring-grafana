@@ -15,8 +15,7 @@
     "editable": true,
     "gnetId": null,
     "graphTooltip": 0,
-    "id": 21,
-    "iteration": 1605615934044,
+    "iteration": 1605622849689,
     "links": [],
     "panels": [
       {
@@ -250,9 +249,9 @@
         {
           "allValue": null,
           "current": {
-            "selected": true,
-            "text": "dev0",
-            "value": "dev0"
+            "selected": false,
+            "text": "staging0",
+            "value": "staging0"
           },
           "datasource": "Prometheus",
           "definition": "label_values(payment_card_add_total, kubernetes_cluster)",
@@ -293,7 +292,7 @@
       ]
     },
     "timezone": "",
-    "title": "New dashboard Copy",
+    "title": "Prometheus Hermes",
     "uid": "xreowtoGz",
     "version": 1
   }
