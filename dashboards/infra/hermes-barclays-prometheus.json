@@ -15,7 +15,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1605702473209,
+  "id": 5,
+  "iteration": 1605708465349,
   "links": [],
   "panels": [
     {
@@ -130,7 +131,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:259",
           "format": "s",
           "label": null,
           "logBase": 1,
@@ -139,7 +139,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:260",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -244,7 +243,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:180",
           "format": "s",
           "label": null,
           "logBase": 1,
@@ -253,7 +251,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:181",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -357,7 +354,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:180",
           "format": "s",
           "label": null,
           "logBase": 1,
@@ -366,7 +362,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:181",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -470,7 +465,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:180",
           "format": "s",
           "label": null,
           "logBase": 1,
@@ -479,7 +473,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:181",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -583,7 +576,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:180",
           "format": "s",
           "label": null,
           "logBase": 1,
@@ -592,7 +584,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:181",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -637,7 +628,7 @@
       {
         "allValue": null,
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "prod0",
           "value": "prod0"
         },
@@ -680,7 +671,7 @@
     ]
   },
   "timezone": "",
-  "title": "Prometheus Hermes Barclays",
+  "title": "Hermes Barclays",
   "uid": "xreowtoGz",
-  "version": 1109
+  "version": 1
 }
