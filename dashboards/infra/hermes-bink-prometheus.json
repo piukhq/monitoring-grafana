@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1605708409946,
+  "iteration": 1605708635419,
   "links": [],
   "panels": [
     {
@@ -104,7 +104,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "histogram_quantile(0.50, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"membership-card\", channel=\"com.barclays.bmb\"}[5m])) by (method, job, le))",
+          "expr": "histogram_quantile(0.50, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"membership-card\", channel=\"com.bink.wallet\"}[5m])) by (method, job, le))",
           "interval": "",
           "legendFormat": "{{method}}",
           "refId": "A"
@@ -217,7 +217,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "histogram_quantile(0.50, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"membership-cards\", channel=\"com.barclays.bmb\"}[5m])) by (method, job, le))",
+          "expr": "histogram_quantile(0.50, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"membership-cards\", channel=\"com.bink.wallet\"}[5m])) by (method, job, le))",
           "hide": false,
           "interval": "",
           "legendFormat": "{{method}}",
@@ -331,7 +331,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "histogram_quantile(0.50, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"service\", channel=\"com.barclays.bmb\"}[5m])) by (method, job, le))",
+          "expr": "histogram_quantile(0.50, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"service\", channel=\"com.bink.wallet\"}[5m])) by (method, job, le))",
           "interval": "",
           "legendFormat": "{{method}}",
           "refId": "A"
@@ -444,7 +444,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "histogram_quantile(0.50, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"payment-card\", channel=\"com.barclays.bmb\"}[5m])) by (method, job, le))",
+          "expr": "histogram_quantile(0.50, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"payment-card\", channel=\"com.bink.wallet\"}[5m])) by (method, job, le))",
           "interval": "",
           "legendFormat": "{{method}}",
           "refId": "A"
@@ -557,7 +557,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "histogram_quantile(0.50, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"payment-cards\", channel=\"com.barclays.bmb\"}[5m])) by (method, job, le))",
+          "expr": "histogram_quantile(0.50, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"payment-cards\", channel=\"com.bink.wallet\"}[5m])) by (method, job, le))",
           "interval": "",
           "legendFormat": "{{method}}",
           "refId": "A"
@@ -637,9 +637,9 @@
       {
         "allValue": null,
         "current": {
-          "selected": false,
-          "text": "prod0",
-          "value": "prod0"
+          "selected": true,
+          "text": "dev0",
+          "value": "dev0"
         },
         "datasource": "Prometheus",
         "definition": "label_values(kubernetes_cluster)",
