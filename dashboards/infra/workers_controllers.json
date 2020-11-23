@@ -15,8 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 23,
-  "iteration": 1606153987904,
+  "iteration": 1606162612919,
   "links": [],
   "panels": [
     {
@@ -26,18 +25,15 @@
           "custom": {},
           "mappings": [],
           "thresholds": {
-            "mode": "percentage",
+            "mode": "absolute",
             "steps": [
               {
                 "color": "green",
                 "value": null
-              },
-              {
-                "color": "red",
-                "value": 0.8
               }
             ]
-          }
+          },
+          "unit": "none"
         },
         "overrides": []
       },
@@ -64,7 +60,7 @@
       "pluginVersion": "7.0.3",
       "targets": [
         {
-          "expr": "sum(kube_node_info{kubernetes_cluster=\"$cluster\", node=~\"$cluster-worker\\\\d\\\\d\"})",
+          "expr": "sum(node_uname_info{env=\"$env\", nodename=~\"$cluster-worker\\\\d\\\\d\"})",
           "interval": "",
           "legendFormat": "{{node}}",
           "refId": "A"
@@ -72,7 +68,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Workers",
+      "title": "Workers currently",
       "type": "stat"
     },
     {
@@ -121,16 +117,73 @@
       "pluginVersion": "7.0.3",
       "targets": [
         {
-          "expr": "sum(kube_node_info{kubernetes_cluster=\"$cluster\", node=~\"$cluster-worker\\\\d\\\\d\"}) / sum(kube_node_info{kubernetes_cluster=\"$cluster\", node=~\"$cluster-worker\\\\d\\\\d\"} offset 1d)",
+          "expr": "sum(node_uname_info{env=\"$env\", nodename=~\"$cluster-worker\\\\d\\\\d\"}) / sum(node_uname_info{env=\"$env\", nodename=~\"$cluster-worker\\\\d\\\\d\"} offset 1d) * 100",
           "hide": false,
+          "instant": false,
           "interval": "",
-          "legendFormat": "{{node}}",
+          "legendFormat": "",
           "refId": "A"
         }
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Workers Down",
+      "title": "Worker percentage change",
+      "type": "stat"
+    },
+    {
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 14,
+        "w": 8,
+        "x": 0,
+        "y": 14
+      },
+      "id": 6,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "last"
+          ],
+          "fields": "",
+          "values": false
+        }
+      },
+      "pluginVersion": "7.0.3",
+      "targets": [
+        {
+          "expr": "sum(node_uname_info{env=\"$env\", nodename=~\"$cluster-controller\"})",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Controllers different over 24 hours",
       "type": "stat"
     },
     {
@@ -178,7 +231,7 @@
       "pluginVersion": "7.0.3",
       "targets": [
         {
-          "expr": "sum(node_uname_info{env=\"$env\", nodename=~\"$cluster-worker\\\\d\\\\d\"}) / sum(node_uname_info{env=\"$env\", nodename=~\"$cluster-worker\\\\d\\\\d\"} offset 1d)",
+          "expr": "sum(node_uname_info{env=\"$env\", nodename=~\"$cluster-controller\"}) / sum(node_uname_info{env=\"$env\", nodename=~\"$cluster-controller\"} offset 1d)",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -186,7 +239,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Controllers",
+      "title": "Controller percentage change",
       "type": "stat"
     }
   ],
@@ -198,7 +251,7 @@
       {
         "allValue": null,
         "current": {
-          "selected": false,
+          "selected": true,
           "text": "dev0",
           "value": "dev0"
         },
@@ -224,7 +277,7 @@
       {
         "allValue": null,
         "current": {
-          "selected": false,
+          "selected": true,
           "text": "Development",
           "value": "Development"
         },
