@@ -15,7 +15,7 @@
     "editable": true,
     "gnetId": null,
     "graphTooltip": 0,
-    "iteration": 1606230770206,
+    "iteration": 1606232288231,
     "links": [],
     "panels": [
       {
@@ -89,7 +89,7 @@
         },
         "lines": true,
         "linewidth": 1,
-        "nullPointMode": "null",
+        "nullPointMode": "null as zero",
         "options": {
           "dataLinks": []
         },
@@ -104,13 +104,13 @@
         "steppedLine": false,
         "targets": [
           {
-            "expr": "histogram_quantile(0.99, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"service\", channel=\"com.barclays.bmb\", method=\"POST\"}[2m])) by (method, job, le))",
+            "expr": "histogram_quantile(0.99, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"service\", channel=\"$channel\", method=\"POST\"}[2m])) by (method, job, le))",
             "interval": "",
             "legendFormat": "{{method}} -- 99",
             "refId": "A"
           },
           {
-            "expr": "histogram_quantile(0.95, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"service\", channel=\"com.barclays.bmb\", method=\"POST\"}[2m])) by (method, job, le))",
+            "expr": "histogram_quantile(0.95, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"service\", channel=\"$channel\", method=\"POST\"}[2m])) by (method, job, le))",
             "interval": "",
             "legendFormat": "{{method}} -- 95",
             "refId": "B"
@@ -240,13 +240,13 @@
         "steppedLine": false,
         "targets": [
           {
-            "expr": "histogram_quantile(0.99, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"service\", channel=\"com.barclays.bmb\", method=\"DELETE\"}[2m])) by (method, job, le))",
+            "expr": "histogram_quantile(0.99, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"service\", channel=\"$channel\", method=\"DELETE\"}[2m])) by (method, job, le))",
             "interval": "",
             "legendFormat": "{{method}} -- 99",
             "refId": "A"
           },
           {
-            "expr": "histogram_quantile(0.95, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"service\", channel=\"com.barclays.bmb\", method=\"DELETE\"}[2m])) by (method, job, le))",
+            "expr": "histogram_quantile(0.95, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"service\", channel=\"$channel\", method=\"DELETE\"}[2m])) by (method, job, le))",
             "interval": "",
             "legendFormat": "{{method}} -- 95",
             "refId": "B"
@@ -376,14 +376,14 @@
         "steppedLine": false,
         "targets": [
           {
-            "expr": "histogram_quantile(0.99, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"membership-cards\", channel=\"com.barclays.bmb\", method=\"GET\"}[2m])) by (method, job, le))",
+            "expr": "histogram_quantile(0.99, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"membership-cards\", channel=\"$channel\", method=\"GET\"}[2m])) by (method, job, le))",
             "hide": false,
             "interval": "",
             "legendFormat": "{{method}} -- 99",
             "refId": "A"
           },
           {
-            "expr": "histogram_quantile(0.95, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"membership-cards\", channel=\"com.barclays.bmb\", method=\"GET\"}[2m])) by (method, job, le))",
+            "expr": "histogram_quantile(0.95, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"membership-cards\", channel=\"$channel\", method=\"GET\"}[2m])) by (method, job, le))",
             "hide": false,
             "interval": "",
             "legendFormat": "{{method}} -- 95",
@@ -514,14 +514,14 @@
         "steppedLine": false,
         "targets": [
           {
-            "expr": "histogram_quantile(0.99, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"membership-cards\", channel=\"com.barclays.bmb\", method=\"DELETE\"}[2m])) by (method, job, le))",
+            "expr": "histogram_quantile(0.99, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"membership-cards\", channel=\"$channel\", method=\"DELETE\"}[2m])) by (method, job, le))",
             "hide": false,
             "interval": "",
             "legendFormat": "{{method}} -- 99",
             "refId": "A"
           },
           {
-            "expr": "histogram_quantile(0.95, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"membership-cards\", channel=\"com.barclays.bmb\", method=\"DELETE\"}[2m])) by (method, job, le))",
+            "expr": "histogram_quantile(0.95, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"membership-cards\", channel=\"$channel\", method=\"DELETE\"}[2m])) by (method, job, le))",
             "hide": false,
             "interval": "",
             "legendFormat": "{{method}} -- 95",
@@ -652,13 +652,13 @@
         "steppedLine": false,
         "targets": [
           {
-            "expr": "histogram_quantile(0.99, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"membership-card\", channel=\"com.barclays.bmb\", method=\"GET\"}[5m])) by (method, job, le))",
+            "expr": "histogram_quantile(0.99, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"membership-card\", channel=\"$channel\", method=\"GET\"}[5m])) by (method, job, le))",
             "interval": "",
             "legendFormat": "{{method}} -- 99",
             "refId": "A"
           },
           {
-            "expr": "histogram_quantile(0.95, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"membership-card\", channel=\"com.barclays.bmb\", method=\"GET\"}[5m])) by (method, job, le))",
+            "expr": "histogram_quantile(0.95, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"membership-card\", channel=\"$channel\", method=\"GET\"}[5m])) by (method, job, le))",
             "interval": "",
             "legendFormat": "{{method}} -- 95",
             "refId": "B"
@@ -788,13 +788,13 @@
         "steppedLine": false,
         "targets": [
           {
-            "expr": "histogram_quantile(0.99, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"membership-card\", channel=\"com.barclays.bmb\", method=\"POST\"}[5m])) by (method, job, le))",
+            "expr": "histogram_quantile(0.99, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"membership-card\", channel=\"$channel\", method=\"POST\"}[5m])) by (method, job, le))",
             "interval": "",
             "legendFormat": "{{method}} -- 99",
             "refId": "A"
           },
           {
-            "expr": "histogram_quantile(0.95, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"membership-card\", channel=\"com.barclays.bmb\", method=\"POST\"}[5m])) by (method, job, le))",
+            "expr": "histogram_quantile(0.95, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"membership-card\", channel=\"$channel\", method=\"POST\"}[5m])) by (method, job, le))",
             "interval": "",
             "legendFormat": "{{method}} -- 95",
             "refId": "B"
@@ -924,13 +924,13 @@
         "steppedLine": false,
         "targets": [
           {
-            "expr": "histogram_quantile(0.99, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\" , view=\"membership-plans\", job=\"hermes\", channel=\"com.barclays.bmb\", method=\"GET\"}[2m])) by (method, job, le))",
+            "expr": "histogram_quantile(0.99, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\" , view=\"membership-plans\", job=\"hermes\", channel=\"$channel\", method=\"GET\"}[2m])) by (method, job, le))",
             "interval": "",
             "legendFormat": "{{method}} -- 99",
             "refId": "C"
           },
           {
-            "expr": "histogram_quantile(0.95, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\" , view=\"membership-plans\", job=\"hermes\", channel=\"com.barclays.bmb\", method=\"GET\"}[2m])) by (method, job, le))",
+            "expr": "histogram_quantile(0.95, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\" , view=\"membership-plans\", job=\"hermes\", channel=\"$channel\", method=\"GET\"}[2m])) by (method, job, le))",
             "interval": "",
             "legendFormat": "{{method}} -- 95",
             "refId": "A"
@@ -1060,13 +1060,13 @@
         "steppedLine": false,
         "targets": [
           {
-            "expr": "histogram_quantile(0.99, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"payment-cards\", channel=\"com.barclays.bmb\", method=\"POST\"}[2m])) by (method, job, le))",
+            "expr": "histogram_quantile(0.99, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"payment-cards\", channel=\"$channel\", method=\"POST\"}[2m])) by (method, job, le))",
             "interval": "",
             "legendFormat": "{{method}} -- 99",
             "refId": "A"
           },
           {
-            "expr": "histogram_quantile(0.95, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"payment-cards\", channel=\"com.barclays.bmb\", method=\"POST\"}[2m])) by (method, job, le))",
+            "expr": "histogram_quantile(0.95, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"payment-cards\", channel=\"$channel\", method=\"POST\"}[2m])) by (method, job, le))",
             "interval": "",
             "legendFormat": "{{method}} -- 95",
             "refId": "B"
@@ -1196,13 +1196,13 @@
         "steppedLine": false,
         "targets": [
           {
-            "expr": "histogram_quantile(0.99, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"payment-cards\", channel=\"com.barclays.bmb\", method=\"DELETE\"}[2m])) by (method, job, le))",
+            "expr": "histogram_quantile(0.99, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"payment-cards\", channel=\"$channel\", method=\"DELETE\"}[2m])) by (method, job, le))",
             "interval": "",
             "legendFormat": "{{method}} -- 99",
             "refId": "A"
           },
           {
-            "expr": "histogram_quantile(0.95, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"payment-cards\", channel=\"com.barclays.bmb\", method=\"DELETE\"}[2m])) by (method, job, le))",
+            "expr": "histogram_quantile(0.95, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"payment-cards\", channel=\"$channel\", method=\"DELETE\"}[2m])) by (method, job, le))",
             "interval": "",
             "legendFormat": "{{method}} -- 95",
             "refId": "B"
@@ -1339,21 +1339,21 @@
         "steppedLine": false,
         "targets": [
           {
-            "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", method=\"GET\", job=\"hermes\", status=~\"2\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"com.barclays.bmb\"}[2m])) by (status, view) ",
+            "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", method=\"GET\", job=\"hermes\", status=~\"2\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view) ",
             "hide": false,
             "interval": "",
             "legendFormat": "{{status}}--{{view}}",
             "refId": "A"
           },
           {
-            "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"GET\", status=~\"3\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"com.barclays.bmb\"}[2m])) by (status, view)",
+            "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"GET\", status=~\"3\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view)",
             "hide": false,
             "interval": "",
             "legendFormat": "{{status}}--{{view}}",
             "refId": "B"
           },
           {
-            "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"GET\", status=~\"4\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"com.barclays.bmb\"}[2m])) by (status, view)",
+            "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"GET\", status=~\"4\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view)",
             "interval": "",
             "legendFormat": "{{status}}--{{view}}",
             "refId": "C"
@@ -1451,21 +1451,21 @@
         "steppedLine": false,
         "targets": [
           {
-            "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", method=\"PUT\", job=\"hermes\", status=~\"2\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"com.barclays.bmb\"}[2m])) by (status, view) ",
+            "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", method=\"PUT\", job=\"hermes\", status=~\"2\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view) ",
             "hide": false,
             "interval": "",
             "legendFormat": "{{status}}--{{view}}",
             "refId": "A"
           },
           {
-            "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"PUT\", status=~\"3\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"com.barclays.bmb\"}[2m])) by (status, view)",
+            "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"PUT\", status=~\"3\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view)",
             "hide": false,
             "interval": "",
             "legendFormat": "{{status}}--{{view}}",
             "refId": "B"
           },
           {
-            "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"PUT\", status=~\"4\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"com.barclays.bmb\"}[2m])) by (status, view)",
+            "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"PUT\", status=~\"4\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view)",
             "interval": "",
             "legendFormat": "{{status}}--{{view}}",
             "refId": "C"
@@ -1563,21 +1563,21 @@
         "steppedLine": false,
         "targets": [
           {
-            "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", method=\"POST\", job=\"hermes\", status=~\"2\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"com.barclays.bmb\"}[2m])) by (status, view) ",
+            "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", method=\"POST\", job=\"hermes\", status=~\"2\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view) ",
             "hide": false,
             "interval": "",
             "legendFormat": "{{status}}--{{view}}",
             "refId": "A"
           },
           {
-            "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"POST\", status=~\"3\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"com.barclays.bmb\"}[2m])) by (status, view)",
+            "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"POST\", status=~\"3\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view)",
             "hide": false,
             "interval": "",
             "legendFormat": "{{status}}--{{view}}",
             "refId": "B"
           },
           {
-            "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"POST\", status=~\"4\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"com.barclays.bmb\"}[2m])) by (status, view)",
+            "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"POST\", status=~\"4\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view)",
             "interval": "",
             "legendFormat": "{{status}}--{{view}}",
             "refId": "C"
@@ -1675,21 +1675,21 @@
         "steppedLine": false,
         "targets": [
           {
-            "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", method=\"DELETE\", job=\"hermes\", status=~\"2\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"com.barclays.bmb\"}[2m])) by (status, view) ",
+            "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", method=\"DELETE\", job=\"hermes\", status=~\"2\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view) ",
             "hide": false,
             "interval": "",
             "legendFormat": "{{status}}--{{view}}",
             "refId": "A"
           },
           {
-            "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"DELETE\", status=~\"3\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"com.barclays.bmb\"}[2m])) by (status, view)",
+            "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"DELETE\", status=~\"3\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view)",
             "hide": false,
             "interval": "",
             "legendFormat": "{{status}}--{{view}}",
             "refId": "B"
           },
           {
-            "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"DELETE\", status=~\"4\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"com.barclays.bmb\"}[2m])) by (status, view)",
+            "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"DELETE\", status=~\"4\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view)",
             "interval": "",
             "legendFormat": "{{status}}--{{view}}",
             "refId": "C"
@@ -1748,8 +1748,8 @@
           "allValue": null,
           "current": {
             "selected": false,
-            "text": "prod0",
-            "value": "prod0"
+            "text": "staging0",
+            "value": "staging0"
           },
           "datasource": "Prometheus",
           "definition": "label_values(kubernetes_cluster)",
@@ -1762,6 +1762,48 @@
           "query": "label_values(kubernetes_cluster)",
           "refresh": 2,
           "regex": "",
+          "skipUrlSync": false,
+          "sort": 0,
+          "tagValuesQuery": "",
+          "tags": [],
+          "tagsQuery": "",
+          "type": "query",
+          "useTags": false
+        },
+        {
+          "allValue": null,
+          "current": {
+            "selected": true,
+            "text": "com.barclays.bmb",
+            "value": "com.barclays.bmb"
+          },
+          "datasource": "Prometheus",
+          "definition": "label_values(channel)",
+          "hide": 0,
+          "includeAll": false,
+          "label": "Channel",
+          "multi": false,
+          "name": "channel",
+          "options": [
+            {
+              "selected": true,
+              "text": "com.barclays.bmb",
+              "value": "com.barclays.bmb"
+            },
+            {
+              "selected": false,
+              "text": "com.bink.bink20dev",
+              "value": "com.bink.bink20dev"
+            },
+            {
+              "selected": false,
+              "text": "com.bink.wallet",
+              "value": "com.bink.wallet"
+            }
+          ],
+          "query": "label_values(channel)",
+          "refresh": 0,
+          "regex": "/com.+/",
           "skipUrlSync": false,
           "sort": 0,
           "tagValuesQuery": "",
@@ -1790,7 +1832,7 @@
       ]
     },
     "timezone": "",
-    "title": "Barclays Hermes Statistics",
+    "title": "Hermes Statistics",
     "uid": "pvgk7R0Gz",
     "version": 1
   }
