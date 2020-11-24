@@ -15,7 +15,7 @@
     "editable": true,
     "gnetId": null,
     "graphTooltip": 0,
-    "iteration": 1606226649624,
+    "iteration": 1606230770206,
     "links": [],
     "panels": [
       {
@@ -46,7 +46,7 @@
         "dashLength": 10,
         "dashes": false,
         "datasource": "Prometheus",
-        "description": "endpoint: /ubiquity/membership_card/",
+        "description": "endpoint: /ubiquity/service/",
         "fieldConfig": {
           "defaults": {
             "custom": {},
@@ -70,13 +70,13 @@
         "fill": 1,
         "fillGradient": 0,
         "gridPos": {
-          "h": 7,
-          "w": 8,
+          "h": 5,
+          "w": 12,
           "x": 0,
           "y": 2
         },
         "hiddenSeries": false,
-        "id": 3,
+        "id": 8,
         "legend": {
           "alignAsTable": false,
           "avg": false,
@@ -104,167 +104,42 @@
         "steppedLine": false,
         "targets": [
           {
-            "expr": "histogram_quantile(0.50, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"membership-card\", channel=\"com.barclays.bmb\"}[5m])) by (method, job, le))",
+            "expr": "histogram_quantile(0.99, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"service\", channel=\"com.barclays.bmb\", method=\"POST\"}[2m])) by (method, job, le))",
             "interval": "",
-            "legendFormat": "{{method}}",
+            "legendFormat": "{{method}} -- 99",
             "refId": "A"
+          },
+          {
+            "expr": "histogram_quantile(0.95, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"service\", channel=\"com.barclays.bmb\", method=\"POST\"}[2m])) by (method, job, le))",
+            "interval": "",
+            "legendFormat": "{{method}} -- 95",
+            "refId": "B"
           }
         ],
         "thresholds": [
           {
-            "$$hashKey": "object:711",
+            "$$hashKey": "object:613",
             "colorMode": "critical",
             "fill": true,
             "line": true,
             "op": "gt",
-            "value": 0.375,
+            "value": 0.45,
             "yaxis": "left"
           },
           {
-            "$$hashKey": "object:717",
+            "$$hashKey": "object:619",
             "colorMode": "warning",
             "fill": true,
             "line": true,
             "op": "gt",
-            "value": 0.125,
+            "value": 0.15,
             "yaxis": "left"
           }
         ],
         "timeFrom": null,
         "timeRegions": [],
         "timeShift": null,
-        "title": "Membership Card",
-        "tooltip": {
-          "shared": true,
-          "sort": 0,
-          "value_type": "individual"
-        },
-        "type": "graph",
-        "xaxis": {
-          "buckets": null,
-          "mode": "time",
-          "name": null,
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "format": "s",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          },
-          {
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          }
-        ],
-        "yaxis": {
-          "align": false,
-          "alignLevel": null
-        }
-      },
-      {
-        "aliasColors": {},
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "datasource": "Prometheus",
-        "description": "endpoint: /ubiquity/membership_cards/",
-        "fieldConfig": {
-          "defaults": {
-            "custom": {},
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": []
-        },
-        "fill": 1,
-        "fillGradient": 0,
-        "gridPos": {
-          "h": 7,
-          "w": 8,
-          "x": 8,
-          "y": 2
-        },
-        "hiddenSeries": false,
-        "id": 2,
-        "legend": {
-          "alignAsTable": false,
-          "avg": false,
-          "current": false,
-          "max": false,
-          "min": false,
-          "show": true,
-          "total": false,
-          "values": false
-        },
-        "lines": true,
-        "linewidth": 1,
-        "nullPointMode": "null",
-        "options": {
-          "dataLinks": []
-        },
-        "percentage": false,
-        "pluginVersion": "7.0.3",
-        "pointradius": 2,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [],
-        "spaceLength": 10,
-        "stack": false,
-        "steppedLine": false,
-        "targets": [
-          {
-            "expr": "histogram_quantile(0.50, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"membership-cards\", channel=\"com.barclays.bmb\"}[5m])) by (method, job, le))",
-            "hide": false,
-            "interval": "",
-            "legendFormat": "{{method}}",
-            "refId": "A"
-          }
-        ],
-        "thresholds": [
-          {
-            "$$hashKey": "object:662",
-            "colorMode": "critical",
-            "fill": true,
-            "line": true,
-            "op": "gt",
-            "value": 0.375,
-            "yaxis": "left"
-          },
-          {
-            "$$hashKey": "object:668",
-            "colorMode": "warning",
-            "fill": true,
-            "line": true,
-            "op": "gt",
-            "value": 0.125,
-            "yaxis": "left"
-          }
-        ],
-        "timeFrom": null,
-        "timeRegions": [],
-        "timeShift": null,
-        "title": "Membership Cards",
+        "title": "Service - POST",
         "tooltip": {
           "shared": true,
           "sort": 0,
@@ -331,13 +206,13 @@
         "fill": 1,
         "fillGradient": 0,
         "gridPos": {
-          "h": 7,
-          "w": 8,
-          "x": 16,
+          "h": 5,
+          "w": 12,
+          "x": 12,
           "y": 2
         },
         "hiddenSeries": false,
-        "id": 8,
+        "id": 18,
         "legend": {
           "alignAsTable": false,
           "avg": false,
@@ -350,7 +225,7 @@
         },
         "lines": true,
         "linewidth": 1,
-        "nullPointMode": "null",
+        "nullPointMode": "null as zero",
         "options": {
           "dataLinks": []
         },
@@ -365,10 +240,16 @@
         "steppedLine": false,
         "targets": [
           {
-            "expr": "histogram_quantile(0.50, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"service\", channel=\"com.barclays.bmb\"}[5m])) by (method, job, le))",
+            "expr": "histogram_quantile(0.99, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"service\", channel=\"com.barclays.bmb\", method=\"DELETE\"}[2m])) by (method, job, le))",
             "interval": "",
-            "legendFormat": "{{method}}",
+            "legendFormat": "{{method}} -- 99",
             "refId": "A"
+          },
+          {
+            "expr": "histogram_quantile(0.95, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"service\", channel=\"com.barclays.bmb\", method=\"DELETE\"}[2m])) by (method, job, le))",
+            "interval": "",
+            "legendFormat": "{{method}} -- 95",
+            "refId": "B"
           }
         ],
         "thresholds": [
@@ -394,7 +275,7 @@
         "timeFrom": null,
         "timeRegions": [],
         "timeShift": null,
-        "title": "Service",
+        "title": "Service - DELETE",
         "tooltip": {
           "shared": true,
           "sort": 0,
@@ -437,7 +318,7 @@
         "dashLength": 10,
         "dashes": false,
         "datasource": "Prometheus",
-        "description": "endpoint: /ubiquity/payment_card",
+        "description": "endpoint: /ubiquity/membership_cards/",
         "fieldConfig": {
           "defaults": {
             "custom": {},
@@ -461,13 +342,13 @@
         "fill": 1,
         "fillGradient": 0,
         "gridPos": {
-          "h": 7,
-          "w": 8,
+          "h": 5,
+          "w": 12,
           "x": 0,
-          "y": 9
+          "y": 7
         },
         "hiddenSeries": false,
-        "id": 10,
+        "id": 2,
         "legend": {
           "alignAsTable": false,
           "avg": false,
@@ -480,7 +361,7 @@
         },
         "lines": true,
         "linewidth": 1,
-        "nullPointMode": "null",
+        "nullPointMode": "null as zero",
         "options": {
           "dataLinks": []
         },
@@ -495,126 +376,161 @@
         "steppedLine": false,
         "targets": [
           {
-            "expr": "histogram_quantile(0.50, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"payment-card\", channel=\"com.barclays.bmb\"}[5m])) by (method, job, le))",
+            "expr": "histogram_quantile(0.99, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"membership-cards\", channel=\"com.barclays.bmb\", method=\"GET\"}[2m])) by (method, job, le))",
+            "hide": false,
             "interval": "",
-            "legendFormat": "{{method}}",
+            "legendFormat": "{{method}} -- 99",
             "refId": "A"
-          }
-        ],
-        "thresholds": [],
-        "timeFrom": null,
-        "timeRegions": [],
-        "timeShift": null,
-        "title": "Payment Card",
-        "tooltip": {
-          "shared": true,
-          "sort": 0,
-          "value_type": "individual"
-        },
-        "type": "graph",
-        "xaxis": {
-          "buckets": null,
-          "mode": "time",
-          "name": null,
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "format": "s",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
           },
           {
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          }
-        ],
-        "yaxis": {
-          "align": false,
-          "alignLevel": null
-        }
-      },
-      {
-        "aliasColors": {},
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "datasource": "Prometheus",
-        "description": "endpoint: /ubiquity/payment_cards",
-        "fieldConfig": {
-          "defaults": {
-            "custom": {},
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": []
-        },
-        "fill": 1,
-        "fillGradient": 0,
-        "gridPos": {
-          "h": 7,
-          "w": 8,
-          "x": 8,
-          "y": 9
-        },
-        "hiddenSeries": false,
-        "id": 11,
-        "legend": {
-          "alignAsTable": false,
-          "avg": false,
-          "current": false,
-          "max": false,
-          "min": false,
-          "show": true,
-          "total": false,
-          "values": false
-        },
-        "lines": true,
-        "linewidth": 1,
-        "nullPointMode": "null",
-        "options": {
-          "dataLinks": []
-        },
-        "percentage": false,
-        "pluginVersion": "7.0.3",
-        "pointradius": 2,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [],
-        "spaceLength": 10,
-        "stack": false,
-        "steppedLine": false,
-        "targets": [
-          {
-            "expr": "histogram_quantile(0.50, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"payment-cards\", channel=\"com.barclays.bmb\"}[5m])) by (method, job, le))",
+            "expr": "histogram_quantile(0.95, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"membership-cards\", channel=\"com.barclays.bmb\", method=\"GET\"}[2m])) by (method, job, le))",
+            "hide": false,
             "interval": "",
-            "legendFormat": "{{method}}",
-            "refId": "A"
+            "legendFormat": "{{method}} -- 95",
+            "refId": "B"
           }
         ],
         "thresholds": [
           {
-            "$$hashKey": "object:809",
+            "$$hashKey": "object:662",
+            "colorMode": "critical",
+            "fill": true,
+            "line": true,
+            "op": "gt",
+            "value": 0.375,
+            "yaxis": "left"
+          },
+          {
+            "$$hashKey": "object:668",
+            "colorMode": "warning",
+            "fill": true,
+            "line": true,
+            "op": "gt",
+            "value": 0.125,
+            "yaxis": "left"
+          }
+        ],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
+        "title": "Membership Cards - GET",
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "format": "s",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
+      },
+      {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": "Prometheus",
+        "description": "endpoint: /ubiquity/membership_cards/",
+        "fieldConfig": {
+          "defaults": {
+            "custom": {},
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "fill": 1,
+        "fillGradient": 0,
+        "gridPos": {
+          "h": 5,
+          "w": 12,
+          "x": 12,
+          "y": 7
+        },
+        "hiddenSeries": false,
+        "id": 19,
+        "legend": {
+          "alignAsTable": false,
+          "avg": false,
+          "current": false,
+          "max": false,
+          "min": false,
+          "show": true,
+          "total": false,
+          "values": false
+        },
+        "lines": true,
+        "linewidth": 1,
+        "nullPointMode": "null as zero",
+        "options": {
+          "dataLinks": []
+        },
+        "percentage": false,
+        "pluginVersion": "7.0.3",
+        "pointradius": 2,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.99, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"membership-cards\", channel=\"com.barclays.bmb\", method=\"DELETE\"}[2m])) by (method, job, le))",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "{{method}} -- 99",
+            "refId": "A"
+          },
+          {
+            "expr": "histogram_quantile(0.95, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"membership-cards\", channel=\"com.barclays.bmb\", method=\"DELETE\"}[2m])) by (method, job, le))",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "{{method}} -- 95",
+            "refId": "B"
+          }
+        ],
+        "thresholds": [
+          {
+            "$$hashKey": "object:662",
             "colorMode": "critical",
             "fill": true,
             "line": true,
@@ -623,7 +539,7 @@
             "yaxis": "left"
           },
           {
-            "$$hashKey": "object:815",
+            "$$hashKey": "object:668",
             "colorMode": "warning",
             "fill": true,
             "line": true,
@@ -635,7 +551,279 @@
         "timeFrom": null,
         "timeRegions": [],
         "timeShift": null,
-        "title": "Payment Cards",
+        "title": "Membership Cards - DELETE",
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "format": "s",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
+      },
+      {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": "Prometheus",
+        "description": "endpoint: /ubiquity/membership_card/",
+        "fieldConfig": {
+          "defaults": {
+            "custom": {},
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "fill": 1,
+        "fillGradient": 0,
+        "gridPos": {
+          "h": 5,
+          "w": 12,
+          "x": 0,
+          "y": 12
+        },
+        "hiddenSeries": false,
+        "id": 3,
+        "legend": {
+          "alignAsTable": false,
+          "avg": false,
+          "current": false,
+          "max": false,
+          "min": false,
+          "show": true,
+          "total": false,
+          "values": false
+        },
+        "lines": true,
+        "linewidth": 1,
+        "nullPointMode": "null as zero",
+        "options": {
+          "dataLinks": []
+        },
+        "percentage": false,
+        "pluginVersion": "7.0.3",
+        "pointradius": 2,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.99, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"membership-card\", channel=\"com.barclays.bmb\", method=\"GET\"}[5m])) by (method, job, le))",
+            "interval": "",
+            "legendFormat": "{{method}} -- 99",
+            "refId": "A"
+          },
+          {
+            "expr": "histogram_quantile(0.95, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"membership-card\", channel=\"com.barclays.bmb\", method=\"GET\"}[5m])) by (method, job, le))",
+            "interval": "",
+            "legendFormat": "{{method}} -- 95",
+            "refId": "B"
+          }
+        ],
+        "thresholds": [
+          {
+            "$$hashKey": "object:711",
+            "colorMode": "critical",
+            "fill": true,
+            "line": true,
+            "op": "gt",
+            "value": 0.375,
+            "yaxis": "left"
+          },
+          {
+            "$$hashKey": "object:717",
+            "colorMode": "warning",
+            "fill": true,
+            "line": true,
+            "op": "gt",
+            "value": 0.125,
+            "yaxis": "left"
+          }
+        ],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
+        "title": "Membership Card - GET",
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "format": "s",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
+      },
+      {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": "Prometheus",
+        "description": "endpoint: /ubiquity/membership_card/",
+        "fieldConfig": {
+          "defaults": {
+            "custom": {},
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "fill": 1,
+        "fillGradient": 0,
+        "gridPos": {
+          "h": 5,
+          "w": 12,
+          "x": 12,
+          "y": 12
+        },
+        "hiddenSeries": false,
+        "id": 20,
+        "legend": {
+          "alignAsTable": false,
+          "avg": false,
+          "current": false,
+          "max": false,
+          "min": false,
+          "show": true,
+          "total": false,
+          "values": false
+        },
+        "lines": true,
+        "linewidth": 1,
+        "nullPointMode": "null as zero",
+        "options": {
+          "dataLinks": []
+        },
+        "percentage": false,
+        "pluginVersion": "7.0.3",
+        "pointradius": 2,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.99, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"membership-card\", channel=\"com.barclays.bmb\", method=\"POST\"}[5m])) by (method, job, le))",
+            "interval": "",
+            "legendFormat": "{{method}} -- 99",
+            "refId": "A"
+          },
+          {
+            "expr": "histogram_quantile(0.95, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"membership-card\", channel=\"com.barclays.bmb\", method=\"POST\"}[5m])) by (method, job, le))",
+            "interval": "",
+            "legendFormat": "{{method}} -- 95",
+            "refId": "B"
+          }
+        ],
+        "thresholds": [
+          {
+            "$$hashKey": "object:711",
+            "colorMode": "critical",
+            "fill": true,
+            "line": true,
+            "op": "gt",
+            "value": 0.45,
+            "yaxis": "left"
+          },
+          {
+            "$$hashKey": "object:717",
+            "colorMode": "warning",
+            "fill": true,
+            "line": true,
+            "op": "gt",
+            "value": 0.15,
+            "yaxis": "left"
+          }
+        ],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
+        "title": "Membership Card - POST",
         "tooltip": {
           "shared": true,
           "sort": 0,
@@ -702,10 +890,10 @@
         "fill": 1,
         "fillGradient": 0,
         "gridPos": {
-          "h": 7,
-          "w": 8,
-          "x": 16,
-          "y": 9
+          "h": 5,
+          "w": 24,
+          "x": 0,
+          "y": 17
         },
         "hiddenSeries": false,
         "id": 17,
@@ -736,10 +924,16 @@
         "steppedLine": false,
         "targets": [
           {
-            "expr": "histogram_quantile(0.50, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\" , view=\"membership-plans\", job=\"hermes\", channel=\"com.barclays.bmb\"}[5m])) by (method, job, le))",
+            "expr": "histogram_quantile(0.99, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\" , view=\"membership-plans\", job=\"hermes\", channel=\"com.barclays.bmb\", method=\"GET\"}[2m])) by (method, job, le))",
             "interval": "",
-            "legendFormat": "{{method}}",
+            "legendFormat": "{{method}} -- 99",
             "refId": "C"
+          },
+          {
+            "expr": "histogram_quantile(0.95, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\" , view=\"membership-plans\", job=\"hermes\", channel=\"com.barclays.bmb\", method=\"GET\"}[2m])) by (method, job, le))",
+            "interval": "",
+            "legendFormat": "{{method}} -- 95",
+            "refId": "A"
           }
         ],
         "thresholds": [
@@ -765,7 +959,279 @@
         "timeFrom": null,
         "timeRegions": [],
         "timeShift": null,
-        "title": "Membership Plans",
+        "title": "Membership Plans - GET",
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "format": "s",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
+      },
+      {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": "Prometheus",
+        "description": "endpoint: /ubiquity/payment_cards",
+        "fieldConfig": {
+          "defaults": {
+            "custom": {},
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "fill": 1,
+        "fillGradient": 0,
+        "gridPos": {
+          "h": 5,
+          "w": 12,
+          "x": 0,
+          "y": 22
+        },
+        "hiddenSeries": false,
+        "id": 11,
+        "legend": {
+          "alignAsTable": false,
+          "avg": false,
+          "current": false,
+          "max": false,
+          "min": false,
+          "show": true,
+          "total": false,
+          "values": false
+        },
+        "lines": true,
+        "linewidth": 1,
+        "nullPointMode": "null as zero",
+        "options": {
+          "dataLinks": []
+        },
+        "percentage": false,
+        "pluginVersion": "7.0.3",
+        "pointradius": 2,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.99, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"payment-cards\", channel=\"com.barclays.bmb\", method=\"POST\"}[2m])) by (method, job, le))",
+            "interval": "",
+            "legendFormat": "{{method}} -- 99",
+            "refId": "A"
+          },
+          {
+            "expr": "histogram_quantile(0.95, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"payment-cards\", channel=\"com.barclays.bmb\", method=\"POST\"}[2m])) by (method, job, le))",
+            "interval": "",
+            "legendFormat": "{{method}} -- 95",
+            "refId": "B"
+          }
+        ],
+        "thresholds": [
+          {
+            "$$hashKey": "object:809",
+            "colorMode": "critical",
+            "fill": true,
+            "line": true,
+            "op": "gt",
+            "value": 0.45,
+            "yaxis": "left"
+          },
+          {
+            "$$hashKey": "object:815",
+            "colorMode": "warning",
+            "fill": true,
+            "line": true,
+            "op": "gt",
+            "value": 0.15,
+            "yaxis": "left"
+          }
+        ],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
+        "title": "Payment Cards - POST",
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "format": "s",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
+      },
+      {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": "Prometheus",
+        "description": "endpoint: /ubiquity/payment_cards",
+        "fieldConfig": {
+          "defaults": {
+            "custom": {},
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "fill": 1,
+        "fillGradient": 0,
+        "gridPos": {
+          "h": 5,
+          "w": 12,
+          "x": 12,
+          "y": 22
+        },
+        "hiddenSeries": false,
+        "id": 21,
+        "legend": {
+          "alignAsTable": false,
+          "avg": false,
+          "current": false,
+          "max": false,
+          "min": false,
+          "show": true,
+          "total": false,
+          "values": false
+        },
+        "lines": true,
+        "linewidth": 1,
+        "nullPointMode": "null as zero",
+        "options": {
+          "dataLinks": []
+        },
+        "percentage": false,
+        "pluginVersion": "7.0.3",
+        "pointradius": 2,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.99, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"payment-cards\", channel=\"com.barclays.bmb\", method=\"DELETE\"}[2m])) by (method, job, le))",
+            "interval": "",
+            "legendFormat": "{{method}} -- 99",
+            "refId": "A"
+          },
+          {
+            "expr": "histogram_quantile(0.95, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"payment-cards\", channel=\"com.barclays.bmb\", method=\"DELETE\"}[2m])) by (method, job, le))",
+            "interval": "",
+            "legendFormat": "{{method}} -- 95",
+            "refId": "B"
+          }
+        ],
+        "thresholds": [
+          {
+            "$$hashKey": "object:809",
+            "colorMode": "critical",
+            "fill": true,
+            "line": true,
+            "op": "gt",
+            "value": 0.45,
+            "yaxis": "left"
+          },
+          {
+            "$$hashKey": "object:815",
+            "colorMode": "warning",
+            "fill": true,
+            "line": true,
+            "op": "gt",
+            "value": 0.15,
+            "yaxis": "left"
+          }
+        ],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
+        "title": "Payment Cards - DELETE",
         "tooltip": {
           "shared": true,
           "sort": 0,
@@ -815,7 +1281,7 @@
           "h": 2,
           "w": 24,
           "x": 0,
-          "y": 16
+          "y": 27
         },
         "id": 9,
         "mode": "markdown",
@@ -839,10 +1305,10 @@
         "fill": 1,
         "fillGradient": 0,
         "gridPos": {
-          "h": 12,
+          "h": 7,
           "w": 6,
           "x": 0,
-          "y": 18
+          "y": 29
         },
         "hiddenSeries": false,
         "id": 13,
@@ -951,10 +1417,10 @@
         "fill": 1,
         "fillGradient": 0,
         "gridPos": {
-          "h": 12,
+          "h": 7,
           "w": 6,
           "x": 6,
-          "y": 18
+          "y": 29
         },
         "hiddenSeries": false,
         "id": 14,
@@ -1063,10 +1529,10 @@
         "fill": 1,
         "fillGradient": 0,
         "gridPos": {
-          "h": 12,
+          "h": 7,
           "w": 6,
           "x": 12,
-          "y": 18
+          "y": 29
         },
         "hiddenSeries": false,
         "id": 15,
@@ -1175,10 +1641,10 @@
         "fill": 1,
         "fillGradient": 0,
         "gridPos": {
-          "h": 12,
+          "h": 7,
           "w": 6,
           "x": 18,
-          "y": 18
+          "y": 29
         },
         "hiddenSeries": false,
         "id": 16,
@@ -1281,7 +1747,7 @@
         {
           "allValue": null,
           "current": {
-            "selected": true,
+            "selected": false,
             "text": "prod0",
             "value": "prod0"
           },
