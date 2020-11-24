@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1606226649624,
+  "iteration": 1606233303869,
   "links": [],
   "panels": [
     {
@@ -1282,8 +1282,8 @@
         "allValue": null,
         "current": {
           "selected": true,
-          "text": "prod0",
-          "value": "prod0"
+          "text": "dev0",
+          "value": "dev0"
         },
         "datasource": "Prometheus",
         "definition": "label_values(kubernetes_cluster)",
@@ -1324,7 +1324,7 @@
     ]
   },
   "timezone": "",
-  "title": "Hermes Devops",
+  "title": "Hermes DevOps",
   "uid": "xreowtoGz",
-  "version": 1
+  "version": 12
 }
