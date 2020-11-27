@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1606470641212,
+  "iteration": 1606483946886,
   "links": [],
   "panels": [
     {
@@ -1468,13 +1468,13 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "histogram_quantile(0.99, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"payment-card\", channel=\"$channel\", method=\"GET\"}[2m])) by (method, job, le))",
+          "expr": "histogram_quantile(0.99, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"payment-cards\", channel=\"$channel\", method=\"GET\"}[2m])) by (method, job, le))",
           "interval": "",
           "legendFormat": "{{method}} -- 99",
           "refId": "A"
         },
         {
-          "expr": "histogram_quantile(0.95, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"payment-card\", channel=\"$channel\", method=\"GET\"}[2m])) by (method, job, le))",
+          "expr": "histogram_quantile(0.95, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"payment-cards\", channel=\"$channel\", method=\"GET\"}[2m])) by (method, job, le))",
           "interval": "",
           "legendFormat": "{{method}} -- 95",
           "refId": "B"
@@ -1503,7 +1503,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Payment Card - GET",
+      "title": "Payment Cards - GET",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -2567,7 +2567,7 @@
       {
         "allValue": null,
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "staging0",
           "value": "staging0"
         },
@@ -2594,8 +2594,8 @@
         "allValue": null,
         "current": {
           "selected": true,
-          "text": "internal_service",
-          "value": "internal_service"
+          "text": "com.bink.wallet",
+          "value": "com.bink.wallet"
         },
         "datasource": "Prometheus",
         "definition": "label_values(channel)",
@@ -2616,12 +2616,12 @@
             "value": "com.bink.bink20dev"
           },
           {
-            "selected": false,
+            "selected": true,
             "text": "com.bink.wallet",
             "value": "com.bink.wallet"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "internal_service",
             "value": "internal_service"
           }
