@@ -15,7 +15,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1606484274179,
+  "id": 4,
+  "iteration": 1606493244831,
   "links": [],
   "panels": [
     {
@@ -118,7 +119,6 @@
       ],
       "thresholds": [
         {
-          "$$hashKey": "object:613",
           "colorMode": "critical",
           "fill": true,
           "line": true,
@@ -127,7 +127,6 @@
           "yaxis": "left"
         },
         {
-          "$$hashKey": "object:619",
           "colorMode": "warning",
           "fill": true,
           "line": true,
@@ -254,7 +253,6 @@
       ],
       "thresholds": [
         {
-          "$$hashKey": "object:613",
           "colorMode": "critical",
           "fill": true,
           "line": true,
@@ -263,7 +261,6 @@
           "yaxis": "left"
         },
         {
-          "$$hashKey": "object:619",
           "colorMode": "warning",
           "fill": true,
           "line": true,
@@ -392,7 +389,6 @@
       ],
       "thresholds": [
         {
-          "$$hashKey": "object:662",
           "colorMode": "critical",
           "fill": true,
           "line": true,
@@ -401,7 +397,6 @@
           "yaxis": "left"
         },
         {
-          "$$hashKey": "object:668",
           "colorMode": "warning",
           "fill": true,
           "line": true,
@@ -528,7 +523,6 @@
       ],
       "thresholds": [
         {
-          "$$hashKey": "object:711",
           "colorMode": "critical",
           "fill": true,
           "line": true,
@@ -537,7 +531,6 @@
           "yaxis": "left"
         },
         {
-          "$$hashKey": "object:717",
           "colorMode": "warning",
           "fill": true,
           "line": true,
@@ -664,7 +657,6 @@
       ],
       "thresholds": [
         {
-          "$$hashKey": "object:711",
           "colorMode": "critical",
           "fill": true,
           "line": true,
@@ -673,7 +665,6 @@
           "yaxis": "left"
         },
         {
-          "$$hashKey": "object:717",
           "colorMode": "warning",
           "fill": true,
           "line": true,
@@ -800,7 +791,6 @@
       ],
       "thresholds": [
         {
-          "$$hashKey": "object:760",
           "colorMode": "critical",
           "fill": true,
           "line": true,
@@ -809,7 +799,6 @@
           "yaxis": "left"
         },
         {
-          "$$hashKey": "object:766",
           "colorMode": "warning",
           "fill": true,
           "line": true,
@@ -936,7 +925,6 @@
       ],
       "thresholds": [
         {
-          "$$hashKey": "object:760",
           "colorMode": "critical",
           "fill": true,
           "line": true,
@@ -945,7 +933,6 @@
           "yaxis": "left"
         },
         {
-          "$$hashKey": "object:766",
           "colorMode": "warning",
           "fill": true,
           "line": true,
@@ -1074,7 +1061,6 @@
       ],
       "thresholds": [
         {
-          "$$hashKey": "object:662",
           "colorMode": "critical",
           "fill": true,
           "line": true,
@@ -1083,7 +1069,6 @@
           "yaxis": "left"
         },
         {
-          "$$hashKey": "object:668",
           "colorMode": "warning",
           "fill": true,
           "line": true,
@@ -1210,7 +1195,6 @@
       ],
       "thresholds": [
         {
-          "$$hashKey": "object:760",
           "colorMode": "critical",
           "fill": true,
           "line": true,
@@ -1219,7 +1203,6 @@
           "yaxis": "left"
         },
         {
-          "$$hashKey": "object:766",
           "colorMode": "warning",
           "fill": true,
           "line": true,
@@ -1346,7 +1329,6 @@
       ],
       "thresholds": [
         {
-          "$$hashKey": "object:760",
           "colorMode": "critical",
           "fill": true,
           "line": true,
@@ -1355,7 +1337,6 @@
           "yaxis": "left"
         },
         {
-          "$$hashKey": "object:766",
           "colorMode": "warning",
           "fill": true,
           "line": true,
@@ -1482,7 +1463,6 @@
       ],
       "thresholds": [
         {
-          "$$hashKey": "object:809",
           "colorMode": "critical",
           "fill": true,
           "line": true,
@@ -1491,7 +1471,6 @@
           "yaxis": "left"
         },
         {
-          "$$hashKey": "object:815",
           "colorMode": "warning",
           "fill": true,
           "line": true,
@@ -1618,7 +1597,6 @@
       ],
       "thresholds": [
         {
-          "$$hashKey": "object:809",
           "colorMode": "critical",
           "fill": true,
           "line": true,
@@ -1627,7 +1605,6 @@
           "yaxis": "left"
         },
         {
-          "$$hashKey": "object:815",
           "colorMode": "warning",
           "fill": true,
           "line": true,
@@ -1754,7 +1731,6 @@
       ],
       "thresholds": [
         {
-          "$$hashKey": "object:809",
           "colorMode": "critical",
           "fill": true,
           "line": true,
@@ -1763,7 +1739,6 @@
           "yaxis": "left"
         },
         {
-          "$$hashKey": "object:815",
           "colorMode": "warning",
           "fill": true,
           "line": true,
@@ -1890,7 +1865,6 @@
       ],
       "thresholds": [
         {
-          "$$hashKey": "object:809",
           "colorMode": "critical",
           "fill": true,
           "line": true,
@@ -1899,7 +1873,6 @@
           "yaxis": "left"
         },
         {
-          "$$hashKey": "object:815",
           "colorMode": "warning",
           "fill": true,
           "line": true,
@@ -2028,7 +2001,6 @@
       ],
       "thresholds": [
         {
-          "$$hashKey": "object:809",
           "colorMode": "critical",
           "fill": true,
           "line": true,
@@ -2037,7 +2009,6 @@
           "yaxis": "left"
         },
         {
-          "$$hashKey": "object:815",
           "colorMode": "warning",
           "fill": true,
           "line": true,
@@ -2166,7 +2137,6 @@
       ],
       "thresholds": [
         {
-          "$$hashKey": "object:809",
           "colorMode": "critical",
           "fill": true,
           "line": true,
@@ -2175,7 +2145,6 @@
           "yaxis": "left"
         },
         {
-          "$$hashKey": "object:815",
           "colorMode": "warning",
           "fill": true,
           "line": true,
@@ -2335,7 +2304,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:369",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -2344,7 +2312,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:370",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -2447,7 +2414,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:369",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -2456,7 +2422,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:370",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -2559,7 +2524,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:369",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -2568,7 +2532,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:370",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -2671,7 +2634,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:369",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -2680,7 +2642,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:370",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -2729,9 +2690,9 @@
       {
         "allValue": null,
         "current": {
-          "selected": true,
-          "text": "com.bink.wallet",
-          "value": "com.bink.wallet"
+          "selected": false,
+          "text": "com.barclays.bmb",
+          "value": "com.barclays.bmb"
         },
         "datasource": "Prometheus",
         "definition": "label_values(channel)",
@@ -2742,29 +2703,19 @@
         "name": "channel",
         "options": [
           {
-            "selected": false,
+            "selected": true,
             "text": "com.barclays.bmb",
             "value": "com.barclays.bmb"
           },
           {
             "selected": false,
-            "text": "com.bink.bink20dev",
-            "value": "com.bink.bink20dev"
-          },
-          {
-            "selected": true,
             "text": "com.bink.wallet",
             "value": "com.bink.wallet"
-          },
-          {
-            "selected": false,
-            "text": "internal_service",
-            "value": "internal_service"
           }
         ],
         "query": "label_values(channel)",
         "refresh": 0,
-        "regex": "/com.+|internal_service/",
+        "regex": "/com.barclays.bmb|com.bink.wallet/",
         "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": "",
