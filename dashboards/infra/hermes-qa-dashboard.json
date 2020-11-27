@@ -15,6 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
+  "id": 5,
   "iteration": 1606470641210,
   "links": [],
   "panels": [
@@ -118,7 +119,6 @@
       ],
       "thresholds": [
         {
-          "$$hashKey": "object:613",
           "colorMode": "critical",
           "fill": true,
           "line": true,
@@ -127,7 +127,6 @@
           "yaxis": "left"
         },
         {
-          "$$hashKey": "object:619",
           "colorMode": "warning",
           "fill": true,
           "line": true,
@@ -254,7 +253,6 @@
       ],
       "thresholds": [
         {
-          "$$hashKey": "object:613",
           "colorMode": "critical",
           "fill": true,
           "line": true,
@@ -263,7 +261,6 @@
           "yaxis": "left"
         },
         {
-          "$$hashKey": "object:619",
           "colorMode": "warning",
           "fill": true,
           "line": true,
@@ -392,7 +389,6 @@
       ],
       "thresholds": [
         {
-          "$$hashKey": "object:662",
           "colorMode": "critical",
           "fill": true,
           "line": true,
@@ -401,7 +397,6 @@
           "yaxis": "left"
         },
         {
-          "$$hashKey": "object:668",
           "colorMode": "warning",
           "fill": true,
           "line": true,
@@ -530,7 +525,6 @@
       ],
       "thresholds": [
         {
-          "$$hashKey": "object:662",
           "colorMode": "critical",
           "fill": true,
           "line": true,
@@ -539,7 +533,6 @@
           "yaxis": "left"
         },
         {
-          "$$hashKey": "object:668",
           "colorMode": "warning",
           "fill": true,
           "line": true,
@@ -666,7 +659,6 @@
       ],
       "thresholds": [
         {
-          "$$hashKey": "object:711",
           "colorMode": "critical",
           "fill": true,
           "line": true,
@@ -675,7 +667,6 @@
           "yaxis": "left"
         },
         {
-          "$$hashKey": "object:717",
           "colorMode": "warning",
           "fill": true,
           "line": true,
@@ -802,7 +793,6 @@
       ],
       "thresholds": [
         {
-          "$$hashKey": "object:711",
           "colorMode": "critical",
           "fill": true,
           "line": true,
@@ -811,7 +801,6 @@
           "yaxis": "left"
         },
         {
-          "$$hashKey": "object:717",
           "colorMode": "warning",
           "fill": true,
           "line": true,
@@ -938,7 +927,6 @@
       ],
       "thresholds": [
         {
-          "$$hashKey": "object:760",
           "colorMode": "critical",
           "fill": true,
           "line": true,
@@ -947,7 +935,6 @@
           "yaxis": "left"
         },
         {
-          "$$hashKey": "object:766",
           "colorMode": "warning",
           "fill": true,
           "line": true,
@@ -1060,13 +1047,13 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "histogram_quantile(0.99, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\" , view=\"payment-card\", job=\"hermes\", channel=\"$channel\", method=\"PATCH\"}[2m])) by (method, job, le))",
+          "expr": "histogram_quantile(0.99, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\" , view=\"membership-cards\", job=\"hermes\", channel=\"$channel\", method=\"PATCH\"}[2m])) by (method, job, le))",
           "interval": "",
           "legendFormat": "{{method}} -- 99",
           "refId": "C"
         },
         {
-          "expr": "histogram_quantile(0.95, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\" , view=\"payment-card\", job=\"hermes\", channel=\"$channel\", method=\"PATCH\"}[2m])) by (method, job, le))",
+          "expr": "histogram_quantile(0.95, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\" , view=\"membership-cards\", job=\"hermes\", channel=\"$channel\", method=\"PATCH\"}[2m])) by (method, job, le))",
           "interval": "",
           "legendFormat": "{{method}} -- 95",
           "refId": "A"
@@ -1074,7 +1061,6 @@
       ],
       "thresholds": [
         {
-          "$$hashKey": "object:760",
           "colorMode": "critical",
           "fill": true,
           "line": true,
@@ -1083,7 +1069,6 @@
           "yaxis": "left"
         },
         {
-          "$$hashKey": "object:766",
           "colorMode": "warning",
           "fill": true,
           "line": true,
@@ -1095,7 +1080,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Membership Plans - PATCH",
+      "title": "Membership Cards - PATCH",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1210,7 +1195,6 @@
       ],
       "thresholds": [
         {
-          "$$hashKey": "object:809",
           "colorMode": "critical",
           "fill": true,
           "line": true,
@@ -1219,7 +1203,6 @@
           "yaxis": "left"
         },
         {
-          "$$hashKey": "object:815",
           "colorMode": "warning",
           "fill": true,
           "line": true,
@@ -1346,7 +1329,6 @@
       ],
       "thresholds": [
         {
-          "$$hashKey": "object:809",
           "colorMode": "critical",
           "fill": true,
           "line": true,
@@ -1355,7 +1337,6 @@
           "yaxis": "left"
         },
         {
-          "$$hashKey": "object:815",
           "colorMode": "warning",
           "fill": true,
           "line": true,
@@ -1515,7 +1496,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:369",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1524,7 +1504,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:370",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1627,7 +1606,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:369",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1636,7 +1614,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:370",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1739,7 +1716,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:369",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1748,7 +1724,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:370",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1851,7 +1826,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:369",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1860,7 +1834,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:370",
           "format": "short",
           "label": null,
           "logBase": 1,
