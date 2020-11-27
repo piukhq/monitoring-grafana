@@ -15,8 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 4,
-  "iteration": 1606493244831,
+  "iteration": 1606495821597,
   "links": [],
   "panels": [
     {
@@ -2001,6 +2000,7 @@
       ],
       "thresholds": [
         {
+          "$$hashKey": "object:442",
           "colorMode": "critical",
           "fill": true,
           "line": true,
@@ -2009,6 +2009,7 @@
           "yaxis": "left"
         },
         {
+          "$$hashKey": "object:443",
           "colorMode": "warning",
           "fill": true,
           "line": true,
@@ -2654,6 +2655,116 @@
         "align": false,
         "alignLevel": null
       }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 6,
+        "x": 0,
+        "y": 49
+      },
+      "hiddenSeries": false,
+      "id": 30,
+      "legend": {
+        "alignAsTable": false,
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "rightSide": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", method=\"PATCH\", job=\"hermes\", status=~\"2\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view) ",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "{{status}}--{{view}}",
+          "refId": "A"
+        },
+        {
+          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"PATCH\", status=~\"3\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view)",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "{{status}}--{{view}}",
+          "refId": "B"
+        },
+        {
+          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"PATCH\", status=~\"4\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view)",
+          "interval": "",
+          "legendFormat": "{{status}}--{{view}}",
+          "refId": "C"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "PATCH",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     }
   ],
   "schemaVersion": 25,
@@ -2664,9 +2775,9 @@
       {
         "allValue": null,
         "current": {
-          "selected": false,
-          "text": "staging0",
-          "value": "staging0"
+          "selected": true,
+          "text": "dev0",
+          "value": "dev0"
         },
         "datasource": "Prometheus",
         "definition": "label_values(kubernetes_cluster)",
@@ -2690,9 +2801,9 @@
       {
         "allValue": null,
         "current": {
-          "selected": false,
-          "text": "com.barclays.bmb",
-          "value": "com.barclays.bmb"
+          "selected": true,
+          "text": "internal_service",
+          "value": "internal_service"
         },
         "datasource": "Prometheus",
         "definition": "label_values(channel)",
@@ -2703,19 +2814,29 @@
         "name": "channel",
         "options": [
           {
-            "selected": true,
+            "selected": false,
             "text": "com.barclays.bmb",
             "value": "com.barclays.bmb"
           },
           {
             "selected": false,
+            "text": "com.bink.bink20dev",
+            "value": "com.bink.bink20dev"
+          },
+          {
+            "selected": false,
             "text": "com.bink.wallet",
             "value": "com.bink.wallet"
+          },
+          {
+            "selected": true,
+            "text": "internal_service",
+            "value": "internal_service"
           }
         ],
         "query": "label_values(channel)",
         "refresh": 0,
-        "regex": "/com.barclays.bmb|com.bink.wallet/",
+        "regex": "/com.+|internal_service/",
         "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": "",
