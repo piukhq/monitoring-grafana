@@ -15,10 +15,31 @@
     "editable": true,
     "gnetId": null,
     "graphTooltip": 0,
-    "id": 24,
-    "iteration": 1606407207247,
+    "iteration": 1606474246478,
     "links": [],
     "panels": [
+      {
+        "content": "\n# Membership ADD",
+        "datasource": null,
+        "fieldConfig": {
+          "defaults": {
+            "custom": {}
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 2,
+          "w": 24,
+          "x": 0,
+          "y": 0
+        },
+        "id": 11,
+        "mode": "markdown",
+        "timeFrom": null,
+        "timeShift": null,
+        "title": "Panel Title",
+        "type": "text"
+      },
       {
         "aliasColors": {},
         "bars": false,
@@ -37,7 +58,7 @@
           "h": 8,
           "w": 12,
           "x": 0,
-          "y": 0
+          "y": 2
         },
         "hiddenSeries": false,
         "id": 4,
@@ -66,11 +87,11 @@
         "steppedLine": false,
         "targets": [
           {
-            "expr": "sum(rate(membership_card_add_total{kubernetes_cluster=\"$cluster\", route=\"Enrol\", scheme=\"$scheme\", channel=\"$channel\"} [2m])) by (route)",
+            "expr": "sum(rate(membership_card_add_total{kubernetes_cluster=\"$cluster\", route=\"Enrol\", scheme=\"$scheme\", channel=\"$channel\"} [5m]))",
             "hide": false,
             "interval": "",
             "legendFormat": "{{route}}",
-            "refId": "A"
+            "refId": "B"
           }
         ],
         "thresholds": [],
@@ -132,7 +153,7 @@
           "h": 8,
           "w": 12,
           "x": 12,
-          "y": 0
+          "y": 2
         },
         "hiddenSeries": false,
         "id": 5,
@@ -161,7 +182,7 @@
         "steppedLine": false,
         "targets": [
           {
-            "expr": "sum(rate(membership_card_add_total{kubernetes_cluster=\"$cluster\", route=\"Link\", scheme=\"$scheme\", channel=\"$channel\"} [2m])) by (route)",
+            "expr": "sum(rate(membership_card_add_total{kubernetes_cluster=\"$cluster\", route=\"Link\", scheme=\"$scheme\", channel=\"$channel\"} [5m])) by (route)",
             "hide": false,
             "interval": "",
             "legendFormat": "{{route}}",
@@ -227,7 +248,7 @@
           "h": 8,
           "w": 12,
           "x": 0,
-          "y": 8
+          "y": 10
         },
         "hiddenSeries": false,
         "id": 6,
@@ -256,7 +277,7 @@
         "steppedLine": false,
         "targets": [
           {
-            "expr": "sum(rate(membership_card_add_total{kubernetes_cluster=\"$cluster\", route=\"Multi Wallet\", scheme=\"$scheme\", channel=\"$channel\"} [2m])) by (route)",
+            "expr": "sum(rate(membership_card_add_total{kubernetes_cluster=\"$cluster\", route=\"Multi Wallet\", scheme=\"$scheme\", channel=\"$channel\"} [5m])) by (route)",
             "hide": false,
             "interval": "",
             "legendFormat": "{{route}}",
@@ -322,7 +343,7 @@
           "h": 8,
           "w": 12,
           "x": 12,
-          "y": 8
+          "y": 10
         },
         "hiddenSeries": false,
         "id": 7,
@@ -351,7 +372,7 @@
         "steppedLine": false,
         "targets": [
           {
-            "expr": "sum(rate(membership_card_add_total{kubernetes_cluster=\"$cluster\", route=\"Wallet Only\", scheme=\"$scheme\", channel=\"$channel\"} [2m])) by (route)",
+            "expr": "sum(rate(membership_card_add_total{kubernetes_cluster=\"$cluster\", route=\"Wallet Only\", scheme=\"$scheme\", channel=\"$channel\"} [5m])) by (route)",
             "hide": false,
             "interval": "",
             "legendFormat": "{{route}}",
@@ -398,6 +419,310 @@
           "align": false,
           "alignLevel": null
         }
+      },
+      {
+        "content": "\n# Membership UPDATE",
+        "datasource": null,
+        "fieldConfig": {
+          "defaults": {
+            "custom": {}
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 2,
+          "w": 24,
+          "x": 0,
+          "y": 18
+        },
+        "id": 12,
+        "mode": "markdown",
+        "timeFrom": null,
+        "timeShift": null,
+        "title": "Panel Title",
+        "type": "text"
+      },
+      {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": "Prometheus",
+        "fieldConfig": {
+          "defaults": {
+            "custom": {}
+          },
+          "overrides": []
+        },
+        "fill": 1,
+        "fillGradient": 0,
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 20
+        },
+        "hiddenSeries": false,
+        "id": 9,
+        "legend": {
+          "avg": false,
+          "current": false,
+          "max": false,
+          "min": false,
+          "show": true,
+          "total": false,
+          "values": false
+        },
+        "lines": true,
+        "linewidth": 1,
+        "nullPointMode": "null",
+        "options": {
+          "dataLinks": []
+        },
+        "percentage": false,
+        "pointradius": 2,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+          {
+            "expr": "sum(rate(membership_card_update_total{kubernetes_cluster=\"$cluster\", scheme=\"$scheme\", channel=\"channel\", route=\"Update\"} [5m])) by (route)",
+            "interval": "",
+            "legendFormat": "{{route}}",
+            "refId": "A"
+          }
+        ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
+        "title": "Update",
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
+      },
+      {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": "Prometheus",
+        "fieldConfig": {
+          "defaults": {
+            "custom": {}
+          },
+          "overrides": []
+        },
+        "fill": 1,
+        "fillGradient": 0,
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 20
+        },
+        "hiddenSeries": false,
+        "id": 13,
+        "legend": {
+          "avg": false,
+          "current": false,
+          "max": false,
+          "min": false,
+          "show": true,
+          "total": false,
+          "values": false
+        },
+        "lines": true,
+        "linewidth": 1,
+        "nullPointMode": "null",
+        "options": {
+          "dataLinks": []
+        },
+        "percentage": false,
+        "pointradius": 2,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+          {
+            "expr": "sum(rate(membership_card_update_total{kubernetes_cluster=\"$cluster\", scheme=\"$scheme\", channel=\"channel\", route=\"Enrol\"} [5m])) by (route)",
+            "interval": "",
+            "legendFormat": "{{route}}",
+            "refId": "A"
+          }
+        ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
+        "title": "Enrol",
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
+      },
+      {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": "Prometheus",
+        "fieldConfig": {
+          "defaults": {
+            "custom": {}
+          },
+          "overrides": []
+        },
+        "fill": 1,
+        "fillGradient": 0,
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 28
+        },
+        "hiddenSeries": false,
+        "id": 14,
+        "legend": {
+          "avg": false,
+          "current": false,
+          "max": false,
+          "min": false,
+          "show": true,
+          "total": false,
+          "values": false
+        },
+        "lines": true,
+        "linewidth": 1,
+        "nullPointMode": "null",
+        "options": {
+          "dataLinks": []
+        },
+        "percentage": false,
+        "pointradius": 2,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+          {
+            "expr": "sum(rate(membership_card_update_total{kubernetes_cluster=\"$cluster\", scheme=\"$scheme\", channel=\"channel\", route=\"Register\"} [5m])) by (route)",
+            "interval": "",
+            "legendFormat": "{{route}}",
+            "refId": "A"
+          }
+        ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
+        "title": "Register",
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
       }
     ],
     "schemaVersion": 25,
@@ -408,9 +733,9 @@
         {
           "allValue": null,
           "current": {
-            "selected": false,
-            "text": "dev0",
-            "value": "dev0"
+            "selected": true,
+            "text": "staging0",
+            "value": "staging0"
           },
           "datasource": "Prometheus",
           "definition": "label_values(kubernetes_cluster)",
@@ -421,7 +746,7 @@
           "name": "cluster",
           "options": [
             {
-              "selected": true,
+              "selected": false,
               "text": "dev0",
               "value": "dev0"
             },
@@ -436,7 +761,7 @@
               "value": "prod0"
             },
             {
-              "selected": false,
+              "selected": true,
               "text": "staging0",
               "value": "staging0"
             }
@@ -455,9 +780,9 @@
         {
           "allValue": null,
           "current": {
-            "selected": false,
-            "text": "fatface",
-            "value": "fatface"
+            "selected": true,
+            "text": "iceland-bonus-card-mock",
+            "value": "iceland-bonus-card-mock"
           },
           "datasource": "Prometheus",
           "definition": "label_values(scheme)",
@@ -488,7 +813,7 @@
               "value": "burger-king-rewards"
             },
             {
-              "selected": true,
+              "selected": false,
               "text": "fatface",
               "value": "fatface"
             },
@@ -518,7 +843,7 @@
               "value": "https"
             },
             {
-              "selected": false,
+              "selected": true,
               "text": "iceland-bonus-card-mock",
               "value": "iceland-bonus-card-mock"
             },
@@ -552,9 +877,9 @@
         {
           "allValue": null,
           "current": {
-            "selected": false,
-            "text": "com.bink.wallet",
-            "value": "com.bink.wallet"
+            "selected": true,
+            "text": "com.barclays.bmb",
+            "value": "com.barclays.bmb"
           },
           "datasource": "Prometheus",
           "definition": "label_values(channel)",
@@ -565,7 +890,7 @@
           "name": "channel",
           "options": [
             {
-              "selected": false,
+              "selected": true,
               "text": "com.barclays.bmb",
               "value": "com.barclays.bmb"
             },
@@ -575,7 +900,7 @@
               "value": "com.bink.bink20dev"
             },
             {
-              "selected": true,
+              "selected": false,
               "text": "com.bink.wallet",
               "value": "com.bink.wallet"
             }
@@ -594,7 +919,7 @@
       ]
     },
     "time": {
-      "from": "now-6h",
+      "from": "now-24h",
       "to": "now"
     },
     "timepicker": {
