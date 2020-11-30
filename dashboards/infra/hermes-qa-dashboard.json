@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1606734693529,
+  "iteration": 1606749626954,
   "links": [],
   "panels": [
     {
@@ -2136,6 +2136,7 @@
       ],
       "thresholds": [
         {
+          "$$hashKey": "object:349",
           "colorMode": "critical",
           "fill": true,
           "line": true,
@@ -2144,6 +2145,7 @@
           "yaxis": "left"
         },
         {
+          "$$hashKey": "object:350",
           "colorMode": "warning",
           "fill": true,
           "line": true,
@@ -2759,21 +2761,21 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", method=\"POST\", job=\"hermes\", status=~\"2\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view) * 60",
+          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", method=\"POST\", job=\"hermes\", status=~\"2\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service|new-login|new-register\", channel=\"$channel\"}[2m])) by (status, view) * 60",
           "hide": false,
           "interval": "",
           "legendFormat": "{{status}}--{{view}}",
           "refId": "A"
         },
         {
-          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"POST\", status=~\"3\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view) * 60",
+          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"POST\", status=~\"3\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service|new-login|new-register\", channel=\"$channel\"}[2m])) by (status, view) * 60",
           "hide": false,
           "interval": "",
           "legendFormat": "{{status}}--{{view}}",
           "refId": "B"
         },
         {
-          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"POST\", status=~\"4\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view) * 60",
+          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"POST\", status=~\"4\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service|new-login|new-register\", channel=\"$channel\"}[2m])) by (status, view) * 60",
           "interval": "",
           "legendFormat": "{{status}}--{{view}}",
           "refId": "C"
@@ -3050,7 +3052,7 @@
       {
         "allValue": null,
         "current": {
-          "selected": false,
+          "selected": true,
           "text": "dev0",
           "value": "dev0"
         },
