@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1606749626954,
+  "iteration": 1606750174698,
   "links": [],
   "panels": [
     {
@@ -2406,7 +2406,7 @@
           "expr": "histogram_quantile(0.95, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"membership-card-transactions\", channel=\"$channel\", method=\"GET\"}[5m])) by (method, job, le))",
           "hide": false,
           "interval": "",
-          "legendFormat": "{{route}} -- 95",
+          "legendFormat": "{{method}} -- 95",
           "refId": "B"
         }
       ],
