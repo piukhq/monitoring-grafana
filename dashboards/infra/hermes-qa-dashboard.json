@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1606495821597,
+  "iteration": 1606732870094,
   "links": [],
   "panels": [
     {
@@ -2265,21 +2265,21 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", method=\"GET\", job=\"hermes\", status=~\"2\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view) ",
+          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", method=\"GET\", job=\"hermes\", status=~\"2\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view) * 60",
           "hide": false,
           "interval": "",
           "legendFormat": "{{status}}--{{view}}",
           "refId": "A"
         },
         {
-          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"GET\", status=~\"3\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view)",
+          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"GET\", status=~\"3\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view) * 60",
           "hide": false,
           "interval": "",
           "legendFormat": "{{status}}--{{view}}",
           "refId": "B"
         },
         {
-          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"GET\", status=~\"4\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view)",
+          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"GET\", status=~\"4\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view) * 60",
           "interval": "",
           "legendFormat": "{{status}}--{{view}}",
           "refId": "C"
@@ -2375,21 +2375,21 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", method=\"PUT\", job=\"hermes\", status=~\"2\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view) ",
+          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", method=\"PUT\", job=\"hermes\", status=~\"2\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view) * 60",
           "hide": false,
           "interval": "",
           "legendFormat": "{{status}}--{{view}}",
           "refId": "A"
         },
         {
-          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"PUT\", status=~\"3\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view)",
+          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"PUT\", status=~\"3\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view) * 60",
           "hide": false,
           "interval": "",
           "legendFormat": "{{status}}--{{view}}",
           "refId": "B"
         },
         {
-          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"PUT\", status=~\"4\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view)",
+          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"PUT\", status=~\"4\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view) * 60",
           "interval": "",
           "legendFormat": "{{status}}--{{view}}",
           "refId": "C"
@@ -2485,21 +2485,21 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", method=\"POST\", job=\"hermes\", status=~\"2\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view) ",
+          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", method=\"POST\", job=\"hermes\", status=~\"2\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view) * 60",
           "hide": false,
           "interval": "",
           "legendFormat": "{{status}}--{{view}}",
           "refId": "A"
         },
         {
-          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"POST\", status=~\"3\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view)",
+          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"POST\", status=~\"3\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view) * 60",
           "hide": false,
           "interval": "",
           "legendFormat": "{{status}}--{{view}}",
           "refId": "B"
         },
         {
-          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"POST\", status=~\"4\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view)",
+          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"POST\", status=~\"4\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view) * 60",
           "interval": "",
           "legendFormat": "{{status}}--{{view}}",
           "refId": "C"
@@ -2595,21 +2595,21 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", method=\"DELETE\", job=\"hermes\", status=~\"2\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view) ",
+          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", method=\"DELETE\", job=\"hermes\", status=~\"2\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view) * 60",
           "hide": false,
           "interval": "",
           "legendFormat": "{{status}}--{{view}}",
           "refId": "A"
         },
         {
-          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"DELETE\", status=~\"3\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view)",
+          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"DELETE\", status=~\"3\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view) * 60",
           "hide": false,
           "interval": "",
           "legendFormat": "{{status}}--{{view}}",
           "refId": "B"
         },
         {
-          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"DELETE\", status=~\"4\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view)",
+          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"DELETE\", status=~\"4\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view) * 60",
           "interval": "",
           "legendFormat": "{{status}}--{{view}}",
           "refId": "C"
@@ -2705,21 +2705,21 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", method=\"PATCH\", job=\"hermes\", status=~\"2\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view) ",
+          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", method=\"PATCH\", job=\"hermes\", status=~\"2\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view) * 60",
           "hide": false,
           "interval": "",
           "legendFormat": "{{status}}--{{view}}",
           "refId": "A"
         },
         {
-          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"PATCH\", status=~\"3\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view)",
+          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"PATCH\", status=~\"3\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view) * 60",
           "hide": false,
           "interval": "",
           "legendFormat": "{{status}}--{{view}}",
           "refId": "B"
         },
         {
-          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"PATCH\", status=~\"4\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view)",
+          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"PATCH\", status=~\"4\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view) * 60",
           "interval": "",
           "legendFormat": "{{status}}--{{view}}",
           "refId": "C"
@@ -2775,7 +2775,7 @@
       {
         "allValue": null,
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "dev0",
           "value": "dev0"
         },
