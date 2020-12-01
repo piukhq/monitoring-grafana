@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1606837055145,
+  "iteration": 1606837301580,
   "links": [],
   "panels": [
     {
@@ -734,7 +734,7 @@
       {
         "allValue": null,
         "current": {
-          "selected": false,
+          "selected": true,
           "text": "staging0",
           "value": "staging0"
         },
@@ -781,12 +781,12 @@
       {
         "allValue": null,
         "current": {
-          "selected": false,
-          "text": "harvey-nichols",
-          "value": "harvey-nichols"
+          "selected": true,
+          "text": "burger-king-rewards",
+          "value": "burger-king-rewards"
         },
         "datasource": "Prometheus",
-        "definition": "label_values(membership_card_add_total, scheme)",
+        "definition": "label_values(scheme)",
         "hide": 0,
         "includeAll": false,
         "label": "Loyalty Scheme",
@@ -794,22 +794,27 @@
         "name": "scheme",
         "options": [
           {
+            "selected": false,
+            "text": "American Express",
+            "value": "American Express"
+          },
+          {
+            "selected": false,
+            "text": "Mastercard",
+            "value": "Mastercard"
+          },
+          {
+            "selected": false,
+            "text": "Visa",
+            "value": "Visa"
+          },
+          {
+            "selected": false,
+            "text": "advantage-card",
+            "value": "advantage-card"
+          },
+          {
             "selected": true,
-            "text": "harvey-nichols",
-            "value": "harvey-nichols"
-          },
-          {
-            "selected": false,
-            "text": "iceland-bonus-card-mock",
-            "value": "iceland-bonus-card-mock"
-          },
-          {
-            "selected": false,
-            "text": "harvey-nichols-mock",
-            "value": "harvey-nichols-mock"
-          },
-          {
-            "selected": false,
             "text": "burger-king-rewards",
             "value": "burger-king-rewards"
           },
@@ -820,18 +825,18 @@
           },
           {
             "selected": false,
-            "text": "wasabi-club",
-            "value": "wasabi-club"
-          },
-          {
-            "selected": false,
-            "text": "whsmith-rewards-mock",
-            "value": "whsmith-rewards-mock"
-          },
-          {
-            "selected": false,
             "text": "handm-club",
             "value": "handm-club"
+          },
+          {
+            "selected": false,
+            "text": "harvey-nichols",
+            "value": "harvey-nichols"
+          },
+          {
+            "selected": false,
+            "text": "harvey-nichols-mock",
+            "value": "harvey-nichols-mock"
           },
           {
             "selected": false,
@@ -840,21 +845,51 @@
           },
           {
             "selected": false,
-            "text": "advantage-card",
-            "value": "advantage-card"
-          },
-          {
-            "selected": false,
             "text": "heathrow-rewards",
             "value": "heathrow-rewards"
           },
           {
             "selected": false,
+            "text": "https",
+            "value": "https"
+          },
+          {
+            "selected": false,
+            "text": "iceland-bonus-card-mock",
+            "value": "iceland-bonus-card-mock"
+          },
+          {
+            "selected": false,
+            "text": "subcard",
+            "value": "subcard"
+          },
+          {
+            "selected": false,
+            "text": "tesco-clubcard1",
+            "value": "tesco-clubcard1"
+          },
+          {
+            "selected": false,
+            "text": "the-garden-club",
+            "value": "the-garden-club"
+          },
+          {
+            "selected": false,
             "text": "the-waterstones-card",
             "value": "the-waterstones-card"
+          },
+          {
+            "selected": false,
+            "text": "wasabi-club",
+            "value": "wasabi-club"
+          },
+          {
+            "selected": false,
+            "text": "whsmith-rewards-mock",
+            "value": "whsmith-rewards-mock"
           }
         ],
-        "query": "label_values(membership_card_add_total, scheme)",
+        "query": "label_values(scheme)",
         "refresh": 0,
         "regex": "",
         "skipUrlSync": false,
@@ -868,9 +903,9 @@
       {
         "allValue": null,
         "current": {
-          "selected": false,
-          "text": "com.barclays.bmb",
-          "value": "com.barclays.bmb"
+          "selected": true,
+          "text": "com.bink.wallet",
+          "value": "com.bink.wallet"
         },
         "datasource": "Prometheus",
         "definition": "label_values(channel)",
@@ -881,7 +916,7 @@
         "name": "channel",
         "options": [
           {
-            "selected": true,
+            "selected": false,
             "text": "com.barclays.bmb",
             "value": "com.barclays.bmb"
           },
@@ -891,7 +926,7 @@
             "value": "com.bink.bink20dev"
           },
           {
-            "selected": false,
+            "selected": true,
             "text": "com.bink.wallet",
             "value": "com.bink.wallet"
           }
