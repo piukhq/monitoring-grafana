@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1606829771725,
+  "iteration": 1606837055145,
   "links": [],
   "panels": [
     {
@@ -489,7 +489,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(rate(membership_card_update_total{route=\"Update\", kubernetes_cluster=\"dev0\", channel=\"com.barclays.bmb\", scheme=\"harvey-nichols-mock\"}[5m])) by (route)",
+          "expr": "sum(rate(membership_card_update_total{route=\"Update\", kubernetes_cluster=\"$cluster\", channel=\"$channel\", scheme=\"$scheme\"}[5m])) by (route)",
           "hide": false,
           "interval": "",
           "legendFormat": "{{route}}",
@@ -678,7 +678,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(rate(membership_card_update_total{kubernetes_cluster=\"$cluster\", scheme=\"$scheme\", channel=\"channel\", route=\"Register\"} [5m])) by (route)",
+          "expr": "sum(rate(membership_card_update_total{kubernetes_cluster=\"$cluster\", channel=\"$channel\", scheme=\"$scheme\", route=\"Register\"} [5m])) by (route)",
           "interval": "",
           "legendFormat": "{{route}}",
           "refId": "A"
