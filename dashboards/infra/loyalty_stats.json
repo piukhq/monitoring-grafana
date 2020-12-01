@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1606837301580,
+  "iteration": 1606841679738,
   "links": [],
   "panels": [
     {
@@ -489,7 +489,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(rate(membership_card_update_total{route=\"Update\", kubernetes_cluster=\"$cluster\", channel=\"$channel\", scheme=\"$scheme\"}[5m])) by (route)",
+          "expr": "sum(rate(membership_card_update_total{route=\"Update\", kubernetes_cluster=\"$cluster\", channel=\"$channel\", scheme=\"$scheme\"}[2m])) by (route) * 60",
           "hide": false,
           "interval": "",
           "legendFormat": "{{route}}",
@@ -584,7 +584,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(irate(membership_card_update_total{route=\"Enrol\", kubernetes_cluster=\"$cluster\", channel=\"$channel\", scheme=\"$scheme\"} [5m])) by (route)",
+          "expr": "sum(irate(membership_card_update_total{route=\"Enrol\", kubernetes_cluster=\"$cluster\", channel=\"$channel\", scheme=\"$scheme\"} [2m])) by (route) * 60",
           "interval": "",
           "legendFormat": "{{route}}",
           "refId": "A"
@@ -678,7 +678,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(rate(membership_card_update_total{kubernetes_cluster=\"$cluster\", channel=\"$channel\", scheme=\"$scheme\", route=\"Register\"} [5m])) by (route)",
+          "expr": "sum(rate(membership_card_update_total{kubernetes_cluster=\"$cluster\", channel=\"$channel\", scheme=\"$scheme\", route=\"Register\"} [2m])) by (route) * 60 ",
           "interval": "",
           "legendFormat": "{{route}}",
           "refId": "A"
@@ -782,8 +782,8 @@
         "allValue": null,
         "current": {
           "selected": true,
-          "text": "burger-king-rewards",
-          "value": "burger-king-rewards"
+          "text": "iceland-bonus-card-mock",
+          "value": "iceland-bonus-card-mock"
         },
         "datasource": "Prometheus",
         "definition": "label_values(scheme)",
@@ -814,7 +814,7 @@
             "value": "advantage-card"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "burger-king-rewards",
             "value": "burger-king-rewards"
           },
@@ -854,7 +854,7 @@
             "value": "https"
           },
           {
-            "selected": false,
+            "selected": true,
             "text": "iceland-bonus-card-mock",
             "value": "iceland-bonus-card-mock"
           },
