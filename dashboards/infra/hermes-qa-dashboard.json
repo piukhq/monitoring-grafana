@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1606817244817,
+  "iteration": 1606817732627,
   "links": [],
   "panels": [
     {
@@ -1984,24 +1984,18 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "histogram_quantile(0.99, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"new-register\", channel=\"$channel\", method=\"POST\"}[5m])) by (method, job, le))",
+          "expr": "histogram_quantile(0.99, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"register_user\", channel=\"$channel\", method=\"POST\"}[5m])) by (method, job, le))",
           "hide": false,
           "interval": "",
           "legendFormat": "{{method}} -- 99",
           "refId": "A"
         },
         {
-          "expr": "histogram_quantile(0.95, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"new-register\", channel=\"$channel\", method=\"POST\"}[5m])) by (method, job, le))",
+          "expr": "histogram_quantile(0.95, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"register_user\", channel=\"$channel\", method=\"POST\"}[5m])) by (method, job, le))",
           "hide": false,
           "interval": "",
-          "legendFormat": "",
+          "legendFormat": "{{method}} -- 95",
           "refId": "B"
-        },
-        {
-          "expr": "django_http_requests_latency_seconds_by_view_method_bucket{view=reg}",
-          "interval": "",
-          "legendFormat": "",
-          "refId": "C"
         }
       ],
       "thresholds": [
@@ -2138,7 +2132,7 @@
           "expr": "histogram_quantile(0.95, sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"$cluster\", job=\"hermes\", view=\"new_login\", channel=\"$channel\", method=\"POST\"}[5m])) by (method, job, le))",
           "hide": false,
           "interval": "",
-          "legendFormat": "",
+          "legendFormat": "{{method}} -- 95",
           "refId": "B"
         }
       ],
@@ -2923,8 +2917,8 @@
         "allValue": null,
         "current": {
           "selected": true,
-          "text": "prod0",
-          "value": "prod0"
+          "text": "staging0",
+          "value": "staging0"
         },
         "datasource": "Prometheus",
         "definition": "label_values(kubernetes_cluster)",
@@ -2948,7 +2942,7 @@
       {
         "allValue": null,
         "current": {
-          "selected": false,
+          "selected": true,
           "text": "com.bink.wallet",
           "value": "com.bink.wallet"
         },
