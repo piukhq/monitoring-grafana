@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1606757935632,
+  "iteration": 1606829771725,
   "links": [],
   "panels": [
     {
@@ -734,9 +734,9 @@
       {
         "allValue": null,
         "current": {
-          "selected": true,
-          "text": "dev0",
-          "value": "dev0"
+          "selected": false,
+          "text": "staging0",
+          "value": "staging0"
         },
         "datasource": "Prometheus",
         "definition": "label_values(kubernetes_cluster)",
@@ -747,7 +747,7 @@
         "name": "cluster",
         "options": [
           {
-            "selected": true,
+            "selected": false,
             "text": "dev0",
             "value": "dev0"
           },
@@ -762,7 +762,7 @@
             "value": "prod0"
           },
           {
-            "selected": false,
+            "selected": true,
             "text": "staging0",
             "value": "staging0"
           }
@@ -781,12 +781,12 @@
       {
         "allValue": null,
         "current": {
-          "selected": true,
-          "text": "harvey-nichols-mock",
-          "value": "harvey-nichols-mock"
+          "selected": false,
+          "text": "harvey-nichols",
+          "value": "harvey-nichols"
         },
         "datasource": "Prometheus",
-        "definition": "label_values(scheme)",
+        "definition": "label_values(membership_card_add_total, scheme)",
         "hide": 0,
         "includeAll": false,
         "label": "Loyalty Scheme",
@@ -794,19 +794,19 @@
         "name": "scheme",
         "options": [
           {
-            "selected": false,
-            "text": "American Express",
-            "value": "American Express"
+            "selected": true,
+            "text": "harvey-nichols",
+            "value": "harvey-nichols"
           },
           {
             "selected": false,
-            "text": "Mastercard",
-            "value": "Mastercard"
+            "text": "iceland-bonus-card-mock",
+            "value": "iceland-bonus-card-mock"
           },
           {
             "selected": false,
-            "text": "Visa",
-            "value": "Visa"
+            "text": "harvey-nichols-mock",
+            "value": "harvey-nichols-mock"
           },
           {
             "selected": false,
@@ -820,13 +820,18 @@
           },
           {
             "selected": false,
-            "text": "harvey-nichols",
-            "value": "harvey-nichols"
+            "text": "wasabi-club",
+            "value": "wasabi-club"
           },
           {
-            "selected": true,
-            "text": "harvey-nichols-mock",
-            "value": "harvey-nichols-mock"
+            "selected": false,
+            "text": "whsmith-rewards-mock",
+            "value": "whsmith-rewards-mock"
+          },
+          {
+            "selected": false,
+            "text": "handm-club",
+            "value": "handm-club"
           },
           {
             "selected": false,
@@ -835,36 +840,21 @@
           },
           {
             "selected": false,
+            "text": "advantage-card",
+            "value": "advantage-card"
+          },
+          {
+            "selected": false,
             "text": "heathrow-rewards",
             "value": "heathrow-rewards"
           },
           {
             "selected": false,
-            "text": "https",
-            "value": "https"
-          },
-          {
-            "selected": false,
-            "text": "iceland-bonus-card-mock",
-            "value": "iceland-bonus-card-mock"
-          },
-          {
-            "selected": false,
-            "text": "subcard",
-            "value": "subcard"
-          },
-          {
-            "selected": false,
-            "text": "wasabi-club",
-            "value": "wasabi-club"
-          },
-          {
-            "selected": false,
-            "text": "whsmith-rewards-mock",
-            "value": "whsmith-rewards-mock"
+            "text": "the-waterstones-card",
+            "value": "the-waterstones-card"
           }
         ],
-        "query": "label_values(scheme)",
+        "query": "label_values(membership_card_add_total, scheme)",
         "refresh": 0,
         "regex": "",
         "skipUrlSync": false,
@@ -878,7 +868,7 @@
       {
         "allValue": null,
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "com.barclays.bmb",
           "value": "com.barclays.bmb"
         },
