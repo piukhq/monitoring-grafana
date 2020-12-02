@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1606842884745,
+  "iteration": 1606843593684,
   "links": [],
   "panels": [
     {
@@ -87,7 +87,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(rate(membership_card_add_total{kubernetes_cluster=\"$cluster\", route=\"Enrol\", scheme=\"$scheme\", channel=\"$channel\"} [5m])) by (route)",
+          "expr": "sum(membership_card_add_total{kubernetes_cluster=\"$cluster\", route=\"Enrol\", scheme=\"$scheme\", channel=\"$channel\"}) by (route)",
           "hide": false,
           "interval": "",
           "legendFormat": "{{route}}",
@@ -372,18 +372,11 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(rate(membership_card_add_total{kubernetes_cluster=\"$cluster\", route=\"Wallet Only\", scheme=\"$scheme\", channel=\"$channel\"} [2m])) by (route) * 60",
+          "expr": "sum(membership_card_add_total{kubernetes_cluster=\"$cluster\", route=\"Wallet Only\", scheme=\"$scheme\", channel=\"$channel\"}) by (route)",
           "hide": false,
           "interval": "",
           "legendFormat": "{{route}}",
           "refId": "A"
-        },
-        {
-          "expr": "membership_card_add_total{route=\"Wallet Only\", scheme=\"the-garden-club\"}",
-          "hide": true,
-          "interval": "",
-          "legendFormat": "{{route}}",
-          "refId": "B"
         }
       ],
       "thresholds": [],
@@ -496,18 +489,11 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(rate(membership_card_update_total{route=\"Update\", kubernetes_cluster=\"$cluster\", channel=\"$channel\", scheme=\"$scheme\"}[2m])) by (route) * 60",
+          "expr": "sum(membership_card_update_total{route=\"Update\", kubernetes_cluster=\"$cluster\", channel=\"$channel\", scheme=\"$scheme\"}) by (route)",
           "hide": false,
           "interval": "",
           "legendFormat": "{{route}}",
           "refId": "B"
-        },
-        {
-          "expr": "sum(membership_card_update_total{route=\"Update\", kubernetes_cluster=\"$cluster\", channel=\"$channel\", scheme=\"$scheme\"}) by (route)",
-          "hide": true,
-          "interval": "",
-          "legendFormat": "{{route}}",
-          "refId": "A"
         }
       ],
       "thresholds": [],
@@ -598,7 +584,8 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(irate(membership_card_update_total{route=\"Enrol\", kubernetes_cluster=\"$cluster\", channel=\"$channel\", scheme=\"$scheme\"} [2m])) by (route) * 60",
+          "expr": "sum(membership_card_update_total{route=\"Enrol\", kubernetes_cluster=\"$cluster\", channel=\"$channel\", scheme=\"$scheme\"}) by (route)",
+          "hide": false,
           "interval": "",
           "legendFormat": "{{route}}",
           "refId": "A"
@@ -692,7 +679,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(rate(membership_card_update_total{kubernetes_cluster=\"$cluster\", channel=\"$channel\", scheme=\"$scheme\", route=\"Register\"} [2m])) by (route) * 60 ",
+          "expr": "sum(membership_card_update_total{kubernetes_cluster=\"$cluster\", channel=\"$channel\", scheme=\"$scheme\", route=\"Register\"}) by (route)",
           "interval": "",
           "legendFormat": "{{route}}",
           "refId": "A"
@@ -796,8 +783,8 @@
         "allValue": null,
         "current": {
           "selected": true,
-          "text": "iceland-bonus-card-mock",
-          "value": "iceland-bonus-card-mock"
+          "text": "burger-king-rewards",
+          "value": "burger-king-rewards"
         },
         "datasource": "Prometheus",
         "definition": "label_values(scheme)",
@@ -828,7 +815,7 @@
             "value": "advantage-card"
           },
           {
-            "selected": false,
+            "selected": true,
             "text": "burger-king-rewards",
             "value": "burger-king-rewards"
           },
@@ -868,7 +855,7 @@
             "value": "https"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "iceland-bonus-card-mock",
             "value": "iceland-bonus-card-mock"
           },
@@ -959,7 +946,7 @@
     ]
   },
   "time": {
-    "from": "now-24h",
+    "from": "now-1h",
     "to": "now"
   },
   "timepicker": {
