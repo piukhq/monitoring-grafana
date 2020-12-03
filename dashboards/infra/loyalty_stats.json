@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1606843593684,
+  "iteration": 1606988642073,
   "links": [],
   "panels": [
     {
@@ -377,6 +377,13 @@
           "interval": "",
           "legendFormat": "{{route}}",
           "refId": "A"
+        },
+        {
+          "expr": "membership_card_add_total{route=\"Wallet Only\", scheme=\"}",
+          "hide": true,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "B"
         }
       ],
       "thresholds": [],
@@ -782,9 +789,9 @@
       {
         "allValue": null,
         "current": {
-          "selected": true,
-          "text": "burger-king-rewards",
-          "value": "burger-king-rewards"
+          "selected": false,
+          "text": "harvey-nichols",
+          "value": "harvey-nichols"
         },
         "datasource": "Prometheus",
         "definition": "label_values(scheme)",
@@ -793,105 +800,9 @@
         "label": "Loyalty Scheme",
         "multi": false,
         "name": "scheme",
-        "options": [
-          {
-            "selected": false,
-            "text": "American Express",
-            "value": "American Express"
-          },
-          {
-            "selected": false,
-            "text": "Mastercard",
-            "value": "Mastercard"
-          },
-          {
-            "selected": false,
-            "text": "Visa",
-            "value": "Visa"
-          },
-          {
-            "selected": false,
-            "text": "advantage-card",
-            "value": "advantage-card"
-          },
-          {
-            "selected": true,
-            "text": "burger-king-rewards",
-            "value": "burger-king-rewards"
-          },
-          {
-            "selected": false,
-            "text": "fatface",
-            "value": "fatface"
-          },
-          {
-            "selected": false,
-            "text": "handm-club",
-            "value": "handm-club"
-          },
-          {
-            "selected": false,
-            "text": "harvey-nichols",
-            "value": "harvey-nichols"
-          },
-          {
-            "selected": false,
-            "text": "harvey-nichols-mock",
-            "value": "harvey-nichols-mock"
-          },
-          {
-            "selected": false,
-            "text": "health-beautycard",
-            "value": "health-beautycard"
-          },
-          {
-            "selected": false,
-            "text": "heathrow-rewards",
-            "value": "heathrow-rewards"
-          },
-          {
-            "selected": false,
-            "text": "https",
-            "value": "https"
-          },
-          {
-            "selected": false,
-            "text": "iceland-bonus-card-mock",
-            "value": "iceland-bonus-card-mock"
-          },
-          {
-            "selected": false,
-            "text": "subcard",
-            "value": "subcard"
-          },
-          {
-            "selected": false,
-            "text": "tesco-clubcard1",
-            "value": "tesco-clubcard1"
-          },
-          {
-            "selected": false,
-            "text": "the-garden-club",
-            "value": "the-garden-club"
-          },
-          {
-            "selected": false,
-            "text": "the-waterstones-card",
-            "value": "the-waterstones-card"
-          },
-          {
-            "selected": false,
-            "text": "wasabi-club",
-            "value": "wasabi-club"
-          },
-          {
-            "selected": false,
-            "text": "whsmith-rewards-mock",
-            "value": "whsmith-rewards-mock"
-          }
-        ],
+        "options": [],
         "query": "label_values(scheme)",
-        "refresh": 0,
+        "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
         "sort": 0,
