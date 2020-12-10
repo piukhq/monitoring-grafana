@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1607609553196,
+  "iteration": 1607609832447,
   "links": [],
   "panels": [
     {
@@ -65,7 +65,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum (transactions_total{kubernetes_cluster=\"$cluster\"}) by (transaction_type, slug)",
+          "expr": "sum (transactions_total{kubernetes_cluster=\"$cluster\"}) by (transaction_type, process_type, slug)",
           "interval": "",
           "legendFormat": "{{transaction_type}} - {{ process_type }} - {{slug }} ",
           "refId": "A"
