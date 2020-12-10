@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "iteration": 1595870940148,
+  "iteration": 1607609295293,
   "links": [],
   "panels": [
     {
@@ -291,7 +291,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "elasticsearch_cluster_health_number_of_data_nodes{cluster=\"elasticsearch\", instance=\"10.4.0.9:9114\", job=\"elasticsearch\", kubernetes_cluster=\"tools\", kubernetes_namespace=\"default\", kubernetes_pod_name=\"elasticsearch-exporter-6d45f98648-7ktqq\"}",
+      "tableColumn": "elasticsearch_cluster_health_number_of_data_nodes{cluster=\"elasticsearch\", instance=\"10.33.0.49:9114\", job=\"elasticsearch\", kubernetes_cluster=\"tools\", kubernetes_namespace=\"default\", kubernetes_pod_name=\"elasticsearch-exporter-7dcdf74f4f-9h4t8\"}",
       "targets": [
         {
           "expr": "elasticsearch_cluster_health_number_of_data_nodes{cluster=~\"$cluster\"}",
@@ -377,7 +377,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "elasticsearch_cluster_health_number_of_pending_tasks{cluster=\"elasticsearch\", instance=\"10.4.0.9:9114\", job=\"elasticsearch\", kubernetes_cluster=\"tools\", kubernetes_namespace=\"default\", kubernetes_pod_name=\"elasticsearch-exporter-6d45f98648-7ktqq\"}",
+      "tableColumn": "elasticsearch_cluster_health_number_of_pending_tasks{cluster=\"elasticsearch\", instance=\"10.33.0.49:9114\", job=\"elasticsearch\", kubernetes_cluster=\"tools\", kubernetes_namespace=\"default\", kubernetes_pod_name=\"elasticsearch-exporter-7dcdf74f4f-9h4t8\"}",
       "targets": [
         {
           "expr": "elasticsearch_cluster_health_number_of_pending_tasks{cluster=~\"$cluster\"}",
@@ -477,7 +477,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "elasticsearch_cluster_health_active_shards{cluster=\"elasticsearch\", instance=\"10.4.0.9:9114\", job=\"elasticsearch\", kubernetes_cluster=\"tools\", kubernetes_namespace=\"default\", kubernetes_pod_name=\"elasticsearch-exporter-6d45f98648-7ktqq\"}",
+      "tableColumn": "elasticsearch_cluster_health_active_shards{cluster=\"elasticsearch\", instance=\"10.33.0.49:9114\", job=\"elasticsearch\", kubernetes_cluster=\"tools\", kubernetes_namespace=\"default\", kubernetes_pod_name=\"elasticsearch-exporter-7dcdf74f4f-9h4t8\"}",
       "targets": [
         {
           "expr": "elasticsearch_cluster_health_active_shards{cluster=~\"$cluster\"}",
@@ -563,7 +563,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "elasticsearch_cluster_health_active_primary_shards{cluster=\"elasticsearch\", instance=\"10.4.0.9:9114\", job=\"elasticsearch\", kubernetes_cluster=\"tools\", kubernetes_namespace=\"default\", kubernetes_pod_name=\"elasticsearch-exporter-6d45f98648-7ktqq\"}",
+      "tableColumn": "elasticsearch_cluster_health_active_primary_shards{cluster=\"elasticsearch\", instance=\"10.33.0.49:9114\", job=\"elasticsearch\", kubernetes_cluster=\"tools\", kubernetes_namespace=\"default\", kubernetes_pod_name=\"elasticsearch-exporter-7dcdf74f4f-9h4t8\"}",
       "targets": [
         {
           "expr": "elasticsearch_cluster_health_active_primary_shards{cluster=~\"$cluster\"}",
@@ -649,7 +649,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "elasticsearch_cluster_health_initializing_shards{cluster=\"elasticsearch\", instance=\"10.4.0.9:9114\", job=\"elasticsearch\", kubernetes_cluster=\"tools\", kubernetes_namespace=\"default\", kubernetes_pod_name=\"elasticsearch-exporter-6d45f98648-7ktqq\"}",
+      "tableColumn": "elasticsearch_cluster_health_initializing_shards{cluster=\"elasticsearch\", instance=\"10.33.0.49:9114\", job=\"elasticsearch\", kubernetes_cluster=\"tools\", kubernetes_namespace=\"default\", kubernetes_pod_name=\"elasticsearch-exporter-7dcdf74f4f-9h4t8\"}",
       "targets": [
         {
           "expr": "elasticsearch_cluster_health_initializing_shards{cluster=~\"$cluster\"}",
@@ -735,7 +735,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "elasticsearch_cluster_health_relocating_shards{cluster=\"elasticsearch\", instance=\"10.4.0.9:9114\", job=\"elasticsearch\", kubernetes_cluster=\"tools\", kubernetes_namespace=\"default\", kubernetes_pod_name=\"elasticsearch-exporter-6d45f98648-7ktqq\"}",
+      "tableColumn": "elasticsearch_cluster_health_relocating_shards{cluster=\"elasticsearch\", instance=\"10.33.0.49:9114\", job=\"elasticsearch\", kubernetes_cluster=\"tools\", kubernetes_namespace=\"default\", kubernetes_pod_name=\"elasticsearch-exporter-7dcdf74f4f-9h4t8\"}",
       "targets": [
         {
           "expr": "elasticsearch_cluster_health_relocating_shards{cluster=~\"$cluster\"}",
@@ -821,7 +821,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "elasticsearch_cluster_health_unassigned_shards{cluster=\"elasticsearch\", instance=\"10.4.0.9:9114\", job=\"elasticsearch\", kubernetes_cluster=\"tools\", kubernetes_namespace=\"default\", kubernetes_pod_name=\"elasticsearch-exporter-6d45f98648-7ktqq\"}",
+      "tableColumn": "elasticsearch_cluster_health_unassigned_shards{cluster=\"elasticsearch\", instance=\"10.33.0.49:9114\", job=\"elasticsearch\", kubernetes_cluster=\"tools\", kubernetes_namespace=\"default\", kubernetes_pod_name=\"elasticsearch-exporter-7dcdf74f4f-9h4t8\"}",
       "targets": [
         {
           "expr": "elasticsearch_cluster_health_unassigned_shards{cluster=~\"$cluster\"}",
@@ -907,7 +907,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "elasticsearch_cluster_health_delayed_unassigned_shards{cluster=\"elasticsearch\", instance=\"10.4.0.9:9114\", job=\"elasticsearch\", kubernetes_cluster=\"tools\", kubernetes_namespace=\"default\", kubernetes_pod_name=\"elasticsearch-exporter-6d45f98648-7ktqq\"}",
+      "tableColumn": "elasticsearch_cluster_health_delayed_unassigned_shards{cluster=\"elasticsearch\", instance=\"10.33.0.49:9114\", job=\"elasticsearch\", kubernetes_cluster=\"tools\", kubernetes_namespace=\"default\", kubernetes_pod_name=\"elasticsearch-exporter-7dcdf74f4f-9h4t8\"}",
       "targets": [
         {
           "expr": "elasticsearch_cluster_health_delayed_unassigned_shards{cluster=~\"$cluster\"}",
@@ -1982,7 +1982,7 @@
             }
           ],
           "dsType": "elasticsearch",
-          "expr": "avg(irate(node_cpu_seconds_total{name=~\"elasticsearch-\\\\d+\"}[60s])) by(mode) *100",
+          "expr": "avg(irate(node_cpu_seconds_total{name=~\"elasticsearch-\\\\d+\"}[120s])) by(mode) *100",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 2,
@@ -2019,6 +2019,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:211",
           "format": "short",
           "label": "",
           "logBase": 1,
@@ -2027,6 +2028,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:212",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -2303,7 +2305,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "irate(elasticsearch_jvm_gc_collection_seconds_sum{cluster=~\"$cluster\"}[1m])",
+          "expr": "irate(elasticsearch_jvm_gc_collection_seconds_sum{cluster=~\"$cluster\"}[2m])",
           "interval": "",
           "intervalFactor": 2,
           "legendFormat": "{{ name }} {{ gc }}",
@@ -2332,6 +2334,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:292",
           "format": "short",
           "logBase": 1,
           "max": null,
@@ -2339,6 +2342,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:293",
           "format": "short",
           "logBase": 1,
           "max": null,
