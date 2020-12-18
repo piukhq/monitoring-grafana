@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1608296898218,
+  "iteration": 1608296898220,
   "links": [],
   "panels": [
     {
@@ -895,7 +895,7 @@
       },
       "lines": true,
       "linewidth": 1,
-      "nullPointMode": "null",
+      "nullPointMode": "null as zero",
       "options": {
         "dataLinks": []
       },
@@ -924,6 +924,7 @@
       ],
       "thresholds": [
         {
+          "$$hashKey": "object:219",
           "colorMode": "critical",
           "fill": true,
           "line": true,
@@ -932,6 +933,7 @@
           "yaxis": "left"
         },
         {
+          "$$hashKey": "object:220",
           "colorMode": "warning",
           "fill": true,
           "line": true,
@@ -959,6 +961,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:193",
           "format": "s",
           "label": null,
           "logBase": 1,
@@ -967,6 +970,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:194",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -2982,9 +2986,9 @@
       {
         "allValue": null,
         "current": {
-          "selected": false,
-          "text": "com.bink.wallet",
-          "value": "com.bink.wallet"
+          "selected": true,
+          "text": "com.barclays.bmb",
+          "value": "com.barclays.bmb"
         },
         "datasource": "Prometheus",
         "definition": "label_values(channel)",
@@ -2995,12 +2999,12 @@
         "name": "channel",
         "options": [
           {
-            "selected": false,
+            "selected": true,
             "text": "com.barclays.bmb",
             "value": "com.barclays.bmb"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "com.bink.wallet",
             "value": "com.bink.wallet"
           }
