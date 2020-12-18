@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1608293351448,
+  "iteration": 1608296898218,
   "links": [],
   "panels": [
     {
@@ -2957,8 +2957,8 @@
         "allValue": null,
         "current": {
           "selected": false,
-          "text": "staging0",
-          "value": "staging0"
+          "text": "prod0",
+          "value": "prod0"
         },
         "datasource": "Prometheus",
         "definition": "label_values(kubernetes_cluster)",
@@ -3019,7 +3019,7 @@
     ]
   },
   "time": {
-    "from": "now-15m",
+    "from": "now-24h",
     "to": "now"
   },
   "timepicker": {
