@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1607084044933,
+  "iteration": 1608296898220,
   "links": [],
   "panels": [
     {
@@ -895,7 +895,7 @@
       },
       "lines": true,
       "linewidth": 1,
-      "nullPointMode": "null",
+      "nullPointMode": "null as zero",
       "options": {
         "dataLinks": []
       },
@@ -924,6 +924,7 @@
       ],
       "thresholds": [
         {
+          "$$hashKey": "object:219",
           "colorMode": "critical",
           "fill": true,
           "line": true,
@@ -932,6 +933,7 @@
           "yaxis": "left"
         },
         {
+          "$$hashKey": "object:220",
           "colorMode": "warning",
           "fill": true,
           "line": true,
@@ -959,6 +961,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:193",
           "format": "s",
           "label": null,
           "logBase": 1,
@@ -967,6 +970,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:194",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -2423,6 +2427,12 @@
           "interval": "",
           "legendFormat": "{{status}}--{{view}}",
           "refId": "C"
+        },
+        {
+          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"GET\", status=~\"5\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service|login|register_user|retrieve-transactions|user-transactions|membership-card-transactions\", channel=\"$channel\"}[2m])) by (status, view) * 60",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "D"
         }
       ],
       "thresholds": [],
@@ -2445,6 +2455,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:478",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -2453,6 +2464,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:479",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -2533,6 +2545,12 @@
           "interval": "",
           "legendFormat": "{{status}}--{{view}}",
           "refId": "C"
+        },
+        {
+          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"PUT\", status=~\"5\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view) * 60",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "D"
         }
       ],
       "thresholds": [],
@@ -2555,6 +2573,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:559",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -2563,6 +2582,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:560",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -2643,6 +2663,12 @@
           "interval": "",
           "legendFormat": "{{status}}--{{view}}",
           "refId": "C"
+        },
+        {
+          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"POST\", status=~\"5\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service|new-login|new-register\", channel=\"$channel\"}[2m])) by (status, view) * 60",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "D"
         }
       ],
       "thresholds": [],
@@ -2665,6 +2691,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:640",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -2673,6 +2700,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:641",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -2753,6 +2781,12 @@
           "interval": "",
           "legendFormat": "{{status}}--{{view}}",
           "refId": "C"
+        },
+        {
+          "expr": "sum(irate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"DELETE\", status=~\"5\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service\", channel=\"$channel\"}[2m])) by (status, view) * 60",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "D"
         }
       ],
       "thresholds": [],
@@ -2775,6 +2809,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:721",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -2783,6 +2818,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:722",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -2863,6 +2899,12 @@
           "interval": "",
           "legendFormat": "{{status}}--{{view}}",
           "refId": "C"
+        },
+        {
+          "expr": "sum(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"PATCH\", status=~\"5\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service|new_login|register_user|payment-link|membership-link\", channel=\"$channel\"}) by (status, view)",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "D"
         }
       ],
       "thresholds": [],
@@ -2885,6 +2927,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:802",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -2893,6 +2936,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:803",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -2916,9 +2960,9 @@
       {
         "allValue": null,
         "current": {
-          "selected": true,
-          "text": "staging0",
-          "value": "staging0"
+          "selected": false,
+          "text": "prod0",
+          "value": "prod0"
         },
         "datasource": "Prometheus",
         "definition": "label_values(kubernetes_cluster)",
@@ -2942,9 +2986,9 @@
       {
         "allValue": null,
         "current": {
-          "selected": false,
-          "text": "com.bink.wallet",
-          "value": "com.bink.wallet"
+          "selected": true,
+          "text": "com.barclays.bmb",
+          "value": "com.barclays.bmb"
         },
         "datasource": "Prometheus",
         "definition": "label_values(channel)",
@@ -2955,12 +2999,12 @@
         "name": "channel",
         "options": [
           {
-            "selected": false,
+            "selected": true,
             "text": "com.barclays.bmb",
             "value": "com.barclays.bmb"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "com.bink.wallet",
             "value": "com.bink.wallet"
           }
@@ -2979,7 +3023,7 @@
     ]
   },
   "time": {
-    "from": "now-15m",
+    "from": "now-24h",
     "to": "now"
   },
   "timepicker": {
