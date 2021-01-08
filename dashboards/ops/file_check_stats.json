@@ -461,6 +461,7 @@
         {
           "expr": "sum(increase(blobstorage_files_total{name=\"wasabihack\"}[45m]))",
           "format": "time_series",
+          "hide": false,
           "instant": false,
           "interval": "",
           "legendFormat": "{{name}}",
@@ -481,8 +482,8 @@
     "list": []
   },
   "time": {
-    "from": "now/d+1m",
-    "to": "now"
+    "from": "now/d+10h",
+    "to": "now/d-6h"
   },
   "timepicker": {
     "refresh_intervals": [
