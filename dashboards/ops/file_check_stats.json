@@ -18,7 +18,7 @@
   "links": [],
   "panels": [
     {
-      "content": "\n# Files from Merchant Schemes\n\n\n\n",
+      "content": "\n# Files from Merchant Schemes\n- `Iceland` - States whether we have received files today\n- `Harvey Nichols` - States whether we have received files today\n- `Wasabi` - States whether we have received files in the last 45 mins\n\n\n\n",
       "datasource": null,
       "fieldConfig": {
         "defaults": {
@@ -27,7 +27,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 8,
+        "h": 4,
         "w": 12,
         "x": 0,
         "y": 0
@@ -40,7 +40,7 @@
       "type": "text"
     },
     {
-      "content": "\n# Files from Payment Schemes\n\n\n\n",
+      "content": "\n# Files from Payment Schemes\n- `Amex` - States whether we have received files today\n- `Mastercard` - States whether we have received files today\n\n\n",
       "datasource": null,
       "fieldConfig": {
         "defaults": {
@@ -49,7 +49,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 8,
+        "h": 4,
         "w": 12,
         "x": 12,
         "y": 0
@@ -109,15 +109,15 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 6,
+        "h": 5,
         "w": 12,
         "x": 0,
-        "y": 8
+        "y": 4
       },
       "id": 4,
       "options": {
         "colorMode": "value",
-        "graphMode": "area",
+        "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
@@ -192,10 +192,171 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 6,
+        "h": 5,
         "w": 12,
         "x": 12,
-        "y": 8
+        "y": 4
+      },
+      "id": 11,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        }
+      },
+      "pluginVersion": "7.0.3",
+      "targets": [
+        {
+          "expr": "sum(blobstorage_files_total{name=\"amex\"})",
+          "format": "time_series",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Amex",
+      "type": "stat"
+    },
+    {
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": null
+          },
+          "mappings": [
+            {
+              "from": "1",
+              "id": 0,
+              "operator": "",
+              "text": "Yes",
+              "to": "100000000",
+              "type": 2,
+              "value": ""
+            },
+            {
+              "from": "0",
+              "id": 1,
+              "operator": "",
+              "text": "No",
+              "to": "0.9",
+              "type": 2
+            }
+          ],
+          "noValue": "No",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 12,
+        "x": 0,
+        "y": 9
+      },
+      "id": 6,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        }
+      },
+      "pluginVersion": "7.0.3",
+      "targets": [
+        {
+          "expr": "sum(blobstorage_files_total{name=\"harvey-nichols\"})",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{name}}",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Harvey Nichols",
+      "type": "stat"
+    },
+    {
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": null
+          },
+          "mappings": [
+            {
+              "from": "1",
+              "id": 0,
+              "operator": "",
+              "text": "Yes",
+              "to": "100000000",
+              "type": 2,
+              "value": ""
+            },
+            {
+              "from": "0",
+              "id": 1,
+              "operator": "",
+              "text": "No",
+              "to": "0.9",
+              "type": 2
+            }
+          ],
+          "noValue": "No",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 0
+              },
+              {
+                "color": "green",
+                "value": 0.1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 12,
+        "x": 12,
+        "y": 9
       },
       "id": 10,
       "options": {
@@ -276,7 +437,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 6,
+        "h": 5,
         "w": 12,
         "x": 0,
         "y": 14
@@ -309,167 +470,6 @@
       "timeFrom": null,
       "timeShift": null,
       "title": "Wasabi",
-      "type": "stat"
-    },
-    {
-      "datasource": "Prometheus",
-      "fieldConfig": {
-        "defaults": {
-          "custom": {
-            "align": null
-          },
-          "mappings": [
-            {
-              "from": "1",
-              "id": 0,
-              "operator": "",
-              "text": "Yes",
-              "to": "100000000",
-              "type": 2,
-              "value": ""
-            },
-            {
-              "from": "0",
-              "id": 1,
-              "operator": "",
-              "text": "No",
-              "to": "0.9",
-              "type": 2
-            }
-          ],
-          "noValue": "No",
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "red",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 0
-              },
-              {
-                "color": "green",
-                "value": 0.1
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 6,
-        "w": 12,
-        "x": 12,
-        "y": 14
-      },
-      "id": 11,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "none",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "fields": "",
-          "values": false
-        }
-      },
-      "pluginVersion": "7.0.3",
-      "targets": [
-        {
-          "expr": "sum(blobstorage_files_total{name=\"amex\"})",
-          "format": "time_series",
-          "hide": false,
-          "interval": "",
-          "legendFormat": "",
-          "refId": "A"
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Amex",
-      "type": "stat"
-    },
-    {
-      "datasource": "Prometheus",
-      "fieldConfig": {
-        "defaults": {
-          "custom": {
-            "align": null
-          },
-          "mappings": [
-            {
-              "from": "1",
-              "id": 0,
-              "operator": "",
-              "text": "Yes",
-              "to": "100000000",
-              "type": 2,
-              "value": ""
-            },
-            {
-              "from": "0",
-              "id": 1,
-              "operator": "",
-              "text": "No",
-              "to": "0.9",
-              "type": 2
-            }
-          ],
-          "noValue": "No",
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 6,
-        "w": 12,
-        "x": 0,
-        "y": 20
-      },
-      "id": 6,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "none",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "fields": "",
-          "values": false
-        }
-      },
-      "pluginVersion": "7.0.3",
-      "targets": [
-        {
-          "expr": "sum(blobstorage_files_total{name=\"harvey-nichols\"})",
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "{{name}}",
-          "refId": "A"
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Harvey Nichols",
       "type": "stat"
     }
   ],
