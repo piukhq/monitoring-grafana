@@ -86,7 +86,7 @@
       },
       "lines": true,
       "linewidth": 1,
-      "nullPointMode": "null",
+      "nullPointMode": "null as zero",
       "options": {
         "dataLinks": []
       },
@@ -212,9 +212,9 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "log_in_fail_created",
+          "expr": "sum(log_in_fail_created) by (slug,kubernetes_cluster)",
           "interval": "",
-          "legendFormat": "",
+          "legendFormat": "{{slug}} -- {{kubernetes_cluster}}",
           "refId": "A"
         }
       ],
@@ -545,9 +545,9 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "register_fail_total",
+          "expr": "sum(register_fail_total) by (slug, kubernetes_cluster)",
           "interval": "",
-          "legendFormat": "",
+          "legendFormat": "{{slug}} -- {{kubernetes_cluster}}",
           "refId": "A"
         }
       ],
