@@ -419,7 +419,7 @@
       },
       "lines": true,
       "linewidth": 1,
-      "nullPointMode": "null",
+      "nullPointMode": "null as zero",
       "options": {
         "dataLinks": []
       },
@@ -434,9 +434,9 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "register_success",
+          "expr": "sum(register_success_created{slug=\"harvey-nichols\"})",
           "interval": "",
-          "legendFormat": "",
+          "legendFormat": "{{slug}} - {{kubernetes_cluster}}",
           "refId": "A"
         }
       ],
