@@ -197,7 +197,7 @@
       },
       "lines": true,
       "linewidth": 1,
-      "nullPointMode": "null",
+      "nullPointMode": "null as zero",
       "options": {
         "dataLinks": []
       },
@@ -308,7 +308,7 @@
       },
       "lines": true,
       "linewidth": 1,
-      "nullPointMode": "null",
+      "nullPointMode": "null as zero",
       "options": {
         "dataLinks": []
       },
@@ -434,7 +434,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(register_success_created{slug=\"harvey-nichols\"}) by (slug, kubernetes_cluster)",
+          "expr": "sum(register_success_created{}) by (slug, kubernetes_cluster)",
           "interval": "",
           "legendFormat": "{{slug}} - {{kubernetes_cluster}}",
           "refId": "A"
@@ -530,7 +530,7 @@
       },
       "lines": true,
       "linewidth": 1,
-      "nullPointMode": "null",
+      "nullPointMode": "null as zero",
       "options": {
         "dataLinks": []
       },
@@ -545,7 +545,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(register_fail_total) by (slug, kubernetes_cluster)",
+          "expr": "sum(register_fail_created) by (slug, kubernetes_cluster)",
           "interval": "",
           "legendFormat": "{{slug}} -- {{kubernetes_cluster}}",
           "refId": "A"
