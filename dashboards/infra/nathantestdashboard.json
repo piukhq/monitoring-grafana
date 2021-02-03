@@ -101,9 +101,9 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "log_in_success",
+          "expr": "sum(log_in_success_created) by (slug, kubernetes_cluster)",
           "interval": "",
-          "legendFormat": "",
+          "legendFormat": "{{slug}} -- {{kubernetes_cluster}}",
           "refId": "A"
         }
       ],
@@ -212,7 +212,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "log_in_fail",
+          "expr": "log_in_fail_created",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -323,9 +323,9 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "request_latency",
+          "expr": "sum(request_latency_seconds_created{}) by (slug,response_code,kubernetes_cluster)",
           "interval": "",
-          "legendFormat": "",
+          "legendFormat": "{{response_code}} -- {{slug}} -- {{kubernetes_cluster}}",
           "refId": "A"
         }
       ],
@@ -434,7 +434,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(register_success_created{slug=\"harvey-nichols\"})",
+          "expr": "sum(register_success_created{slug=\"harvey-nichols\"}) by (slug, kubernetes_cluster)",
           "interval": "",
           "legendFormat": "{{slug}} - {{kubernetes_cluster}}",
           "refId": "A"
@@ -545,7 +545,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "register_fail",
+          "expr": "register_fail_total",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
