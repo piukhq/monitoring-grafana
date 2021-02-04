@@ -323,7 +323,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(request_latency_seconds_bucket) by (slug,response_code,kubernetes_cluster)",
+          "expr": "sum(request_latency_seconds_count) by (slug, response_code, kubernetes_cluster)",
           "interval": "",
           "legendFormat": "{{response_code}} -- {{slug}} -- {{kubernetes_cluster}}",
           "refId": "A"
@@ -434,9 +434,9 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(register_success_total) by (slug,kubernetes_cluster)",
+          "expr": "sum(register_success_total) by (slug, kubernetes_cluster, channel)",
           "interval": "",
-          "legendFormat": "{{slug}} - {{kubernetes_cluster}}",
+          "legendFormat": "{{slug}} -- {{channel}} --  {{kubernetes_cluster}}",
           "refId": "A"
         }
       ],
@@ -545,9 +545,9 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(register_fail_total) by (slug,kubernetes_cluster)",
+          "expr": "sum(register_fail_total) by (slug,kubernetes_cluster, channel)",
           "interval": "",
-          "legendFormat": "{{slug}} -- {{kubernetes_cluster}}",
+          "legendFormat": "{{slug}} -- {{channel}} --  {{kubernetes_cluster}}",
           "refId": "A"
         }
       ],
