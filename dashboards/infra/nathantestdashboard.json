@@ -101,7 +101,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(log_in_success_created) by (slug, kubernetes_cluster)",
+          "expr": "sum(log_in_success_total) by (slug,kubernetes_cluster)",
           "interval": "",
           "legendFormat": "{{slug}} -- {{kubernetes_cluster}}",
           "refId": "A"
@@ -212,7 +212,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(log_in_fail_created) by (slug,kubernetes_cluster)",
+          "expr": "sum(log_in_fail_total) by (slug,kubernetes_cluster)",
           "interval": "",
           "legendFormat": "{{slug}} -- {{kubernetes_cluster}}",
           "refId": "A"
@@ -323,7 +323,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(request_latency_seconds_created{}) by (slug,response_code,kubernetes_cluster)",
+          "expr": "sum(request_latency_seconds_bucket) by (slug,response_code,kubernetes_cluster)",
           "interval": "",
           "legendFormat": "{{response_code}} -- {{slug}} -- {{kubernetes_cluster}}",
           "refId": "A"
@@ -434,7 +434,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(register_success_created{}) by (slug, kubernetes_cluster)",
+          "expr": "sum(register_success_total) by (slug,kubernetes_cluster)",
           "interval": "",
           "legendFormat": "{{slug}} - {{kubernetes_cluster}}",
           "refId": "A"
@@ -545,7 +545,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(register_fail_created) by (slug, kubernetes_cluster)",
+          "expr": "sum(register_fail_total) by (slug,kubernetes_cluster)",
           "interval": "",
           "legendFormat": "{{slug}} -- {{kubernetes_cluster}}",
           "refId": "A"
@@ -602,7 +602,7 @@
     "list": []
   },
   "time": {
-    "from": "now-30m",
+    "from": "now-24h",
     "to": "now"
   },
   "timepicker": {
