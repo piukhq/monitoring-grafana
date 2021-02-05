@@ -872,7 +872,7 @@
       "pluginVersion": "7.0.3",
       "targets": [
         {
-          "expr": "hermes_current_users_total{kubernetes_cluster=\"dev0\", client_app=\"Barclays Mobile Banking\"}",
+          "expr": "hermes_current_users_total{kubernetes_cluster=\"staging0\", client_app=\"Barclays Mobile Banking\"}",
           "interval": "",
           "legendFormat": "{{client_app}}",
           "refId": "A"
@@ -924,7 +924,7 @@
       "pluginVersion": "7.0.3",
       "targets": [
         {
-          "expr": "hermes_current_payment_cards_total{kubernetes_cluster=\"dev0\", client_app=\"Barclays Mobile Banking\"}",
+          "expr": "hermes_current_payment_cards_total{kubernetes_cluster=\"staging0\", client_app=\"Barclays Mobile Banking\"}",
           "interval": "",
           "legendFormat": "{{client_app}}",
           "refId": "A"
@@ -976,7 +976,7 @@
       "pluginVersion": "7.0.3",
       "targets": [
         {
-          "expr": "hermes_current_membership_cards_total{kubernetes_cluster=\"dev0\", client_app=\"Barclays Mobile Banking\"}",
+          "expr": "hermes_current_membership_cards_total{kubernetes_cluster=\"staging0\", client_app=\"Barclays Mobile Banking\"}",
           "interval": "",
           "legendFormat": "{{client_app}}",
           "refId": "A"
