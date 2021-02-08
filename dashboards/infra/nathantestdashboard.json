@@ -15,6 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
+  "id": 16,
   "links": [],
   "panels": [
     {
@@ -138,7 +139,6 @@
           },
           "yaxes": [
             {
-              "$$hashKey": "object:163",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -147,7 +147,6 @@
               "show": true
             },
             {
-              "$$hashKey": "object:164",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -249,7 +248,6 @@
           },
           "yaxes": [
             {
-              "$$hashKey": "object:163",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -258,7 +256,6 @@
               "show": true
             },
             {
-              "$$hashKey": "object:164",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -360,7 +357,6 @@
           },
           "yaxes": [
             {
-              "$$hashKey": "object:163",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -369,7 +365,6 @@
               "show": true
             },
             {
-              "$$hashKey": "object:164",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -471,7 +466,6 @@
           },
           "yaxes": [
             {
-              "$$hashKey": "object:163",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -480,7 +474,6 @@
               "show": true
             },
             {
-              "$$hashKey": "object:164",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -582,7 +575,6 @@
           },
           "yaxes": [
             {
-              "$$hashKey": "object:163",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -591,7 +583,6 @@
               "show": true
             },
             {
-              "$$hashKey": "object:164",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -679,7 +670,6 @@
           },
           "yaxes": [
             {
-              "$$hashKey": "object:157",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -688,7 +678,6 @@
               "show": true
             },
             {
-              "$$hashKey": "object:158",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -793,7 +782,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:171",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -802,7 +790,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:172",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -889,7 +876,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:171",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -898,7 +884,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:172",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -985,7 +970,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:171",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -994,7 +978,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:172",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1184,7 +1167,55 @@
   "style": "dark",
   "tags": [],
   "templating": {
-    "list": []
+    "list": [
+      {
+        "allValue": null,
+        "current": {
+          "selected": false,
+          "text": "staging0",
+          "value": "staging0"
+        },
+        "datasource": "Prometheus",
+        "definition": "label_values(kubernetes_cluster)",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Kubernetes Cluster",
+        "multi": false,
+        "name": "cluster",
+        "options": [
+          {
+            "selected": false,
+            "text": "dev0",
+            "value": "dev0"
+          },
+          {
+            "selected": false,
+            "text": "preprod0",
+            "value": "preprod0"
+          },
+          {
+            "selected": false,
+            "text": "prod0",
+            "value": "prod0"
+          },
+          {
+            "selected": true,
+            "text": "staging0",
+            "value": "staging0"
+          }
+        ],
+        "query": "label_values(kubernetes_cluster)",
+        "refresh": 0,
+        "regex": "/dev0|staging0|prod0/",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      }
+    ]
   },
   "time": {
     "from": "now-3h",
