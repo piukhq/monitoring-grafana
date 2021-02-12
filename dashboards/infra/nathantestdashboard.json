@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1613134180185,
+  "iteration": 1613143027793,
   "links": [],
   "panels": [
     {
@@ -79,9 +79,9 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(iris_response_by_status_total{kubernetes_cluster=\"$cluster\"})",
+          "expr": "sum(iris_response_by_status_total{kubernetes_cluster=\"$cluster\"}) by (status)",
           "interval": "",
-          "legendFormat": "",
+          "legendFormat": "{{status}}",
           "refId": "A"
         }
       ],
@@ -1219,8 +1219,8 @@
         "allValue": null,
         "current": {
           "selected": true,
-          "text": "dev0",
-          "value": "dev0"
+          "text": "staging0",
+          "value": "staging0"
         },
         "datasource": "Prometheus",
         "definition": "label_values(kubernetes_cluster)",
@@ -1231,7 +1231,7 @@
         "name": "cluster",
         "options": [
           {
-            "selected": true,
+            "selected": false,
             "text": "dev0",
             "value": "dev0"
           },
@@ -1246,7 +1246,7 @@
             "value": "prod0"
           },
           {
-            "selected": false,
+            "selected": true,
             "text": "staging0",
             "value": "staging0"
           }
