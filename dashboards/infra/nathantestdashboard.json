@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1613570909264,
+  "iteration": 1613577104297,
   "links": [],
   "panels": [
     {
@@ -77,9 +77,9 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(membership_card_status_change_total{kubernetes_cluster=\"$cluster\"}) by (scheme, status_change)",
+          "expr": "sum(membership_card_status_change_total{kubernetes_cluster=\"$cluster\"}) by (scheme, status_change, channel)",
           "interval": "",
-          "legendFormat": "{{scheme}} - {{status_change}}",
+          "legendFormat": "{{scheme}} -- {{channel}} -- {{status_change}}",
           "refId": "A"
         }
       ],
