@@ -77,7 +77,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(membership_card_status_change_total{kubernetes_cluster=\"$cluster\"}) by (scheme, status_change, channel)",
+          "expr": "sum(membership_card_status_change_total{kubernetes_cluster=\"$cluster\", scheme=\"$scheme\", channel=\"$channel\"}) by (scheme, status_change, channel)",
           "interval": "",
           "legendFormat": "{{scheme}} -- {{channel}} -- {{status_change}}",
           "refId": "A"
@@ -1364,6 +1364,480 @@
         "query": "label_values(kubernetes_cluster)",
         "refresh": 0,
         "regex": "/dev0|staging0|prod0/",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+          "selected": false,
+          "text": "com.barclays.bmb",
+          "value": "com.barclays.bmb"
+        },
+        "datasource": "Prometheus",
+        "definition": "label_values(channel)",
+        "hide": 0,
+        "includeAll": false,
+        "label": "channel",
+        "multi": false,
+        "name": "channel",
+        "options": [
+          {
+            "selected": true,
+            "text": "com.barclays.bmb",
+            "value": "com.barclays.bmb"
+          },
+          {
+            "selected": false,
+            "text": "com.bink.bink20dev",
+            "value": "com.bink.bink20dev"
+          },
+          {
+            "selected": false,
+            "text": "com.bink.wallet",
+            "value": "com.bink.wallet"
+          },
+          {
+            "selected": false,
+            "text": "com.wasabi.bink.web",
+            "value": "com.wasabi.bink.web"
+          }
+        ],
+        "query": "label_values(channel)",
+        "refresh": 0,
+        "regex": "/com.+/",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+          "selected": false,
+          "text": "Beales",
+          "value": "Beales"
+        },
+        "datasource": "Prometheus",
+        "definition": "label_values(scheme)",
+        "hide": 0,
+        "includeAll": false,
+        "label": "scheme",
+        "multi": false,
+        "name": "scheme",
+        "options": [
+          {
+            "selected": true,
+            "text": "Beales",
+            "value": "Beales"
+          },
+          {
+            "selected": false,
+            "text": "advantage-card",
+            "value": "advantage-card"
+          },
+          {
+            "selected": false,
+            "text": "asia-miles",
+            "value": "asia-miles"
+          },
+          {
+            "selected": false,
+            "text": "beales",
+            "value": "beales"
+          },
+          {
+            "selected": false,
+            "text": "beefeater-grill-reward-club",
+            "value": "beefeater-grill-reward-club"
+          },
+          {
+            "selected": false,
+            "text": "bonus-club",
+            "value": "bonus-club"
+          },
+          {
+            "selected": false,
+            "text": "bq-club",
+            "value": "bq-club"
+          },
+          {
+            "selected": false,
+            "text": "burger-king-rewards",
+            "value": "burger-king-rewards"
+          },
+          {
+            "selected": false,
+            "text": "club-individual",
+            "value": "club-individual"
+          },
+          {
+            "selected": false,
+            "text": "coffee-club",
+            "value": "coffee-club"
+          },
+          {
+            "selected": false,
+            "text": "colonels-club",
+            "value": "colonels-club"
+          },
+          {
+            "selected": false,
+            "text": "cooperative-mock",
+            "value": "cooperative-mock"
+          },
+          {
+            "selected": false,
+            "text": "debenhams",
+            "value": "debenhams"
+          },
+          {
+            "selected": false,
+            "text": "esquires-coffee",
+            "value": "esquires-coffee"
+          },
+          {
+            "selected": false,
+            "text": "executive-club",
+            "value": "executive-club"
+          },
+          {
+            "selected": false,
+            "text": "explore-more",
+            "value": "explore-more"
+          },
+          {
+            "selected": false,
+            "text": "fatface",
+            "value": "fatface"
+          },
+          {
+            "selected": false,
+            "text": "foyalty",
+            "value": "foyalty"
+          },
+          {
+            "selected": false,
+            "text": "friends-of-krispy-kreme",
+            "value": "friends-of-krispy-kreme"
+          },
+          {
+            "selected": false,
+            "text": "go-outdoors",
+            "value": "go-outdoors"
+          },
+          {
+            "selected": false,
+            "text": "handm-club",
+            "value": "handm-club"
+          },
+          {
+            "selected": false,
+            "text": "harrods-rewards",
+            "value": "harrods-rewards"
+          },
+          {
+            "selected": false,
+            "text": "harvey-nichols",
+            "value": "harvey-nichols"
+          },
+          {
+            "selected": false,
+            "text": "harvey-nichols-mock",
+            "value": "harvey-nichols-mock"
+          },
+          {
+            "selected": false,
+            "text": "health-beautycard",
+            "value": "health-beautycard"
+          },
+          {
+            "selected": false,
+            "text": "heathrow-rewards",
+            "value": "heathrow-rewards"
+          },
+          {
+            "selected": false,
+            "text": "hilton-hhonors",
+            "value": "hilton-hhonors"
+          },
+          {
+            "selected": false,
+            "text": "hotel-chocolat",
+            "value": "hotel-chocolat"
+          },
+          {
+            "selected": false,
+            "text": "https",
+            "value": "https"
+          },
+          {
+            "selected": false,
+            "text": "iberia-plus",
+            "value": "iberia-plus"
+          },
+          {
+            "selected": false,
+            "text": "iceland-bonus-card",
+            "value": "iceland-bonus-card"
+          },
+          {
+            "selected": false,
+            "text": "iceland-bonus-card-mock",
+            "value": "iceland-bonus-card-mock"
+          },
+          {
+            "selected": false,
+            "text": "ikea",
+            "value": "ikea"
+          },
+          {
+            "selected": false,
+            "text": "love-your-body",
+            "value": "love-your-body"
+          },
+          {
+            "selected": false,
+            "text": "m-co-loyalty-card",
+            "value": "m-co-loyalty-card"
+          },
+          {
+            "selected": false,
+            "text": "matalan-reward-card",
+            "value": "matalan-reward-card"
+          },
+          {
+            "selected": false,
+            "text": "match-more",
+            "value": "match-more"
+          },
+          {
+            "selected": false,
+            "text": "millemiglia",
+            "value": "millemiglia"
+          },
+          {
+            "selected": false,
+            "text": "monsoon",
+            "value": "monsoon"
+          },
+          {
+            "selected": false,
+            "text": "my-john-lewis",
+            "value": "my-john-lewis"
+          },
+          {
+            "selected": false,
+            "text": "my-opc",
+            "value": "my-opc"
+          },
+          {
+            "selected": false,
+            "text": "my-waitrose",
+            "value": "my-waitrose"
+          },
+          {
+            "selected": false,
+            "text": "mystarbucks-rewards",
+            "value": "mystarbucks-rewards"
+          },
+          {
+            "selected": false,
+            "text": "nandos-card",
+            "value": "nandos-card"
+          },
+          {
+            "selected": false,
+            "text": "national-trust",
+            "value": "national-trust"
+          },
+          {
+            "selected": false,
+            "text": "nectar",
+            "value": "nectar"
+          },
+          {
+            "selected": false,
+            "text": "performance-mock-17",
+            "value": "performance-mock-17"
+          },
+          {
+            "selected": false,
+            "text": "performance-mock-18",
+            "value": "performance-mock-18"
+          },
+          {
+            "selected": false,
+            "text": "performance-mock-2",
+            "value": "performance-mock-2"
+          },
+          {
+            "selected": false,
+            "text": "performance-mock-3",
+            "value": "performance-mock-3"
+          },
+          {
+            "selected": false,
+            "text": "performance-mock-4",
+            "value": "performance-mock-4"
+          },
+          {
+            "selected": false,
+            "text": "performance-mock-5",
+            "value": "performance-mock-5"
+          },
+          {
+            "selected": false,
+            "text": "performance-mock-6",
+            "value": "performance-mock-6"
+          },
+          {
+            "selected": false,
+            "text": "performance-mock-7",
+            "value": "performance-mock-7"
+          },
+          {
+            "selected": false,
+            "text": "performance-voucher-mock-1",
+            "value": "performance-voucher-mock-1"
+          },
+          {
+            "selected": false,
+            "text": "pets-at-home",
+            "value": "pets-at-home"
+          },
+          {
+            "selected": false,
+            "text": "play-points",
+            "value": "play-points"
+          },
+          {
+            "selected": false,
+            "text": "qachannelswitchingtestinginstaging",
+            "value": "qachannelswitchingtestinginstaging"
+          },
+          {
+            "selected": false,
+            "text": "qaschemetest2",
+            "value": "qaschemetest2"
+          },
+          {
+            "selected": false,
+            "text": "recognition-reward-card",
+            "value": "recognition-reward-card"
+          },
+          {
+            "selected": false,
+            "text": "rewards-for-life",
+            "value": "rewards-for-life"
+          },
+          {
+            "selected": false,
+            "text": "russell-and-bromley",
+            "value": "russell-and-bromley"
+          },
+          {
+            "selected": false,
+            "text": "shell-drivers-club",
+            "value": "shell-drivers-club"
+          },
+          {
+            "selected": false,
+            "text": "space-nk",
+            "value": "space-nk"
+          },
+          {
+            "selected": false,
+            "text": "sparks",
+            "value": "sparks"
+          },
+          {
+            "selected": false,
+            "text": "star-rewards",
+            "value": "star-rewards"
+          },
+          {
+            "selected": false,
+            "text": "subcard",
+            "value": "subcard"
+          },
+          {
+            "selected": false,
+            "text": "swiss-miles-more",
+            "value": "swiss-miles-more"
+          },
+          {
+            "selected": false,
+            "text": "tasty-rewards",
+            "value": "tasty-rewards"
+          },
+          {
+            "selected": false,
+            "text": "tesco-clubcard1",
+            "value": "tesco-clubcard1"
+          },
+          {
+            "selected": false,
+            "text": "the-co-operative-membership",
+            "value": "the-co-operative-membership"
+          },
+          {
+            "selected": false,
+            "text": "the-perfume-shop",
+            "value": "the-perfume-shop"
+          },
+          {
+            "selected": false,
+            "text": "the-waterstones-card",
+            "value": "the-waterstones-card"
+          },
+          {
+            "selected": false,
+            "text": "tkmaxx",
+            "value": "tkmaxx"
+          },
+          {
+            "selected": false,
+            "text": "together-rewards-card",
+            "value": "together-rewards-card"
+          },
+          {
+            "selected": false,
+            "text": "towsure",
+            "value": "towsure"
+          },
+          {
+            "selected": false,
+            "text": "treat-me",
+            "value": "treat-me"
+          },
+          {
+            "selected": false,
+            "text": "vibe-club",
+            "value": "vibe-club"
+          },
+          {
+            "selected": false,
+            "text": "wasabi-club",
+            "value": "wasabi-club"
+          },
+          {
+            "selected": false,
+            "text": "whsmith-rewards-mock",
+            "value": "whsmith-rewards-mock"
+          }
+        ],
+        "query": "label_values(scheme)",
+        "refresh": 0,
+        "regex": "",
         "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": "",
