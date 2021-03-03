@@ -22,18 +22,30 @@
         "datasource": "Prometheus",
         "fieldConfig": {
           "defaults": {
-            "custom": {},
-            "mappings": [],
+            "custom": {
+              "align": null
+            },
+            "mappings": [
+              {
+                "from": "95",
+                "id": 0,
+                "operator": "",
+                "text": "Pass",
+                "to": "100",
+                "type": 2,
+                "value": ""
+              }
+            ],
             "thresholds": {
-              "mode": "absolute",
+              "mode": "percentage",
               "steps": [
                 {
-                  "color": "green",
+                  "color": "red",
                   "value": null
                 },
                 {
-                  "color": "red",
-                  "value": 80
+                  "color": "green",
+                  "value": ""
                 }
               ]
             }
@@ -46,10 +58,10 @@
           "x": 0,
           "y": 0
         },
-        "id": 3,
+        "id": 10,
         "options": {
           "colorMode": "value",
-          "graphMode": "area",
+          "graphMode": "none",
           "justifyMode": "auto",
           "orientation": "auto",
           "reduceOptions": {
@@ -63,14 +75,24 @@
         "pluginVersion": "7.0.3",
         "targets": [
           {
-            "expr": "sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"service\", channel=\"com.barclays.bmb\", method=\"POST\", le=\"0.15\"} [1h])) by (job) / sum(rate(django_http_requests_latency_seconds_by_view_method_count{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"service\", channel=\"com.barclays.bmb\", method=\"POST\"} [1h])) by (job) * 100\n",
+            "expr": "((sum(django_http_requests_latency_seconds_by_view_method_sum{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"service\", channel=\"com.barclays.bmb\", method=\"POST\"})) / (sum(django_http_requests_latency_seconds_by_view_method_count{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"service\", channel=\"com.barclays.bmb\", method=\"POST\"}))) * 10",
+            "format": "time_series",
             "interval": "",
+            "legendFormat": "Average Response time (MS)",
+            "refId": "C"
+          },
+          {
+            "expr": "sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"service\", channel=\"com.barclays.bmb\", method=\"POST\", le=\"0.15\"} [2m])) by (job) / sum(rate(django_http_requests_latency_seconds_by_view_method_count{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"service\", channel=\"com.barclays.bmb\", method=\"POST\"} [2m])) by (job) * 100 > 95\n",
+            "format": "time_series",
+            "interval": "30m",
             "legendFormat": "95th",
             "refId": "A"
           },
           {
-            "expr": "sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"service\", channel=\"com.barclays.bmb\", method=\"POST\", le=\"0.45\"} [1h])) by (job) / sum(rate(django_http_requests_latency_seconds_by_view_method_count{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"service\", channel=\"com.barclays.bmb\", method=\"POST\"} [1h])) by (job) * 100",
-            "interval": "",
+            "expr": "sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"service\", channel=\"com.barclays.bmb\", method=\"POST\", le=\"0.45\"} [2m])) by (job) / sum(rate(django_http_requests_latency_seconds_by_view_method_count{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"service\", channel=\"com.barclays.bmb\", method=\"POST\"} [2m])) by (job) * 100 > 99",
+            "format": "time_series",
+            "hide": false,
+            "interval": "30m",
             "legendFormat": "99th ",
             "refId": "B"
           }
@@ -84,80 +106,30 @@
         "datasource": "Prometheus",
         "fieldConfig": {
           "defaults": {
-            "custom": {},
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 9,
-          "w": 12,
-          "x": 12,
-          "y": 0
-        },
-        "id": 2,
-        "options": {
-          "colorMode": "value",
-          "graphMode": "area",
-          "justifyMode": "auto",
-          "orientation": "auto",
-          "reduceOptions": {
-            "calcs": [
-              "mean"
+            "custom": {
+              "align": null
+            },
+            "mappings": [
+              {
+                "from": "95",
+                "id": 0,
+                "operator": "",
+                "text": "Pass",
+                "to": "100",
+                "type": 2,
+                "value": ""
+              }
             ],
-            "fields": "",
-            "values": false
-          }
-        },
-        "pluginVersion": "7.0.3",
-        "targets": [
-          {
-            "expr": "sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"membership-cards\", channel=\"com.barclays.bmb\", method=\"GET\", le=\"0.125\"} [1h])) by (job) / sum(rate(django_http_requests_latency_seconds_by_view_method_count{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"membership-cards\", channel=\"com.barclays.bmb\", method=\"GET\"} [1h])) by (job) * 100\n",
-            "interval": "",
-            "legendFormat": "95th",
-            "refId": "A"
-          },
-          {
-            "expr": "sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"membership-cards\", channel=\"com.barclays.bmb\", method=\"GET\", le=\"0.375\"} [1h])) by (job) / sum(rate(django_http_requests_latency_seconds_by_view_method_count{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"membership-cards\", channel=\"com.barclays.bmb\", method=\"GET\"} [1h])) by (job) * 100\n",
-            "interval": "",
-            "legendFormat": "99th",
-            "refId": "B"
-          }
-        ],
-        "timeFrom": null,
-        "timeShift": null,
-        "title": "Retrieve Cards - Membership-cards - GET",
-        "type": "stat"
-      },
-      {
-        "datasource": "Prometheus",
-        "fieldConfig": {
-          "defaults": {
-            "custom": {},
-            "mappings": [],
             "thresholds": {
-              "mode": "absolute",
+              "mode": "percentage",
               "steps": [
                 {
-                  "color": "green",
+                  "color": "red",
                   "value": null
                 },
                 {
-                  "color": "red",
-                  "value": 80
+                  "color": "green",
+                  "value": ""
                 }
               ]
             }
@@ -170,10 +142,10 @@
           "x": 0,
           "y": 9
         },
-        "id": 4,
+        "id": 11,
         "options": {
           "colorMode": "value",
-          "graphMode": "area",
+          "graphMode": "none",
           "justifyMode": "auto",
           "orientation": "auto",
           "reduceOptions": {
@@ -187,331 +159,31 @@
         "pluginVersion": "7.0.3",
         "targets": [
           {
-            "expr": "sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"membership-plans\", channel=\"com.barclays.bmb\", method=\"GET\", le=\"0.15\"} [1h])) by (job) / sum(rate(django_http_requests_latency_seconds_by_view_method_count{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"membership-plans\", channel=\"com.barclays.bmb\", method=\"GET\"} [1h])) by (job) * 100\n",
+            "expr": "((sum(django_http_requests_latency_seconds_by_view_method_sum{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"membership-cards\", channel=\"com.barclays.bmb\", method=\"GET\"})) / (sum(django_http_requests_latency_seconds_by_view_method_count{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"membership-cards\", channel=\"com.barclays.bmb\", method=\"GET\"}))) * 10",
+            "format": "time_series",
             "interval": "",
+            "legendFormat": "Average Response time (MS)",
+            "refId": "C"
+          },
+          {
+            "expr": "sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"membership-cards\", channel=\"com.barclays.bmb\", method=\"GET\", le=\"0.15\"} [2m])) by (job) / sum(rate(django_http_requests_latency_seconds_by_view_method_count{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"membership-cards\", channel=\"com.barclays.bmb\", method=\"GET\"} [2m])) by (job) * 100 > 95\n",
+            "format": "time_series",
+            "interval": "30m",
             "legendFormat": "95th",
             "refId": "A"
           },
           {
-            "expr": "sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"membership-plans\", channel=\"com.barclays.bmb\", method=\"GET\", le=\"0.45\"} [1h])) by (job) / sum(rate(django_http_requests_latency_seconds_by_view_method_count{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"membership-plans\", channel=\"com.barclays.bmb\", method=\"GET\"} [1h])) by (job) * 100\n",
-            "interval": "",
-            "legendFormat": "99th",
+            "expr": "sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"service\", channel=\"com.barclays.bmb\", method=\"POST\", le=\"0.45\"} [2m])) by (job) / sum(rate(django_http_requests_latency_seconds_by_view_method_count{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"service\", channel=\"com.barclays.bmb\", method=\"POST\"} [2m])) by (job) * 100 > 99",
+            "format": "time_series",
+            "hide": false,
+            "interval": "30m",
+            "legendFormat": "99th ",
             "refId": "B"
           }
         ],
         "timeFrom": null,
         "timeShift": null,
-        "title": "Retrieve Plan Information - membership-plans - GET",
-        "type": "stat"
-      },
-      {
-        "datasource": "Prometheus",
-        "fieldConfig": {
-          "defaults": {
-            "custom": {},
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 9,
-          "w": 12,
-          "x": 12,
-          "y": 9
-        },
-        "id": 5,
-        "options": {
-          "colorMode": "value",
-          "graphMode": "area",
-          "justifyMode": "auto",
-          "orientation": "auto",
-          "reduceOptions": {
-            "calcs": [
-              "mean"
-            ],
-            "fields": "",
-            "values": false
-          }
-        },
-        "pluginVersion": "7.0.3",
-        "targets": [
-          {
-            "expr": "sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"membership-cards\", channel=\"com.barclays.bmb\", method=\"POST\", le=\"0.15\"} [1h])) by (job) / sum(rate(django_http_requests_latency_seconds_by_view_method_count{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"membership-cards\", channel=\"com.barclays.bmb\", method=\"POST\"} [1h])) by (job) * 100\n",
-            "interval": "",
-            "legendFormat": "95th",
-            "refId": "A"
-          },
-          {
-            "expr": "sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"membership-cards\", channel=\"com.barclays.bmb\", method=\"POST\", le=\"0.45\"} [1h])) by (job) / sum(rate(django_http_requests_latency_seconds_by_view_method_count{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"membership-cards\", channel=\"com.barclays.bmb\", method=\"POST\"} [1h])) by (job) * 100\n",
-            "interval": "",
-            "legendFormat": "99th",
-            "refId": "B"
-          }
-        ],
-        "timeFrom": null,
-        "timeShift": null,
-        "title": "Add / Join Membership - membership-cards - POST",
-        "type": "stat"
-      },
-      {
-        "datasource": "Prometheus",
-        "fieldConfig": {
-          "defaults": {
-            "custom": {},
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 9,
-          "w": 12,
-          "x": 0,
-          "y": 18
-        },
-        "id": 6,
-        "options": {
-          "colorMode": "value",
-          "graphMode": "area",
-          "justifyMode": "auto",
-          "orientation": "auto",
-          "reduceOptions": {
-            "calcs": [
-              "mean"
-            ],
-            "fields": "",
-            "values": false
-          }
-        },
-        "pluginVersion": "7.0.3",
-        "targets": [
-          {
-            "expr": "sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"payment-cards\", channel=\"com.barclays.bmb\", method=\"POST\", le=\"0.15\"} [1h])) by (job) / sum(rate(django_http_requests_latency_seconds_by_view_method_count{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"payment-cards\", channel=\"com.barclays.bmb\", method=\"POST\"} [1h])) by (job) * 100\n",
-            "interval": "",
-            "legendFormat": "95th",
-            "refId": "A"
-          },
-          {
-            "expr": "sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"payment-cards\", channel=\"com.barclays.bmb\", method=\"POST\", le=\"0.45\"} [1h])) by (job) / sum(rate(django_http_requests_latency_seconds_by_view_method_count{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"payment-cards\", channel=\"com.barclays.bmb\", method=\"POST\"} [1h])) by (job) * 100\n",
-            "interval": "",
-            "legendFormat": "99th",
-            "refId": "B"
-          }
-        ],
-        "timeFrom": null,
-        "timeShift": null,
-        "title": "Enrol Payment Card - payment-cards - POST",
-        "type": "stat"
-      },
-      {
-        "datasource": "Prometheus",
-        "fieldConfig": {
-          "defaults": {
-            "custom": {},
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 9,
-          "w": 12,
-          "x": 12,
-          "y": 18
-        },
-        "id": 7,
-        "options": {
-          "colorMode": "value",
-          "graphMode": "area",
-          "justifyMode": "auto",
-          "orientation": "auto",
-          "reduceOptions": {
-            "calcs": [
-              "mean"
-            ],
-            "fields": "",
-            "values": false
-          }
-        },
-        "pluginVersion": "7.0.3",
-        "targets": [
-          {
-            "expr": "sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"service\", channel=\"com.barclays.bmb\", method=\"DELETE\", le=\"0.15\"} [1h])) by (job) / sum(rate(django_http_requests_latency_seconds_by_view_method_count{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"service\", channel=\"com.barclays.bmb\", method=\"DELETE\"} [1h])) by (job) * 100\n",
-            "interval": "",
-            "legendFormat": "95th",
-            "refId": "A"
-          },
-          {
-            "expr": "sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"service\", channel=\"com.barclays.bmb\", method=\"DELETE\", le=\"0.45\"} [1h])) by (job) / sum(rate(django_http_requests_latency_seconds_by_view_method_count{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"service\", channel=\"com.barclays.bmb\", method=\"DELETE\"} [1h])) by (job) * 100\n",
-            "interval": "",
-            "legendFormat": "99th",
-            "refId": "B"
-          }
-        ],
-        "timeFrom": null,
-        "timeShift": null,
-        "title": "De-register - service - DELETE",
-        "type": "stat"
-      },
-      {
-        "datasource": "Prometheus",
-        "fieldConfig": {
-          "defaults": {
-            "custom": {},
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 9,
-          "w": 12,
-          "x": 0,
-          "y": 27
-        },
-        "id": 8,
-        "options": {
-          "colorMode": "value",
-          "graphMode": "area",
-          "justifyMode": "auto",
-          "orientation": "auto",
-          "reduceOptions": {
-            "calcs": [
-              "mean"
-            ],
-            "fields": "",
-            "values": false
-          }
-        },
-        "pluginVersion": "7.0.3",
-        "targets": [
-          {
-            "expr": "sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"membership-card\", channel=\"com.barclays.bmb\", method=\"DELETE\", le=\"0.15\"} [1h])) by (job) / sum(rate(django_http_requests_latency_seconds_by_view_method_count{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"membership-card\", channel=\"com.barclays.bmb\", method=\"DELETE\"} [1h])) by (job) * 100\n",
-            "interval": "",
-            "legendFormat": "95th",
-            "refId": "A"
-          },
-          {
-            "expr": "sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"membership-card\", channel=\"com.barclays.bmb\", method=\"DELETE\", le=\"0.45\"} [1h])) by (job) / sum(rate(django_http_requests_latency_seconds_by_view_method_count{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"membership-card\", channel=\"com.barclays.bmb\", method=\"DELETE\"} [1h])) by (job) * 100\n",
-            "interval": "",
-            "legendFormat": "99th",
-            "refId": "B"
-          }
-        ],
-        "timeFrom": null,
-        "timeShift": null,
-        "title": "Remove Membership Cards - membership-card - DELETE",
-        "type": "stat"
-      },
-      {
-        "datasource": "Prometheus",
-        "fieldConfig": {
-          "defaults": {
-            "custom": {},
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 9,
-          "w": 12,
-          "x": 12,
-          "y": 27
-        },
-        "id": 9,
-        "options": {
-          "colorMode": "value",
-          "graphMode": "area",
-          "justifyMode": "auto",
-          "orientation": "auto",
-          "reduceOptions": {
-            "calcs": [
-              "mean"
-            ],
-            "fields": "",
-            "values": false
-          }
-        },
-        "pluginVersion": "7.0.3",
-        "targets": [
-          {
-            "expr": "sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"payment-cards\", channel=\"com.barclays.bmb\", method=\"GET\", le=\"0.15\"} [1h])) by (job) / sum(rate(django_http_requests_latency_seconds_by_view_method_count{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"payment-cards\", channel=\"com.barclays.bmb\", method=\"GET\"} [1h])) by (job) * 100\n",
-            "interval": "",
-            "legendFormat": "95th",
-            "refId": "A"
-          },
-          {
-            "expr": "sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"payment-cards\", channel=\"com.barclays.bmb\", method=\"GET\", le=\"0.45\"} [1h])) by (job) / sum(rate(django_http_requests_latency_seconds_by_view_method_count{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"payment-cards\", channel=\"com.barclays.bmb\", method=\"GET\"} [1h])) by (job) * 100\n",
-            "interval": "",
-            "legendFormat": "99th",
-            "refId": "B"
-          }
-        ],
-        "timeFrom": null,
-        "timeShift": null,
-        "title": "Retrieve Linked Payment Cards - payment-cards - GET",
+        "title": "Register - service - POST",
         "type": "stat"
       }
     ],
@@ -522,7 +194,7 @@
       "list": []
     },
     "time": {
-      "from": "now-30d",
+      "from": "now/M",
       "to": "now"
     },
     "timepicker": {
@@ -541,5 +213,5 @@
     "timezone": "",
     "title": "Barclays SLA Info",
     "uid": "Xu4T59sGz",
-    "version": 2
+    "version": 3
   }
