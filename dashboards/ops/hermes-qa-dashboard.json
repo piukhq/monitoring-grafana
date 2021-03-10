@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1609858150440,
+  "iteration": 1615394996640,
   "links": [],
   "panels": [
     {
@@ -2881,27 +2881,27 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", method=\"PATCH\", job=\"hermes\", status=~\"2\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service|new_login|register_user|payment-link|membership-link\", channel=\"$channel\"}) by (status, view)",
+          "expr": "sum(rate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", method=\"PATCH\", job=\"hermes\", status=~\"2\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service|new_login|register_user|payment-link|membership-link\", channel=\"$channel\"}[2m])) by (status, view)",
           "hide": false,
           "interval": "",
           "legendFormat": "{{status}}--{{view}}",
           "refId": "A"
         },
         {
-          "expr": "sum(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"PATCH\", status=~\"3\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service|new_login|register_user|payment-link|membership-link\", channel=\"$channel\"}) by (status, view)",
+          "expr": "sum(rate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"PATCH\", status=~\"3\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service|new_login|register_user|payment-link|membership-link\", channel=\"$channel\"}[2m])) by (status, view)",
           "hide": false,
           "interval": "",
           "legendFormat": "{{status}}--{{view}}",
           "refId": "B"
         },
         {
-          "expr": "sum(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"PATCH\", status=~\"4\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service|new_login|register_user|payment-link|membership-link\", channel=\"$channel\"}) by (status, view)",
+          "expr": "sum(rate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"PATCH\", status=~\"4\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service|new_login|register_user|payment-link|membership-link\", channel=\"$channel\"}[2m])) by (status, view)",
           "interval": "",
           "legendFormat": "{{status}}--{{view}}",
           "refId": "C"
         },
         {
-          "expr": "sum(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"PATCH\", status=~\"5\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service|new_login|register_user|payment-link|membership-link\", channel=\"$channel\"}) by (status, view)",
+          "expr": "sum(rate(django_http_responses_total_by_status_view_method_total{kubernetes_cluster=\"$cluster\", job=\"hermes\", method=\"PATCH\", status=~\"5\\\\d\\\\d\", view=~\"membership-card|membership-cards|payment-card|payment-cards|service|new_login|register_user|payment-link|membership-link\", channel=\"$channel\"}[2m])) by (status, view)",
           "interval": "",
           "legendFormat": "",
           "refId": "D"
@@ -2986,9 +2986,9 @@
       {
         "allValue": null,
         "current": {
-          "selected": true,
-          "text": "com.barclays.bmb",
-          "value": "com.barclays.bmb"
+          "selected": false,
+          "text": "com.bink.wallet",
+          "value": "com.bink.wallet"
         },
         "datasource": "Prometheus",
         "definition": "label_values(channel)",
@@ -2999,12 +2999,12 @@
         "name": "channel",
         "options": [
           {
-            "selected": true,
+            "selected": false,
             "text": "com.barclays.bmb",
             "value": "com.barclays.bmb"
           },
           {
-            "selected": false,
+            "selected": true,
             "text": "com.bink.wallet",
             "value": "com.bink.wallet"
           }
@@ -3023,7 +3023,7 @@
     ]
   },
   "time": {
-    "from": "now-24h",
+    "from": "now-3h",
     "to": "now"
   },
   "timepicker": {
@@ -3042,5 +3042,5 @@
   "timezone": "",
   "title": "Hermes Statistics",
   "uid": "pvgk7R0Gz",
-  "version": 1
+  "version": 70700
 }
