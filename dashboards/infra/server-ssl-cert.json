@@ -16,7 +16,7 @@
   "editable": true,
   "gnetId": 11279,
   "graphTooltip": 0,
-  "iteration": 1595597226707,
+  "iteration": 1619694223990,
   "links": [],
   "panels": [
     {
@@ -167,7 +167,7 @@
       ],
       "targets": [
         {
-          "expr": "((ssl_cert_not_after{instance=~\"$instance\",job=~\"$job\",cn!~\".*(COMODO RSA Domain Validation|Sectigo RSA Domain Validation|RSA Certification Authority|Let's Encrypt Authority X3).*\"} - time())/24/60/60)",
+          "expr": "((ssl_cert_not_after{cn!~\".*(COMODO RSA Domain Validation|Sectigo RSA Domain Validation|RSA Certification Authority|Let's Encrypt Authority X3|R3).*\"} - time())/24/60/60)",
           "format": "table",
           "instant": true,
           "interval": "",
@@ -334,6 +334,7 @@
         "allValue": null,
         "current": {
           "selected": true,
+          "tags": [],
           "text": "All",
           "value": [
             "$__all"
