@@ -15,231 +15,20 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": null,
+  "iteration": 1613577104297,
   "links": [],
   "panels": [
     {
-      "datasource": "Prometheus",
-      "fieldConfig": {
-        "defaults": {
-          "custom": {},
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "red",
-                "value": null
-              },
-              {
-                "color": "green",
-                "value": 0.8
-              }
-            ]
-          },
-          "unit": "percentunit"
-        },
-        "overrides": []
-      },
+      "datasource": null,
       "gridPos": {
-        "h": 4,
-        "w": 3,
+        "h": 1,
+        "w": 24,
         "x": 0,
         "y": 0
       },
-      "id": 6,
-      "options": {
-        "colorMode": "background",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        }
-      },
-      "pluginVersion": "7.0.3",
-      "targets": [
-        {
-          "expr": "sum(kube_pod_status_ready{kubernetes_cluster=\"dev0\", pod=~\"red-october-.+\", pod!~\"red-october-migrator-.+\" ,condition=\"true\"}) / sum(kube_deployment_status_replicas{kubernetes_cluster=\"dev0\", deployment=\"red-october\"})",
-          "interval": "",
-          "legendFormat": "",
-          "refId": "A"
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Current Available Pods",
-      "type": "stat"
-    },
-    {
-      "datasource": "Prometheus",
-      "fieldConfig": {
-        "defaults": {
-          "custom": {},
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "red",
-                "value": null
-              },
-              {
-                "color": "green",
-                "value": 0.8
-              }
-            ]
-          },
-          "unit": "percentunit"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 3,
-        "x": 7,
-        "y": 0
-      },
-      "id": 7,
-      "options": {
-        "colorMode": "background",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        }
-      },
-      "pluginVersion": "7.0.3",
-      "targets": [
-        {
-          "expr": "kube_deployment_status_replicas_available{kubernetes_cluster=\"dev0\", deployment=\"red-october\"} / kube_deployment_status_replicas{kubernetes_cluster=\"dev0\", deployment=\"red-october\"}",
-          "interval": "",
-          "legendFormat": "",
-          "refId": "A"
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Current Available Pods",
-      "type": "stat"
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "Prometheus",
-      "fieldConfig": {
-        "defaults": {
-          "custom": {},
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 4
-      },
-      "hiddenSeries": false,
-      "id": 4,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "dataLinks": []
-      },
-      "percentage": false,
-      "pluginVersion": "7.0.3",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "kube_deployment_status_replicas{kubernetes_cluster=\"dev0\", deployment=\"red-october\"}",
-          "interval": "",
-          "legendFormat": "{{deployment}}",
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Total Number of Pods",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
+      "id": 36,
+      "title": "LOY1380",
+      "type": "row"
     },
     {
       "aliasColors": {},
@@ -256,13 +45,13 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 9,
+        "h": 8,
         "w": 12,
         "x": 0,
-        "y": 12
+        "y": 1
       },
       "hiddenSeries": false,
-      "id": 2,
+      "id": 34,
       "legend": {
         "avg": false,
         "current": false,
@@ -288,9 +77,9 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(kube_pod_status_ready{kubernetes_cluster=\"dev0\", pod=~\"red-october-.+\", pod!~\"red-october-migrator-.+\" ,condition=\"true\"})",
+          "expr": "sum(membership_card_status_change_total{kubernetes_cluster=\"$cluster\", scheme=\"$scheme\", channel=\"$channel\"}) by (scheme, status_change, channel)",
           "interval": "",
-          "legendFormat": "Red October",
+          "legendFormat": "{{scheme}} -- {{channel}} -- {{status_change}}",
           "refId": "A"
         }
       ],
@@ -298,7 +87,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Number of Ready Red October pods",
+      "title": "membership_card_status_change",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -314,6 +103,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:139",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -322,6 +112,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:140",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -334,16 +125,1731 @@
         "align": false,
         "alignLevel": null
       }
+    },
+    {
+      "collapsed": true,
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 9
+      },
+      "id": 30,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "Prometheus",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
+          "fill": 1,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 1
+          },
+          "hiddenSeries": false,
+          "id": 32,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "nullPointMode": "null",
+          "options": {
+            "dataLinks": []
+          },
+          "percentage": false,
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(iris_response_by_status_total{kubernetes_cluster=\"$cluster\"}) by (status)",
+              "interval": "",
+              "legendFormat": "{{status}}",
+              "refId": "A"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Iris response by status",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:71",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:72",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        }
+      ],
+      "title": "LOY-1515",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 10
+      },
+      "id": 26,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "Prometheus",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
+          "fill": 1,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 1
+          },
+          "hiddenSeries": false,
+          "id": 28,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "nullPointMode": "null",
+          "options": {
+            "dataLinks": []
+          },
+          "percentage": false,
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(lethe_request_by_template_total{kubernetes_cluster=\"$cluster\"} ) by (template)",
+              "interval": "",
+              "legendFormat": "{{template}}",
+              "refId": "A"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Lethe requests",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:227",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:228",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        }
+      ],
+      "title": "LOY-1516",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 11
+      },
+      "id": 14,
+      "panels": [
+        {
+          "content": "\n# DEVOPS-1211\n* MER-796\n* MER-788\n* MER-784\n\n\n",
+          "datasource": null,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 5,
+            "w": 24,
+            "x": 0,
+            "y": 1
+          },
+          "id": 10,
+          "mode": "markdown",
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Ticket",
+          "type": "text"
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "Prometheus",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {},
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "fill": 1,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 7,
+            "w": 8,
+            "x": 0,
+            "y": 6
+          },
+          "hiddenSeries": false,
+          "id": 4,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "nullPointMode": "null as zero",
+          "options": {
+            "dataLinks": []
+          },
+          "percentage": false,
+          "pluginVersion": "7.0.3",
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(log_in_success_total) by (slug,kubernetes_cluster)",
+              "interval": "",
+              "legendFormat": "{{slug}} -- {{kubernetes_cluster}}",
+              "refId": "A"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Log_in_success",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:163",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:164",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "Prometheus",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {},
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "fill": 1,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 7,
+            "w": 8,
+            "x": 8,
+            "y": 6
+          },
+          "hiddenSeries": false,
+          "id": 5,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "nullPointMode": "null as zero",
+          "options": {
+            "dataLinks": []
+          },
+          "percentage": false,
+          "pluginVersion": "7.0.3",
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(log_in_fail_total) by (slug,kubernetes_cluster)",
+              "interval": "",
+              "legendFormat": "{{slug}} -- {{kubernetes_cluster}}",
+              "refId": "A"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Log_in_fail",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:163",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:164",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "Prometheus",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {},
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "fill": 1,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 7,
+            "w": 8,
+            "x": 16,
+            "y": 6
+          },
+          "hiddenSeries": false,
+          "id": 8,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "nullPointMode": "null as zero",
+          "options": {
+            "dataLinks": []
+          },
+          "percentage": false,
+          "pluginVersion": "7.0.3",
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(request_latency_seconds_count) by (slug, response_code, kubernetes_cluster)",
+              "interval": "",
+              "legendFormat": "{{response_code}} -- {{slug}} -- {{kubernetes_cluster}}",
+              "refId": "A"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Response code",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:163",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:164",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "Prometheus",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {},
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "fill": 1,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 6,
+            "w": 12,
+            "x": 0,
+            "y": 13
+          },
+          "hiddenSeries": false,
+          "id": 6,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "nullPointMode": "null as zero",
+          "options": {
+            "dataLinks": []
+          },
+          "percentage": false,
+          "pluginVersion": "7.0.3",
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(register_success_total) by (slug, kubernetes_cluster, channel)",
+              "interval": "",
+              "legendFormat": "{{slug}} -- {{channel}} --  {{kubernetes_cluster}}",
+              "refId": "A"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "register_success",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:163",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:164",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "Prometheus",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {},
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "fill": 1,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 6,
+            "w": 12,
+            "x": 12,
+            "y": 13
+          },
+          "hiddenSeries": false,
+          "id": 7,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "nullPointMode": "null as zero",
+          "options": {
+            "dataLinks": []
+          },
+          "percentage": false,
+          "pluginVersion": "7.0.3",
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(register_fail_total) by (slug,kubernetes_cluster, channel)",
+              "interval": "",
+              "legendFormat": "{{slug}} -- {{channel}} --  {{kubernetes_cluster}}",
+              "refId": "A"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "register_fail",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:163",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:164",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "Prometheus",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
+          "fill": 1,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 10,
+            "w": 11,
+            "x": 0,
+            "y": 19
+          },
+          "hiddenSeries": false,
+          "id": 12,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "nullPointMode": "null as zero",
+          "options": {
+            "dataLinks": []
+          },
+          "percentage": false,
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "histogram_quantile(0.50,sum(rate(request_latency_seconds_bucket{slug=\"harvey-nichols\"} [5m])) by (le, slug, kubernetes_cluster, endpoint, response_code))",
+              "hide": false,
+              "interval": "",
+              "legendFormat": "{{slug}} --  {{response_code}} -- {{kubernetes_cluster}} -- {{endpoint}}",
+              "refId": "B"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "request_latency_seconds_bucket",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:157",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:158",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        }
+      ],
+      "title": "DevOps - 1211",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 12
+      },
+      "id": 16,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "Prometheus",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
+          "fill": 1,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 8,
+            "w": 8,
+            "x": 0,
+            "y": 2
+          },
+          "hiddenSeries": false,
+          "id": 18,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "nullPointMode": "null as zero",
+          "options": {
+            "dataLinks": []
+          },
+          "percentage": false,
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(hermes_current_vop_activation_status_total{kubernetes_cluster=\"$cluster\"}) by (status)",
+              "interval": "",
+              "legendFormat": "{{status}}",
+              "refId": "B"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "VOP activation status",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:171",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:172",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        }
+      ],
+      "title": "LOY1432",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 13
+      },
+      "id": 20,
+      "panels": [
+        {
+          "datasource": "Prometheus",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {},
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 8,
+            "x": 0,
+            "y": 5
+          },
+          "id": 22,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "none",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "mean"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "pluginVersion": "7.0.3",
+          "targets": [
+            {
+              "expr": "hermes_current_users_total{kubernetes_cluster=\"$cluster\", client_app=\"Barclays Mobile Banking\"}",
+              "interval": "",
+              "legendFormat": "",
+              "refId": "A"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Current Users",
+          "type": "stat"
+        },
+        {
+          "datasource": "Prometheus",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {},
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 8,
+            "x": 8,
+            "y": 5
+          },
+          "id": 23,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "none",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "mean"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "pluginVersion": "7.0.3",
+          "targets": [
+            {
+              "expr": "hermes_current_payment_cards_total{kubernetes_cluster=\"$cluster\", client_app=\"Barclays Mobile Banking\"}",
+              "interval": "",
+              "legendFormat": "{{client_app}}",
+              "refId": "A"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Current Payment Cards",
+          "type": "stat"
+        },
+        {
+          "datasource": "Prometheus",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {},
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 8,
+            "x": 16,
+            "y": 5
+          },
+          "id": 24,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "none",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "mean"
+              ],
+              "fields": "",
+              "values": false
+            }
+          },
+          "pluginVersion": "7.0.3",
+          "targets": [
+            {
+              "expr": "hermes_current_membership_cards_total{kubernetes_cluster=\"$cluster\", client_app=\"Barclays Mobile Banking\"}",
+              "interval": "",
+              "legendFormat": "{{client_app}}",
+              "refId": "A"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Current Membership Cards",
+          "type": "stat"
+        }
+      ],
+      "title": "LOY1479",
+      "type": "row"
     }
   ],
   "schemaVersion": 25,
   "style": "dark",
   "tags": [],
   "templating": {
-    "list": []
+    "list": [
+      {
+        "allValue": null,
+        "current": {
+          "selected": true,
+          "text": "dev0",
+          "value": "dev0"
+        },
+        "datasource": "Prometheus",
+        "definition": "label_values(kubernetes_cluster)",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Kubernetes Cluster",
+        "multi": false,
+        "name": "cluster",
+        "options": [
+          {
+            "selected": true,
+            "text": "dev0",
+            "value": "dev0"
+          },
+          {
+            "selected": false,
+            "text": "preprod0",
+            "value": "preprod0"
+          },
+          {
+            "selected": false,
+            "text": "prod0",
+            "value": "prod0"
+          },
+          {
+            "selected": false,
+            "text": "staging0",
+            "value": "staging0"
+          }
+        ],
+        "query": "label_values(kubernetes_cluster)",
+        "refresh": 0,
+        "regex": "/dev0|staging0|prod0/",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+          "selected": false,
+          "text": "com.barclays.bmb",
+          "value": "com.barclays.bmb"
+        },
+        "datasource": "Prometheus",
+        "definition": "label_values(channel)",
+        "hide": 0,
+        "includeAll": false,
+        "label": "channel",
+        "multi": false,
+        "name": "channel",
+        "options": [
+          {
+            "selected": true,
+            "text": "com.barclays.bmb",
+            "value": "com.barclays.bmb"
+          },
+          {
+            "selected": false,
+            "text": "com.bink.bink20dev",
+            "value": "com.bink.bink20dev"
+          },
+          {
+            "selected": false,
+            "text": "com.bink.wallet",
+            "value": "com.bink.wallet"
+          },
+          {
+            "selected": false,
+            "text": "com.wasabi.bink.web",
+            "value": "com.wasabi.bink.web"
+          }
+        ],
+        "query": "label_values(channel)",
+        "refresh": 0,
+        "regex": "/com.+/",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+          "selected": false,
+          "text": "Beales",
+          "value": "Beales"
+        },
+        "datasource": "Prometheus",
+        "definition": "label_values(scheme)",
+        "hide": 0,
+        "includeAll": false,
+        "label": "scheme",
+        "multi": false,
+        "name": "scheme",
+        "options": [
+          {
+            "selected": true,
+            "text": "Beales",
+            "value": "Beales"
+          },
+          {
+            "selected": false,
+            "text": "advantage-card",
+            "value": "advantage-card"
+          },
+          {
+            "selected": false,
+            "text": "asia-miles",
+            "value": "asia-miles"
+          },
+          {
+            "selected": false,
+            "text": "beales",
+            "value": "beales"
+          },
+          {
+            "selected": false,
+            "text": "beefeater-grill-reward-club",
+            "value": "beefeater-grill-reward-club"
+          },
+          {
+            "selected": false,
+            "text": "bonus-club",
+            "value": "bonus-club"
+          },
+          {
+            "selected": false,
+            "text": "bq-club",
+            "value": "bq-club"
+          },
+          {
+            "selected": false,
+            "text": "burger-king-rewards",
+            "value": "burger-king-rewards"
+          },
+          {
+            "selected": false,
+            "text": "club-individual",
+            "value": "club-individual"
+          },
+          {
+            "selected": false,
+            "text": "coffee-club",
+            "value": "coffee-club"
+          },
+          {
+            "selected": false,
+            "text": "colonels-club",
+            "value": "colonels-club"
+          },
+          {
+            "selected": false,
+            "text": "cooperative-mock",
+            "value": "cooperative-mock"
+          },
+          {
+            "selected": false,
+            "text": "debenhams",
+            "value": "debenhams"
+          },
+          {
+            "selected": false,
+            "text": "esquires-coffee",
+            "value": "esquires-coffee"
+          },
+          {
+            "selected": false,
+            "text": "executive-club",
+            "value": "executive-club"
+          },
+          {
+            "selected": false,
+            "text": "explore-more",
+            "value": "explore-more"
+          },
+          {
+            "selected": false,
+            "text": "fatface",
+            "value": "fatface"
+          },
+          {
+            "selected": false,
+            "text": "foyalty",
+            "value": "foyalty"
+          },
+          {
+            "selected": false,
+            "text": "friends-of-krispy-kreme",
+            "value": "friends-of-krispy-kreme"
+          },
+          {
+            "selected": false,
+            "text": "go-outdoors",
+            "value": "go-outdoors"
+          },
+          {
+            "selected": false,
+            "text": "handm-club",
+            "value": "handm-club"
+          },
+          {
+            "selected": false,
+            "text": "harrods-rewards",
+            "value": "harrods-rewards"
+          },
+          {
+            "selected": false,
+            "text": "harvey-nichols",
+            "value": "harvey-nichols"
+          },
+          {
+            "selected": false,
+            "text": "harvey-nichols-mock",
+            "value": "harvey-nichols-mock"
+          },
+          {
+            "selected": false,
+            "text": "health-beautycard",
+            "value": "health-beautycard"
+          },
+          {
+            "selected": false,
+            "text": "heathrow-rewards",
+            "value": "heathrow-rewards"
+          },
+          {
+            "selected": false,
+            "text": "hilton-hhonors",
+            "value": "hilton-hhonors"
+          },
+          {
+            "selected": false,
+            "text": "hotel-chocolat",
+            "value": "hotel-chocolat"
+          },
+          {
+            "selected": false,
+            "text": "https",
+            "value": "https"
+          },
+          {
+            "selected": false,
+            "text": "iberia-plus",
+            "value": "iberia-plus"
+          },
+          {
+            "selected": false,
+            "text": "iceland-bonus-card",
+            "value": "iceland-bonus-card"
+          },
+          {
+            "selected": false,
+            "text": "iceland-bonus-card-mock",
+            "value": "iceland-bonus-card-mock"
+          },
+          {
+            "selected": false,
+            "text": "ikea",
+            "value": "ikea"
+          },
+          {
+            "selected": false,
+            "text": "love-your-body",
+            "value": "love-your-body"
+          },
+          {
+            "selected": false,
+            "text": "m-co-loyalty-card",
+            "value": "m-co-loyalty-card"
+          },
+          {
+            "selected": false,
+            "text": "matalan-reward-card",
+            "value": "matalan-reward-card"
+          },
+          {
+            "selected": false,
+            "text": "match-more",
+            "value": "match-more"
+          },
+          {
+            "selected": false,
+            "text": "millemiglia",
+            "value": "millemiglia"
+          },
+          {
+            "selected": false,
+            "text": "monsoon",
+            "value": "monsoon"
+          },
+          {
+            "selected": false,
+            "text": "my-john-lewis",
+            "value": "my-john-lewis"
+          },
+          {
+            "selected": false,
+            "text": "my-opc",
+            "value": "my-opc"
+          },
+          {
+            "selected": false,
+            "text": "my-waitrose",
+            "value": "my-waitrose"
+          },
+          {
+            "selected": false,
+            "text": "mystarbucks-rewards",
+            "value": "mystarbucks-rewards"
+          },
+          {
+            "selected": false,
+            "text": "nandos-card",
+            "value": "nandos-card"
+          },
+          {
+            "selected": false,
+            "text": "national-trust",
+            "value": "national-trust"
+          },
+          {
+            "selected": false,
+            "text": "nectar",
+            "value": "nectar"
+          },
+          {
+            "selected": false,
+            "text": "performance-mock-17",
+            "value": "performance-mock-17"
+          },
+          {
+            "selected": false,
+            "text": "performance-mock-18",
+            "value": "performance-mock-18"
+          },
+          {
+            "selected": false,
+            "text": "performance-mock-2",
+            "value": "performance-mock-2"
+          },
+          {
+            "selected": false,
+            "text": "performance-mock-3",
+            "value": "performance-mock-3"
+          },
+          {
+            "selected": false,
+            "text": "performance-mock-4",
+            "value": "performance-mock-4"
+          },
+          {
+            "selected": false,
+            "text": "performance-mock-5",
+            "value": "performance-mock-5"
+          },
+          {
+            "selected": false,
+            "text": "performance-mock-6",
+            "value": "performance-mock-6"
+          },
+          {
+            "selected": false,
+            "text": "performance-mock-7",
+            "value": "performance-mock-7"
+          },
+          {
+            "selected": false,
+            "text": "performance-voucher-mock-1",
+            "value": "performance-voucher-mock-1"
+          },
+          {
+            "selected": false,
+            "text": "pets-at-home",
+            "value": "pets-at-home"
+          },
+          {
+            "selected": false,
+            "text": "play-points",
+            "value": "play-points"
+          },
+          {
+            "selected": false,
+            "text": "qachannelswitchingtestinginstaging",
+            "value": "qachannelswitchingtestinginstaging"
+          },
+          {
+            "selected": false,
+            "text": "qaschemetest2",
+            "value": "qaschemetest2"
+          },
+          {
+            "selected": false,
+            "text": "recognition-reward-card",
+            "value": "recognition-reward-card"
+          },
+          {
+            "selected": false,
+            "text": "rewards-for-life",
+            "value": "rewards-for-life"
+          },
+          {
+            "selected": false,
+            "text": "russell-and-bromley",
+            "value": "russell-and-bromley"
+          },
+          {
+            "selected": false,
+            "text": "shell-drivers-club",
+            "value": "shell-drivers-club"
+          },
+          {
+            "selected": false,
+            "text": "space-nk",
+            "value": "space-nk"
+          },
+          {
+            "selected": false,
+            "text": "sparks",
+            "value": "sparks"
+          },
+          {
+            "selected": false,
+            "text": "star-rewards",
+            "value": "star-rewards"
+          },
+          {
+            "selected": false,
+            "text": "subcard",
+            "value": "subcard"
+          },
+          {
+            "selected": false,
+            "text": "swiss-miles-more",
+            "value": "swiss-miles-more"
+          },
+          {
+            "selected": false,
+            "text": "tasty-rewards",
+            "value": "tasty-rewards"
+          },
+          {
+            "selected": false,
+            "text": "tesco-clubcard1",
+            "value": "tesco-clubcard1"
+          },
+          {
+            "selected": false,
+            "text": "the-co-operative-membership",
+            "value": "the-co-operative-membership"
+          },
+          {
+            "selected": false,
+            "text": "the-perfume-shop",
+            "value": "the-perfume-shop"
+          },
+          {
+            "selected": false,
+            "text": "the-waterstones-card",
+            "value": "the-waterstones-card"
+          },
+          {
+            "selected": false,
+            "text": "tkmaxx",
+            "value": "tkmaxx"
+          },
+          {
+            "selected": false,
+            "text": "together-rewards-card",
+            "value": "together-rewards-card"
+          },
+          {
+            "selected": false,
+            "text": "towsure",
+            "value": "towsure"
+          },
+          {
+            "selected": false,
+            "text": "treat-me",
+            "value": "treat-me"
+          },
+          {
+            "selected": false,
+            "text": "vibe-club",
+            "value": "vibe-club"
+          },
+          {
+            "selected": false,
+            "text": "wasabi-club",
+            "value": "wasabi-club"
+          },
+          {
+            "selected": false,
+            "text": "whsmith-rewards-mock",
+            "value": "whsmith-rewards-mock"
+          }
+        ],
+        "query": "label_values(scheme)",
+        "refresh": 0,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      }
+    ]
   },
   "time": {
-    "from": "now-30m",
+    "from": "now-5m",
     "to": "now"
   },
   "timepicker": {
@@ -360,7 +1866,7 @@
     ]
   },
   "timezone": "",
-  "title": "Test Dashboard",
-  "uid": null,
-  "version": 0
+  "title": "Testing QA Dashboard",
+  "uid": "kCQImkBGz",
+  "version": 1
 }
