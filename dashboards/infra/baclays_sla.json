@@ -22,173 +22,6 @@
       "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "ms"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 12,
-        "x": 0,
-        "y": 0
-      },
-      "id": 30,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "fields": "",
-          "values": false
-        }
-      },
-      "pluginVersion": "7.0.3",
-      "targets": [
-        {
-          "expr": "backendrequestlatency_milliseconds_average",
-          "interval": "",
-          "legendFormat": "Frontdoor",
-          "refId": "A"
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Frontdoor average response time",
-      "type": "stat"
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "Prometheus",
-      "fieldConfig": {
-        "defaults": {
-          "custom": {},
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "ms"
-        },
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 4,
-        "w": 12,
-        "x": 12,
-        "y": 0
-      },
-      "hiddenSeries": false,
-      "id": 31,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "dataLinks": []
-      },
-      "percentage": false,
-      "pluginVersion": "7.0.3",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "backendrequestlatency_milliseconds_average ",
-          "interval": "",
-          "legendFormat": "Frontdoor",
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Frontdoor average response time",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "ms",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "datasource": "Prometheus",
-      "fieldConfig": {
-        "defaults": {
           "custom": {
             "align": null
           },
@@ -213,7 +46,7 @@
         "h": 4,
         "w": 12,
         "x": 0,
-        "y": 4
+        "y": 0
       },
       "id": 10,
       "options": {
@@ -232,7 +65,7 @@
       "pluginVersion": "7.0.3",
       "targets": [
         {
-          "expr": "((sum(django_http_requests_latency_seconds_by_view_method_sum{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"service\", channel=\"com.barclays.bmb\", method=\"POST\"})) / (sum(django_http_requests_latency_seconds_by_view_method_count{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"service\", channel=\"com.barclays.bmb\", method=\"POST\"})))",
+          "expr": "((sum(django_http_requests_latency_seconds_by_view_method_sum{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"service\", channel=\"com.barclays.bmb\", method=\"POST\"})) / 1000) ",
           "format": "time_series",
           "interval": "",
           "legendFormat": "Average Response time (Secs)",
@@ -241,7 +74,6 @@
         {
           "expr": "0.095 - sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"service\", channel=\"com.barclays.bmb\", method=\"POST\", le=\"0.15\"} [2m]))\n",
           "format": "time_series",
-          "hide": false,
           "interval": "2m",
           "legendFormat": "95th - (SLA = 0.150)",
           "refId": "A"
@@ -253,6 +85,12 @@
           "interval": "2m",
           "legendFormat": "99th - (SLA = 0.450)",
           "refId": "B"
+        },
+        {
+          "expr": "",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "D"
         }
       ],
       "timeFrom": null,
@@ -304,7 +142,7 @@
         "h": 4,
         "w": 12,
         "x": 12,
-        "y": 4
+        "y": 0
       },
       "hiddenSeries": false,
       "id": 20,
@@ -418,7 +256,7 @@
         "h": 4,
         "w": 12,
         "x": 0,
-        "y": 8
+        "y": 4
       },
       "id": 19,
       "options": {
@@ -508,7 +346,7 @@
         "h": 4,
         "w": 12,
         "x": 12,
-        "y": 8
+        "y": 4
       },
       "hiddenSeries": false,
       "id": 22,
@@ -622,7 +460,7 @@
         "h": 4,
         "w": 12,
         "x": 0,
-        "y": 12
+        "y": 8
       },
       "id": 11,
       "options": {
@@ -712,7 +550,7 @@
         "h": 4,
         "w": 12,
         "x": 12,
-        "y": 12
+        "y": 8
       },
       "hiddenSeries": false,
       "id": 23,
@@ -826,7 +664,7 @@
         "h": 4,
         "w": 12,
         "x": 0,
-        "y": 16
+        "y": 12
       },
       "id": 13,
       "options": {
@@ -916,7 +754,7 @@
         "h": 4,
         "w": 12,
         "x": 12,
-        "y": 16
+        "y": 12
       },
       "hiddenSeries": false,
       "id": 24,
@@ -1030,7 +868,7 @@
         "h": 4,
         "w": 12,
         "x": 0,
-        "y": 20
+        "y": 16
       },
       "id": 15,
       "options": {
@@ -1120,7 +958,7 @@
         "h": 4,
         "w": 12,
         "x": 12,
-        "y": 20
+        "y": 16
       },
       "hiddenSeries": false,
       "id": 25,
@@ -1234,7 +1072,7 @@
         "h": 4,
         "w": 12,
         "x": 0,
-        "y": 24
+        "y": 20
       },
       "id": 14,
       "options": {
@@ -1324,7 +1162,7 @@
         "h": 4,
         "w": 12,
         "x": 12,
-        "y": 24
+        "y": 20
       },
       "hiddenSeries": false,
       "id": 26,
@@ -1438,7 +1276,7 @@
         "h": 4,
         "w": 12,
         "x": 0,
-        "y": 28
+        "y": 24
       },
       "id": 16,
       "options": {
@@ -1528,7 +1366,7 @@
         "h": 4,
         "w": 12,
         "x": 12,
-        "y": 28
+        "y": 24
       },
       "hiddenSeries": false,
       "id": 27,
@@ -1642,7 +1480,7 @@
         "h": 4,
         "w": 12,
         "x": 0,
-        "y": 32
+        "y": 28
       },
       "id": 18,
       "options": {
@@ -1732,7 +1570,7 @@
         "h": 4,
         "w": 12,
         "x": 12,
-        "y": 32
+        "y": 28
       },
       "hiddenSeries": false,
       "id": 28,
@@ -1845,5 +1683,5 @@
   "timezone": "",
   "title": "Barclays SLA Info",
   "uid": "Xu4T59sGz",
-  "version": 23
+  "version": 19
 }
