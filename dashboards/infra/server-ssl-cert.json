@@ -16,7 +16,7 @@
   "editable": true,
   "gnetId": 11279,
   "graphTooltip": 0,
-  "iteration": 1619694223990,
+  "iteration": 1620646553860,
   "links": [],
   "panels": [
     {
@@ -334,7 +334,6 @@
         "allValue": null,
         "current": {
           "selected": true,
-          "tags": [],
           "text": "All",
           "value": [
             "$__all"
