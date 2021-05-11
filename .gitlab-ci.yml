@@ -11,8 +11,8 @@ build-develop-grafana:
   script:
     - export CTAG="develop-$(date +%F-%H%M%S)"
     - docker build --pull -t "$CI_REGISTRY/grafana:latest" .
-    - docker tag "$CI_REGISTRY/grafana:latest" "$CI_REGISTRY/grafana:develop-$CTAG"
+    - docker tag "$CI_REGISTRY/grafana:latest" "$CI_REGISTRY/grafana:$CTAG"
     - docker push "$CI_REGISTRY/grafana:latest"
-    - docker push "$CI_REGISTRY/grafana:develop-$CTAG"
+    - docker push "$CI_REGISTRY/grafana:$CTAG"
   only:
     - master
