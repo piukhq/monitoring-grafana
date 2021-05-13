@@ -71,7 +71,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Frontdoor average response time",
+      "title": "Frontdoor backend average response time",
       "type": "stat"
     },
     {
@@ -137,7 +137,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "backendrequestlatency_milliseconds_average ",
+          "expr": "sum(backendrequestlatency_milliseconds_average)",
           "interval": "",
           "legendFormat": "Frontdoor",
           "refId": "A"
@@ -147,7 +147,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Frontdoor average response time",
+      "title": "Frontdoor backend average response time",
       "tooltip": {
         "shared": true,
         "sort": 0,
