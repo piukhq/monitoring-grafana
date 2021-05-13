@@ -1048,21 +1048,21 @@
       "pluginVersion": "7.0.3",
       "targets": [
         {
-          "expr": "((sum(django_http_requests_latency_seconds_by_view_method_sum{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"payment-cards\", channel=\"com.barclays.bmb\", method=\"POST\"})) / (sum(django_http_requests_latency_seconds_by_view_method_count{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"payment-cards\", channel=\"com.barclays.bmb\", method=\"POST\"})))",
+          "expr": "(sum(backendrequestlatency_milliseconds_average) / 1000) - ((sum(django_http_requests_latency_seconds_by_view_method_sum{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"payment-cards\", channel=\"com.barclays.bmb\", method=\"POST\"})) / (sum(django_http_requests_latency_seconds_by_view_method_count{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"payment-cards\", channel=\"com.barclays.bmb\", method=\"POST\"})))",
           "format": "time_series",
           "interval": "",
           "legendFormat": "Average Response time (Secs)",
           "refId": "C"
         },
         {
-          "expr": "0.095 - sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"payment-cards\", channel=\"com.barclays.bmb\", method=\"POST\", le=\"0.15\"} [2m])) by (job)",
+          "expr": "(sum(backendrequestlatency_milliseconds_average) / 1000) -  sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"payment-cards\", channel=\"com.barclays.bmb\", method=\"POST\", le=\"0.15\"} [2m]))",
           "format": "time_series",
           "interval": "2m",
           "legendFormat": "95th - (SLA = 0.150)",
           "refId": "A"
         },
         {
-          "expr": "0.095 - sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"payment-cards\", channel=\"com.barclays.bmb\", method=\"POST\", le=\"0.45\"} [2m])) by (job)",
+          "expr": "(sum(backendrequestlatency_milliseconds_average) / 1000) -  sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"payment-cards\", channel=\"com.barclays.bmb\", method=\"POST\", le=\"0.45\"} [2m]))",
           "format": "time_series",
           "hide": false,
           "interval": "2m",
@@ -1456,21 +1456,21 @@
       "pluginVersion": "7.0.3",
       "targets": [
         {
-          "expr": "((sum(django_http_requests_latency_seconds_by_view_method_sum{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"service\", channel=\"com.barclays.bmb\", method=\"DELETE\"})) / (sum(django_http_requests_latency_seconds_by_view_method_count{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"service\", channel=\"com.barclays.bmb\", method=\"DELETE\"})))",
+          "expr": "(sum(backendrequestlatency_milliseconds_average) / 1000) -  ((sum(django_http_requests_latency_seconds_by_view_method_sum{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"service\", channel=\"com.barclays.bmb\", method=\"DELETE\"})) / (sum(django_http_requests_latency_seconds_by_view_method_count{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"service\", channel=\"com.barclays.bmb\", method=\"DELETE\"})))",
           "format": "time_series",
           "interval": "",
           "legendFormat": "Average Response time (Secs)",
           "refId": "C"
         },
         {
-          "expr": "0.095 - sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"service\", channel=\"com.barclays.bmb\", method=\"DELETE\", le=\"0.15\"} [2m])) by (job)",
+          "expr": "(sum(backendrequestlatency_milliseconds_average) / 1000) -  sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"service\", channel=\"com.barclays.bmb\", method=\"DELETE\", le=\"0.15\"} [2m]))",
           "format": "time_series",
           "interval": "2m",
           "legendFormat": "95th - (SLA = 0.150)",
           "refId": "A"
         },
         {
-          "expr": "0.095 - sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"service\", channel=\"com.barclays.bmb\", method=\"DELETE\", le=\"0.45\"} [2m])) by (job)",
+          "expr": "(sum(backendrequestlatency_milliseconds_average) / 1000) -  sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"service\", channel=\"com.barclays.bmb\", method=\"DELETE\", le=\"0.45\"} [2m]))",
           "format": "time_series",
           "hide": false,
           "interval": "2m",
@@ -1660,21 +1660,21 @@
       "pluginVersion": "7.0.3",
       "targets": [
         {
-          "expr": "((sum(django_http_requests_latency_seconds_by_view_method_sum{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"membership-card\", channel=\"com.barclays.bmb\", method=\"DELETE\"})) / (sum(django_http_requests_latency_seconds_by_view_method_count{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"membership-card\", channel=\"com.barclays.bmb\", method=\"DELETE\"})))",
+          "expr": "(sum(backendrequestlatency_milliseconds_average) / 1000) - ((sum(django_http_requests_latency_seconds_by_view_method_sum{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"membership-card\", channel=\"com.barclays.bmb\", method=\"DELETE\"})) / (sum(django_http_requests_latency_seconds_by_view_method_count{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"membership-card\", channel=\"com.barclays.bmb\", method=\"DELETE\"})))",
           "format": "time_series",
           "interval": "",
           "legendFormat": "Average Response time (Secs)",
           "refId": "C"
         },
         {
-          "expr": "0.095 - sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"membership-card\", channel=\"com.barclays.bmb\", method=\"DELETE\", le=\"0.15\"} [2m])) by (job)",
+          "expr": "(sum(backendrequestlatency_milliseconds_average) / 1000) - sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"membership-card\", channel=\"com.barclays.bmb\", method=\"DELETE\", le=\"0.15\"} [2m]))",
           "format": "time_series",
           "interval": "2m",
           "legendFormat": "95th - (SLA = 0.150)",
           "refId": "A"
         },
         {
-          "expr": "0.095 - sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"membership-card\", channel=\"com.barclays.bmb\", method=\"DELETE\", le=\"0.45\"} [2m])) by (job)",
+          "expr": "(sum(backendrequestlatency_milliseconds_average) / 1000) - sum(rate(django_http_requests_latency_seconds_by_view_method_bucket{kubernetes_cluster=\"prod0\", job=\"hermes\", view=\"membership-card\", channel=\"com.barclays.bmb\", method=\"DELETE\", le=\"0.45\"} [2m]))",
           "format": "time_series",
           "hide": false,
           "interval": "2m",
