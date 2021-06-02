@@ -15,7 +15,7 @@
     "editable": true,
     "gnetId": null,
     "graphTooltip": 0,
-    "id": 32,
+    "id": 19,
     "links": [],
     "panels": [
       {
@@ -26,7 +26,21 @@
         "datasource": "Prometheus",
         "fieldConfig": {
           "defaults": {
-            "custom": {}
+            "custom": {},
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
           },
           "overrides": []
         },
@@ -51,11 +65,12 @@
         },
         "lines": true,
         "linewidth": 1,
-        "nullPointMode": "null",
+        "nullPointMode": "null as zero",
         "options": {
           "dataLinks": []
         },
         "percentage": false,
+        "pluginVersion": "7.0.3",
         "pointradius": 2,
         "points": false,
         "renderer": "flot",
@@ -65,7 +80,8 @@
         "steppedLine": false,
         "targets": [
           {
-            "expr": "sum(nginx_ingress_controller_requests{kubernetes_cluster=\"prod0\"})",
+            "expr": "sum(increase(nginx_ingress_controller_requests{kubernetes_cluster=\"prod0\"}[10m]))",
+            "hide": false,
             "interval": "",
             "legendFormat": "Total",
             "refId": "A"
@@ -120,7 +136,7 @@
       "list": []
     },
     "time": {
-      "from": "now-7d",
+      "from": "now-30d",
       "to": "now"
     },
     "timepicker": {
