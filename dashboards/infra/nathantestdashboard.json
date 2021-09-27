@@ -776,7 +776,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum(register_success_total) by (slug, kubernetes_cluster, channel)",
+              "expr": "sum(join_success_total) by (slug, kubernetes_cluster, channel)",
               "interval": "",
               "legendFormat": "{{slug}} -- {{channel}} --  {{kubernetes_cluster}}",
               "refId": "A"
@@ -786,7 +786,7 @@
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
-          "title": "register_success",
+          "title": "join_success",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -887,7 +887,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum(register_fail_total) by (slug,kubernetes_cluster, channel)",
+              "expr": "sum(join_fail_total) by (slug,kubernetes_cluster, channel)",
               "interval": "",
               "legendFormat": "{{slug}} -- {{channel}} --  {{kubernetes_cluster}}",
               "refId": "A"
@@ -897,7 +897,7 @@
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
-          "title": "register_fail",
+          "title": "join_fail",
           "tooltip": {
             "shared": true,
             "sort": 0,
