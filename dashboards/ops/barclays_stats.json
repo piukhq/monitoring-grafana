@@ -175,7 +175,7 @@
       "type": "stat"
     },
     {
-      "content": "## Number of users\nA count of the number of users who have consented to use the Bink service through Barclays.  If a user consents, deletes and consents again this will count as two.  This doesn't decrement when consent is removed.\n\n## Number of payment cards\nA count of payment card enrolments from Barclays.  This doesn't decrement when payment cards are deleted.\n\n## Number of membership cards\nA count of membership accounts added and joined through Barclays.  This doesn't decrement when membership cards are deleted.\n",
+      "content": "## Number of users\nA count of the number of users who have consented to use the Bink service through Barclays.\n\n## Number of payment cards\nA count of payment card enrolments from Barclays.  This doesn't decrement when payment cards are deleted.\n\n## Number of membership cards\nA count of membership accounts added and joined through Barclays.  This doesn't decrement when membership cards are deleted.\n",
       "datasource": null,
       "fieldConfig": {
         "defaults": {
