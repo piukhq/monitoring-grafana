@@ -1,0 +1,146 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": "-- Grafana --",
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "target": {
+            "limit": 100,
+            "matchAny": false,
+            "tags": [],
+            "type": "dashboard"
+          },
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 34,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "prom1"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 9,
+          "w": 12,
+          "x": 0,
+          "y": 0
+        },
+        "id": 2,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "8.3.1",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "prom1"
+            },
+            "exemplar": true,
+            "expr": "sum(join_fail_total{kubernetes_cluster=~\"prod\\\\d\"} + join_success_total{kubernetes_cluster=~\"prod\\\\d\"}) by (slug)",
+            "interval": "",
+            "legendFormat": "Total - {{ slug }}",
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "prom1"
+            },
+            "exemplar": true,
+            "expr": "sum(callback_fail_total{kubernetes_cluster=~\"prod\\\\d\"} + callback_success_total{kubernetes_cluster=~\"prod\\\\d\"}) by (slug)",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "Total - {{ slug }}",
+            "refId": "B"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "prom1"
+            },
+            "exemplar": true,
+            "expr": "sum(join_fail_total{kubernetes_cluster=~\"prod\\\\d\"}) by (slug)",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "Fail - {{slug}}",
+            "refId": "C"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "prom1"
+            },
+            "exemplar": true,
+            "expr": "sum(callback_fail_total{kubernetes_cluster=~\"prod\\\\d\"}) by (slug)",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "Fail - {{ slug }}",
+            "refId": "D"
+          }
+        ],
+        "title": "Join Totals and Fails",
+        "type": "stat"
+      }
+    ],
+    "schemaVersion": 33,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+      "list": []
+    },
+    "time": {
+      "from": "now-1h",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "Join statistics",
+    "uid": "fA5P42bnk",
+    "version": 1,
+    "weekStart": ""
+  }
