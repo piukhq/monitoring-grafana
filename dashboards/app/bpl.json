@@ -21,7 +21,7 @@
     "editable": true,
     "fiscalYearStartMonth": 0,
     "graphTooltip": 0,
-    "id": 34,
+    "id": 26,
     "links": [],
     "liveNow": false,
     "panels": [
@@ -169,9 +169,9 @@
               "uid": "prom1"
             },
             "exemplar": true,
-            "expr": "sum(bpl_inbound_http_request_total{kubernetes_cluster=~\"prod\\\\d\"})",
+            "expr": "sum(bpl_inbound_http_request_total{kubernetes_cluster=~\"prod\\\\d\"}) by (retailer)",
             "interval": "",
-            "legendFormat": "Prod Inbound",
+            "legendFormat": "{{ retailer }}",
             "refId": "A"
           }
         ],
