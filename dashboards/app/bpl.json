@@ -21,7 +21,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 25,
+  "id": 24,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -104,9 +104,9 @@
             "uid": "prom1"
           },
           "exemplar": true,
-          "expr": "sum(rate(bpl_outgoing_http_requests_total{kubernetes_cluster=~\"prod0\"}[5m]))",
+          "expr": "sum(bpl_outgoing_http_requests_total{kubernetes_cluster=~\"prod\\\\d\"}) by (url, response, method)",
           "interval": "",
-          "legendFormat": "Prod (ms)",
+          "legendFormat": "{{ url }} - {{response}} - {{method}}",
           "refId": "A"
         }
       ],
