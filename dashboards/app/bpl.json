@@ -169,7 +169,8 @@
             "uid": "prom1"
           },
           "exemplar": true,
-          "expr": "sum(bpl_inbound_http_request_total{kubernetes_cluster=~\"prod\\\\d\"}) by (retailer)",
+          "expr": "sum(bpl_inbound_http_request_total{kubernetes_cluster=~\"prod\\\\d\", endpoint!=\"/readyz\", endpoint!=\"/livez\", endpoint!=\"/metrics\"}) by (retailer)",
+          "hide": false,
           "interval": "",
           "legendFormat": "{{ retailer }}",
           "refId": "A"
