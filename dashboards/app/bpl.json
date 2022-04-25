@@ -21,7 +21,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 24,
+  "id": 25,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -106,7 +106,7 @@
           "exemplar": true,
           "expr": "sum(rate(bpl_outgoing_http_requests_total{kubernetes_cluster=~\"prod0\"}[5m]))",
           "interval": "",
-          "legendFormat": "",
+          "legendFormat": "Prod (ms)",
           "refId": "A"
         }
       ],
