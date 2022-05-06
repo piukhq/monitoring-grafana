@@ -21,7 +21,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 24,
+  "id": 27,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -97,6 +97,7 @@
           "mode": "single"
         }
       },
+      "pluginVersion": "8.3.1",
       "targets": [
         {
           "datasource": {
@@ -105,6 +106,7 @@
           },
           "exemplar": true,
           "expr": "sum(bpl_outgoing_http_requests_total{kubernetes_cluster=~\"prod\\\\d\"}) by (url, response, method)",
+          "hide": false,
           "interval": "",
           "legendFormat": "{{ url }} - {{response}} - {{method}}",
           "refId": "A"
@@ -169,10 +171,10 @@
             "uid": "prom1"
           },
           "exemplar": true,
-          "expr": "sum(bpl_inbound_http_request_total{kubernetes_cluster=~\"prod\\\\d\", endpoint!=\"/readyz\", endpoint!=\"/livez\", endpoint!=\"/metrics\"}) by (retailer)",
+          "expr": "sum(bpl_inbound_http_request_total{kubernetes_cluster=~\"prod\\\\d\", endpoint!=\"/readyz\", endpoint!=\"/livez\", endpoint!=\"/metrics\"}) by (retailer,app)",
           "hide": false,
           "interval": "",
-          "legendFormat": "{{ retailer }}",
+          "legendFormat": "{{ retailer }} - {{ app }}",
           "refId": "A"
         }
       ],
@@ -517,6 +519,7 @@
           "mode": "single"
         }
       },
+      "pluginVersion": "8.3.1",
       "targets": [
         {
           "datasource": {
@@ -541,13 +544,13 @@
     "list": []
   },
   "time": {
-    "from": "now-1h",
+    "from": "now-24h",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "BPL Metrics",
   "uid": "3JmccZw7k",
-  "version": 1,
+  "version": 2,
   "weekStart": ""
 }
