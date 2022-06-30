@@ -21,7 +21,6 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 28,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -33,35 +32,7 @@
       "fieldConfig": {
         "defaults": {
           "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 0,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "auto",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
+            "mode": "thresholds"
           },
           "mappings": [],
           "thresholds": {
@@ -86,16 +57,18 @@
         "x": 0,
         "y": 0
       },
-      "id": 12,
+      "id": 14,
       "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom"
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
         },
-        "tooltip": {
-          "mode": "single"
-        }
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
       },
       "pluginVersion": "8.3.1",
       "targets": [
@@ -105,15 +78,14 @@
             "uid": "prom1"
           },
           "exemplar": true,
-          "expr": "sum(bpl_outgoing_http_requests_total{kubernetes_cluster=~\"prod\\\\d\"}) by (url, response, method)",
-          "hide": false,
+          "expr": "sum(bpl_task_summary{kubernetes_cluster=~\"prod\\\\d\"}) by (app)",
           "interval": "",
-          "legendFormat": "{{ url }} - {{response}} - {{method}}",
+          "legendFormat": "{{ app }}",
           "refId": "A"
         }
       ],
-      "title": "Outbound Http requests total",
-      "type": "timeseries"
+      "title": "Task Summarys",
+      "type": "gauge"
     },
     {
       "datasource": {
@@ -232,8 +204,7 @@
                 "value": 80
               }
             ]
-          },
-          "unit": "ms"
+          }
         },
         "overrides": []
       },
@@ -243,7 +214,7 @@
         "x": 0,
         "y": 8
       },
-      "id": 6,
+      "id": 12,
       "options": {
         "legend": {
           "calcs": [],
@@ -254,6 +225,7 @@
           "mode": "single"
         }
       },
+      "pluginVersion": "8.3.1",
       "targets": [
         {
           "datasource": {
@@ -261,14 +233,14 @@
             "uid": "prom1"
           },
           "exemplar": true,
-          "expr": "histogram_quantile(0.5, sum(rate(bpl_inbound_http_request_latency_seconds_bucket{kubernetes_cluster=~\"prod\\\\d\", endpoint!~\"/livez|/healthz|/metrics|/readyz\"}[5m])) by(le, app)) * 1000",
+          "expr": "sum(bpl_outgoing_http_requests_total{kubernetes_cluster=~\"prod\\\\d\"}) by (url, response, method)",
           "hide": false,
           "interval": "",
-          "legendFormat": "{{app}}",
-          "refId": "B"
+          "legendFormat": "{{ url }} - {{response}} - {{method}}",
+          "refId": "A"
         }
       ],
-      "title": "Inbound Http request latency",
+      "title": "Outbound Http requests total",
       "type": "timeseries"
     },
     {
@@ -410,7 +382,8 @@
                 "value": 80
               }
             ]
-          }
+          },
+          "unit": "ms"
         },
         "overrides": []
       },
@@ -420,7 +393,7 @@
         "x": 0,
         "y": 16
       },
-      "id": 8,
+      "id": 6,
       "options": {
         "legend": {
           "calcs": [],
@@ -438,13 +411,14 @@
             "uid": "prom1"
           },
           "exemplar": true,
-          "expr": "bpl_erroneous_marketing_opt_out_get_requests_total{kubernetes_cluster=~\"prod\\\\d\"}",
+          "expr": "histogram_quantile(0.5, sum(rate(bpl_inbound_http_request_latency_seconds_bucket{kubernetes_cluster=~\"prod\\\\d\", endpoint!~\"/livez|/healthz|/metrics|/readyz\"}[5m])) by(le, app)) * 1000",
+          "hide": false,
           "interval": "",
-          "legendFormat": "Erroneous Marketing opt out",
-          "refId": "A"
+          "legendFormat": "{{app}}",
+          "refId": "B"
         }
       ],
-      "title": "Erroneous Marketing opt out",
+      "title": "Inbound Http request latency",
       "type": "timeseries"
     },
     {
@@ -534,6 +508,94 @@
         }
       ],
       "title": "Tasks run total",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prom1"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 24
+      },
+      "id": 8,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prom1"
+          },
+          "exemplar": true,
+          "expr": "bpl_erroneous_marketing_opt_out_get_requests_total{kubernetes_cluster=~\"prod\\\\d\"}",
+          "interval": "",
+          "legendFormat": "Erroneous Marketing opt out",
+          "refId": "A"
+        }
+      ],
+      "title": "Erroneous Marketing opt out",
       "type": "timeseries"
     }
   ],
